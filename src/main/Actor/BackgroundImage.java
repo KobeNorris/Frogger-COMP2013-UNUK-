@@ -1,8 +1,9 @@
-package p4_group_8_repo;
+package main.Actor;
 
 import javafx.scene.image.Image;
+import main.Actor.Actor;
 
-public class BackgroundImage extends Actor{
+public class BackgroundImage extends Actor {
 
 	@Override
 	public void act(long now) {

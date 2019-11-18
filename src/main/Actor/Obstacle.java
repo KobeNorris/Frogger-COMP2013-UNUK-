@@ -1,9 +1,11 @@
-package p4_group_8_repo;
+package main.Actor;
 
 import javafx.scene.image.Image;
+import main.Actor.Actor;
 
 public class Obstacle extends Actor {
 	private int speed;
+
 	@Override
 	public void act(long now) {
 		move(speed , 0);

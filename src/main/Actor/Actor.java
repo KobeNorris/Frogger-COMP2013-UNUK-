@@ -1,7 +1,8 @@
-package p4_group_8_repo;
+package main.Actor;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.input.InputEvent;
+import main.World;
 
 import java.util.ArrayList;
 
