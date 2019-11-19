@@ -35,9 +35,9 @@ public abstract class Actor extends ImageView{
         }
         return someArray;
     }
-    
+
     public void manageInput(InputEvent e) {
-        
+
     }
 
     public <A extends Actor> A getOneIntersectingObject(java.lang.Class<A> cls) {
