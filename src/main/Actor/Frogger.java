@@ -105,6 +105,7 @@ public class Frogger extends Actor {
 				}
 			}
 		});
+
 		setOnKeyReleased(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				if (noMove) {
