@@ -9,6 +9,8 @@ public class WetTurtle extends Actor {
 	Image turtle3;
 	Image turtle4;
 	private int speed;
+	String filePath = "file:src/img/Turtle/";
+
 	int i = 1;
 	boolean bool = true;
 	boolean sunk = false;
@@ -39,10 +41,10 @@ public class WetTurtle extends Actor {
 			setX(600);
 	}
 	public WetTurtle(int xpos, int ypos, int s, int w, int h) {
-		turtle1 = new Image("file:src/img/TurtleAnimation1.png", w, h, true, true);
-		turtle2 = new Image("file:src/img/TurtleAnimation2Wet.png", w, h, true, true);
-		turtle3 = new Image("file:src/img/TurtleAnimation3Wet.png", w, h, true, true);
-		turtle4 = new Image("file:src/img/TurtleAnimation4Wet.png", w, h, true, true);
+		turtle1 = new Image(filePath + "turtleAnimation1.png", w, h, true, true);
+		turtle2 = new Image(filePath + "turtleAnimation2Wet.png", w, h, true, true);
+		turtle3 = new Image(filePath + "turtleAnimation3Wet.png", w, h, true, true);
+		turtle4 = new Image(filePath + "turtleAnimation4Wet.png", w, h, true, true);
 		setX(xpos);
 		setY(ypos);
 		speed = s;
