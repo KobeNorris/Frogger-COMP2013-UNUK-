@@ -13,7 +13,7 @@ public class Frogger extends Actor {
 	private boolean second = false;
 	private String filePath = "file:src/img/FroggerAction/";
 
-	int points = 900;
+	int points = 0;
 	int end = 0;
 	int imgSize = 40;
 	int deathFrame = 0;
