@@ -14,7 +14,7 @@
 //	private String filePath = "file:src/img/FroggerAction/";
 //
 //	int points = 0;
-//	int end = 0;
+//	int end = 0;-
 //	int imgSize = 40;
 //	int deathFrame = 0;
 //	boolean noMove = false;

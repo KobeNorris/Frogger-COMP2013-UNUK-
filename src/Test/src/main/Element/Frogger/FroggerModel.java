@@ -10,14 +10,13 @@ public class FroggerModel {
     boolean noMove = false;
     boolean stop = false;
     boolean changeScore = false;
-    double presentHighestPosition = 800;
+    double presentHighestPosition;
+    double upBound = 114.4, leftBound = 22, bottomBound = 760.0, rightBound = 538.0;
 
     public FroggerModel(){
         this.status = Status.ALIVE;
+        this.presentHighestPosition = 800;
     }
-
-
-
 
     enum Status{
         ALIVE(0),

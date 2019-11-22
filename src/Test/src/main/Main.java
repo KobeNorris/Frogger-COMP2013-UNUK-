@@ -1,7 +1,7 @@
 package main;
 
-import javafx.animation.AnimationTimer;
-import main.Actor.*;
+//import javafx.animation.AnimationTimer;
+//import main.Actor.*;
 
 public class Main{
 	public static void main(String[] args) {

@@ -15,14 +15,8 @@ public class FroggerViewer extends Viewer {
     private double movementX, movementY;
     private boolean moveComplete = true;
 
-    private FroggerController froggerController;
-
-    private static FroggerViewer frogger = null;
-
-    public static FroggerViewer getFrogger(){
-        if(frogger == null)
-            frogger = new FroggerViewer();
-        return frogger;
+    public FroggerViewer(String filePath){
+        this.filePath = filePath;
     }
 
     public void init(){
@@ -32,8 +26,8 @@ public class FroggerViewer extends Viewer {
         imgRight = new Image(filePath + "froggerRight.png", imgSize, imgSize, true, true);
         imgUpJump = new Image(filePath + "froggerUpJump.png", imgSize, imgSize, true, true);
         imgLeftJump = new Image(filePath + "froggerLeftJump.png", imgSize, imgSize, true, true);
-        imgRightJump = new Image(filePath + "froggerDownJump.png", imgSize, imgSize, true, true);
-        imgDownJump = new Image(filePath + "froggerRightJump.png", imgSize, imgSize, true, true);
+        imgDownJump = new Image(filePath + "froggerDownJump.png", imgSize, imgSize, true, true);
+        imgRightJump = new Image(filePath + "froggerRightJump.png", imgSize, imgSize, true, true);
 
         waterDeath1 = new Image(filePath + "waterDeath1.png", imgSize, imgSize, true, true);
         waterDeath2 = new Image(filePath + "waterDeath2.png", imgSize, imgSize, true, true);
@@ -43,29 +37,11 @@ public class FroggerViewer extends Viewer {
         roadDeath2 = new Image(filePath + "carDeath2.png", imgSize, imgSize, true, true);
         roadDeath3 = new Image(filePath + "carDeath3.png", imgSize, imgSize, true, true);
 
-        movementY = 13.3333333 * 2;
+        movementY = 13.45 * 2;
         movementX = 10.666666 * 2;
         originPositionX = 280.0;
         originPositionY = 730.0 + movementY;
         setBackToStart();
-
-        this.froggerController = new FroggerController();
-
-        setOnKeyPressed(new EventHandler<KeyEvent>() {
-            public void handle(KeyEvent event){
-                froggerController.movePressInstruction(event.getCode());
-            }
-        });
-
-        setOnKeyReleased(new EventHandler<KeyEvent>() {
-            public void handle(KeyEvent event) {
-                froggerController.moveReleaseInstruction(event.getCode());
-            }
-        });
-    }
-
-    public void setController(FroggerController froggerController){
-        this.froggerController = froggerController;
     }
 
     public void setBackToStart(){

@@ -3,11 +3,11 @@ package main;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import main.Element.Background.BackgroundImageController;
+import main.Element.Background.BackgroundImageViewer;
 import main.Element.Frogger.*;
-import main.Actor.*;
+import main.Element.Obstacle.ObstacleController;
 
 public class GameApplication extends Application{
     private static GameApplication instance = null;
@@ -19,7 +19,7 @@ public class GameApplication extends Application{
 
     AnimationTimer timer;
     MyStage background;
-    FroggerViewer frogger;
+    FroggerController frogger;
 
     public static GameApplication getInstance(){
         if(instance == null)
@@ -44,11 +44,11 @@ public class GameApplication extends Application{
     }
 
     public void initGameBackGround(){
-        BackgroundImage froggerback = new BackgroundImage(filePathToBackground + "background.png");
+        BackgroundImageController froggerback = new BackgroundImageController(filePathToBackground + "background.png");
 
         background.add(froggerback);
-        frogger = frogger.getFrogger();
-        frogger.init();
+        background.add(new ObstacleController(filePathToCar + "car1Right.png", 80, 701, 2, 50, 50));
+        frogger = new FroggerController();
         background.add(frogger);
         background.start();
     }
