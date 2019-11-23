@@ -1,9 +1,11 @@
 package main.Element.Obstacle;
 
 public class ObstacleModel {
-    public int speed;
+    public double speed;
 
-    public ObstacleModel(int speed){
+    protected ObstacleModel(){};
+
+    public ObstacleModel(double speed){
         this.speed = speed;
     }
 }

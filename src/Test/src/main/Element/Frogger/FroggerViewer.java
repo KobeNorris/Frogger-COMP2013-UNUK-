@@ -56,33 +56,28 @@ public class FroggerViewer extends Viewer {
                 case W:
                     move(0, -movementY);
                     setImage(imgUp);
-                    System.out.println("W");
                     moveComplete = false;
                     break;
 
                 case A:
                     move(-movementX, 0);
                     setImage(imgLeft);
-                    System.out.println("A");
                     moveComplete = false;
                     break;
 
                 case S:
                     move(0, movementY);
                     setImage(imgDown);
-                    System.out.println("S");
                     moveComplete = false;
                     break;
 
                 case D:
                     move(movementX, 0);
                     setImage(imgRight);
-                    System.out.println("D");
                     moveComplete = false;
                     break;
 
                 default:
-                    moveComplete = false;
             }
         }else{
             switch (pressedKey){
@@ -111,7 +106,6 @@ public class FroggerViewer extends Viewer {
                     break;
 
                 default:
-                    moveComplete = true;
             }
         }
     }
@@ -134,18 +128,15 @@ public class FroggerViewer extends Viewer {
                 move(0, movementY);
                 setImage(imgDown);
                 moveComplete = false;
-                System.out.println("S");
                 break;
 
             case D:
                 move(movementX, 0);
                 setImage(imgRight);
                 moveComplete = false;
-                System.out.println("D");
                 break;
 
             default:
-                moveComplete = false;
             }
     }
 

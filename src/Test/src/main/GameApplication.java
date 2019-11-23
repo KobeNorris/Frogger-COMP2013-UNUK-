@@ -5,9 +5,12 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.Element.Background.BackgroundImageController;
-import main.Element.Background.BackgroundImageViewer;
 import main.Element.Frogger.*;
+import main.Element.Obstacle.Car.CarController;
 import main.Element.Obstacle.ObstacleController;
+import main.Element.Obstacle.Truck.ShortTruck.ShortTruckController;
+import main.Element.Obstacle.Truck.LongTruck.LongTruckController;
+import main.Element.Platform.Log.LogController;
 
 public class GameApplication extends Application{
     private static GameApplication instance = null;
@@ -47,7 +50,30 @@ public class GameApplication extends Application{
         BackgroundImageController froggerback = new BackgroundImageController(filePathToBackground + "background.png");
 
         background.add(froggerback);
-        background.add(new ObstacleController(filePathToCar + "car1Right.png", 80, 701, 2, 50, 50));
+        background.add(new LogController("short", 0, 165, 0.75,166, 166));
+        background.add(new LogController("short", 220, 165, 0.75,166, 166));
+        background.add(new LogController("short", 440, 165, 0.75,166, 166));
+        background.add(new LogController("long", 400, 328, -2,276, 276));
+        background.add(new LogController("long", 800, 328, -2,276, 276));
+//        background.add(new LogController("short", 270, 150, 0.75,329, 329));
+//        background.add(new LogController("short", 490, 150, 0.75,329, 329));
+
+        background.add(new CarController("right", 80, 701, 2, 50, 50));
+        background.add(new CarController("right", 300, 701, 2, 50, 50));
+        background.add(new CarController("right", 400, 701, 2, 50, 50));
+        background.add(new CarController("right", 570, 701, 2, 50, 50));
+        background.add(new ShortTruckController("right", 0, 649, 1, 120, 120));
+        background.add(new ShortTruckController("right", 300, 649, 1, 120, 120));
+        background.add(new ShortTruckController("right", 600, 649, 1, 120, 120));
+        background.add(new ShortTruckController("right", 720, 649, 1, 120, 120));
+        background.add(new CarController("left", 100, 597, -1, 50, 50));
+        background.add(new CarController("left", 250, 597, -1, 50, 50));
+        background.add(new CarController("left", 400, 597, -1, 50, 50));
+        background.add(new CarController("left", 550, 597, -1, 50, 50));
+        background.add(new LongTruckController("right", 0, 540, 1, 200, 200));
+        background.add(new LongTruckController("right", 500, 540, 1, 200, 200));
+        background.add(new CarController("left", 500, 490, -5, 50, 50));
+
         frogger = new FroggerController();
         background.add(frogger);
         background.start();
