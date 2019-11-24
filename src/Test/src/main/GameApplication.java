@@ -11,6 +11,7 @@ import main.Element.Obstacle.ObstacleController;
 import main.Element.Obstacle.Truck.ShortTruck.ShortTruckController;
 import main.Element.Obstacle.Truck.LongTruck.LongTruckController;
 import main.Element.Platform.Log.LogController;
+import main.Element.Platform.Turtle.DryTurtle.DryTurtleController;
 
 public class GameApplication extends Application{
     private static GameApplication instance = null;
@@ -57,6 +58,9 @@ public class GameApplication extends Application{
         background.add(new LogController("long", 800, 328, -2,276, 276));
 //        background.add(new LogController("short", 270, 150, 0.75,329, 329));
 //        background.add(new LogController("short", 490, 150, 0.75,329, 329));
+
+        background.add(new DryTurtleController(500, 376, -1, 130, 130));
+        background.add(new DryTurtleController(300, 376, -1, 130, 130));
 
         background.add(new CarController("right", 80, 701, 2, 50, 50));
         background.add(new CarController("right", 300, 701, 2, 50, 50));

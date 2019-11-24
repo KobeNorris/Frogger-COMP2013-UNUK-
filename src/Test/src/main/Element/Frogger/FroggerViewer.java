@@ -52,6 +52,7 @@ public class FroggerViewer extends Viewer {
 
     public void keyBoardPress(KeyCode pressedKey){
         if(moveComplete){
+//            System.out.println("1");
             switch (pressedKey){
                 case W:
                     move(0, -movementY);
@@ -80,6 +81,7 @@ public class FroggerViewer extends Viewer {
                 default:
             }
         }else{
+//            System.out.println("2");
             switch (pressedKey){
                 case W:
                     move(0, -movementY);
@@ -111,6 +113,7 @@ public class FroggerViewer extends Viewer {
     }
 
     public void keyBoardRelease(KeyCode releasedKey){
+//        System.out.println("3");
         switch (releasedKey) {
             case W:
                 move(0, -movementY);

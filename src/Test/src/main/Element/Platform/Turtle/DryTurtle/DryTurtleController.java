@@ -7,9 +7,9 @@ public class DryTurtleController extends PlatformController {
     private DryTurtleModel model;
     private String imageLink = "file:src/img/Platform/Turtle/";
 
-    public DryTurtleController(String type, int positionX, int positionY, double speed, double width, double height){
+    public DryTurtleController(int positionX, int positionY, double speed, double width, double height){
         this.model = new DryTurtleModel(speed);
-        this.viewer = new DryTurtleViewer(imageLink, positionX, positionY, width, height);
+        this.viewer = new DryTurtleViewer(positionX, positionY, width, height);
     }
 
     @Override
@@ -19,6 +19,7 @@ public class DryTurtleController extends PlatformController {
             this.viewer.setX(-180);
         if (this.viewer.getX() < -300 && this.model.speed < 0)
             this.viewer.setX(700);
+        viewer.turtleSwim(timer);
     }
 
     @Override
