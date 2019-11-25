@@ -5,15 +5,26 @@ import main.Element.Platform.PlatformController;
 public class LogController extends PlatformController {
     private LogViewer viewer;
     private LogModel model;
-    private String imageLinkLong = "file:src/img/Platform/Log/logs.png";
     private String imageLinkShort = "file:src/img/Platform/Log/shortLog.png";
+    private String imageLinkMiddle = "file:src/img/Platform/Log/middleLog.png";
+    private String imageLinkLong = "file:src/img/Platform/Log/longLog.png";
 
     public LogController(String type, int positionX, int positionY, double speed, double width, double height){
         this.model = new LogModel(speed);
-        if(type.equals("long")){
-            this.viewer = new LogViewer(imageLinkLong, positionX, positionY, width, height);
-        }else if(type.equals("short")){
-            this.viewer = new LogViewer(imageLinkShort, positionX, positionY, width, height);
+        switch(type){
+            case "long":
+                this.viewer = new LogViewer(imageLinkLong, positionX, positionY, width, height);
+                break;
+
+            case "middle":
+                this.viewer = new LogViewer(imageLinkMiddle, positionX, positionY, width, height);
+                break;
+
+            case "short":
+                this.viewer = new LogViewer(imageLinkShort, positionX, positionY, width, height);
+                break;
+
+            default:
         }
     }
 

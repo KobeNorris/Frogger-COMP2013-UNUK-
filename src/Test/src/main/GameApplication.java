@@ -12,6 +12,7 @@ import main.Element.Obstacle.Truck.ShortTruck.ShortTruckController;
 import main.Element.Obstacle.Truck.LongTruck.LongTruckController;
 import main.Element.Platform.Log.LogController;
 import main.Element.Platform.Turtle.DryTurtle.DryTurtleController;
+import main.Element.Platform.Turtle.WetTurtle.WetTurtleController;
 
 public class GameApplication extends Application{
     private static GameApplication instance = null;
@@ -51,16 +52,25 @@ public class GameApplication extends Application{
         BackgroundImageController froggerback = new BackgroundImageController(filePathToBackground + "background.png");
 
         background.add(froggerback);
-        background.add(new LogController("short", 0, 165, 0.75,166, 166));
-        background.add(new LogController("short", 220, 165, 0.75,166, 166));
-        background.add(new LogController("short", 440, 165, 0.75,166, 166));
-        background.add(new LogController("long", 400, 328, -2,276, 276));
-        background.add(new LogController("long", 800, 328, -2,276, 276));
+        background.add(new LogController("middle", 0, 170, 0.75, 170, 170));
+//        background.add(new LogController("middle", 220, 170, 0.75, 170, 170));
+        background.add(new LogController("middle", 440, 170, 0.75, 170, 170));
+        background.add(new LogController("short", 200, 328, -2,140, 140));
+//        background.add(new LogController("short", 400, 328, -2,150, 150));
+        background.add(new LogController("short", 600, 328, -2,140, 140));
+        background.add(new LogController("short", 800, 328, -2,140, 140));
+        background.add(new LogController("long", 400, 274, -2,280, 280));
+        background.add(new LogController("long", 800, 274, -2,280, 280));
 //        background.add(new LogController("short", 270, 150, 0.75,329, 329));
 //        background.add(new LogController("short", 490, 150, 0.75,329, 329));
 
         background.add(new DryTurtleController(500, 376, -1, 130, 130));
         background.add(new DryTurtleController(300, 376, -1, 130, 130));
+
+        background.add(new WetTurtleController(700, 376, -1, 130, 130));
+        background.add(new WetTurtleController(600, 217, -1, 130, 130));
+        background.add(new WetTurtleController(400, 217, -1, 130, 130));
+        background.add(new WetTurtleController(200, 217, -1, 130, 130));
 
         background.add(new CarController("right", 80, 701, 2, 50, 50));
         background.add(new CarController("right", 300, 701, 2, 50, 50));

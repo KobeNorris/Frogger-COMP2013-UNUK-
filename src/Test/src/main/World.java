@@ -95,21 +95,12 @@ public abstract class World extends Pane {
         getChildren().remove(Controller.getViewer());
         this.myControllers.remove(Controller);
     }
-
-//    public <A extends Controller> List<A> getObjects(Class<A> cls) {
-//        ArrayList<A> someArray = new ArrayList<A>();
-//        for (Node n: getChildren()) {
-//            if (cls.isInstance(n)) {
-//                someArray.add((A)n);
-//            }
-//        }
-//        return someArray;
-//    }
-
     public <A extends Viewer> ArrayList<A> getObjects(Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
         for (Controller anController: myControllers) {
-            someArray.add((A)(anController.getViewer()));
+            if(cls.isInstance(anController.getViewer())){
+                someArray.add((A)(anController.getViewer()));
+            }
         }
         return someArray;
     }
