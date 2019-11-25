@@ -3,7 +3,7 @@ package main.Element.Platform.Log;
 import main.Element.Platform.PlatformController;
 
 public class LogController extends PlatformController {
-    private LogViewer viewer;
+    private LogView view;
     private LogModel model;
     private String imageLinkShort = "file:src/img/Platform/Log/shortLog.png";
     private String imageLinkMiddle = "file:src/img/Platform/Log/middleLog.png";
@@ -13,15 +13,15 @@ public class LogController extends PlatformController {
         this.model = new LogModel(speed);
         switch(type){
             case "long":
-                this.viewer = new LogViewer(imageLinkLong, positionX, positionY, width, height);
+                this.view = new LogView(imageLinkLong, positionX, positionY, width, height);
                 break;
 
             case "middle":
-                this.viewer = new LogViewer(imageLinkMiddle, positionX, positionY, width, height);
+                this.view = new LogView(imageLinkMiddle, positionX, positionY, width, height);
                 break;
 
             case "short":
-                this.viewer = new LogViewer(imageLinkShort, positionX, positionY, width, height);
+                this.view = new LogView(imageLinkShort, positionX, positionY, width, height);
                 break;
 
             default:
@@ -30,15 +30,15 @@ public class LogController extends PlatformController {
 
     @Override
     public void act(long timer) {
-        this.viewer.move(this.model.speed , 0);
-        if (this.viewer.getX() > 600 && this.model.speed > 0)
-            this.viewer.setX(-180);
-        if (this.viewer.getX() < -300 && this.model.speed < 0)
-            this.viewer.setX(700);
+        this.view.move(this.model.speed , 0);
+        if (this.view.getX() > 600 && this.model.speed > 0)
+            this.view.setX(-180);
+        if (this.view.getX() < -300 && this.model.speed < 0)
+            this.view.setX(700);
     }
 
     @Override
-    public LogViewer getViewer(){
-        return this.viewer;
+    public LogView getView(){
+        return this.view;
     }
 }

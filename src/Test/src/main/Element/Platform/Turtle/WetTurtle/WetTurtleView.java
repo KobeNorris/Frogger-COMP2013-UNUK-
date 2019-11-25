@@ -1,16 +1,16 @@
 package main.Element.Platform.Turtle.WetTurtle;
 
 import javafx.scene.image.Image;
-import main.Element.Platform.PlatformViewer;
+import main.Element.Platform.PlatformView;
 
-public class WetTurtleViewer extends PlatformViewer {
+public class WetTurtleView extends PlatformView {
     private Image firstFrame, secondFrame, thirdFrame, fourthFrame;
-    private String filePathFirstFrame = "file:src/img/Turtle/turtleAnimation1.png";
-    private String filePathSecondFrame = "file:src/img/Turtle/turtleAnimation2Wet.png";
-    private String filePathThirdFrame = "file:src/img/Turtle/turtleAnimation3Wet.png";
-    private String getFilePathFourthFrame = "file:src/img/Turtle/turtleAnimation4Wet.png";
+    private String filePathFirstFrame = "file:src/img/Platform/Turtle/turtleAnimation1.png";
+    private String filePathSecondFrame = "file:src/img/Platform/Turtle/turtleAnimation2Wet.png";
+    private String filePathThirdFrame = "file:src/img/Platform/Turtle/turtleAnimation3Wet.png";
+    private String getFilePathFourthFrame = "file:src/img/Platform/Turtle/turtleAnimation4Wet.png";
 
-    public WetTurtleViewer(int positionX, int positionY, double width, double height) {
+    public WetTurtleView(int positionX, int positionY, double width, double height) {
         this.firstFrame = new Image(filePathFirstFrame, width, height, true, true);
         this.secondFrame = new Image(filePathSecondFrame, width, height, true, true);
         this.thirdFrame = new Image(filePathThirdFrame, width, height, true, true);

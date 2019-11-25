@@ -1,31 +1,31 @@
 package main.Element.Platform;
 
 import main.Element.Controller;
-import main.Element.Viewer;
+import main.Element.View;
 
 public class PlatformController extends Controller {
-    private PlatformViewer viewer;
+    private PlatformView view;
     private PlatformModel model;
 
     protected PlatformController(){}
 
     public PlatformController(String imageLink, int positionX, int positionY, int speed, double width, double height){
         this.model = new PlatformModel(speed);
-        this.viewer = new PlatformViewer(imageLink, positionX, positionY, width, height);
+        this.view = new PlatformView(imageLink, positionX, positionY, width, height);
     }
 
     @Override
     public void act(long timer){
-        viewer.move(model.speed , 0);
-        if (viewer.getX() > 600 && model.speed > 0)
-            viewer.setX(-200);
-        if (viewer.getX() < -50 && model.speed < 0)
-            viewer.setX(600);
+        view.move(model.speed , 0);
+        if (view.getX() > 600 && model.speed > 0)
+            view.setX(-200);
+        if (view.getX() < -50 && model.speed < 0)
+            view.setX(600);
     }
 
     @Override
-    public Viewer getViewer(){
-        return this.viewer;
+    public View getView(){
+        return this.view;
     }
 
 }

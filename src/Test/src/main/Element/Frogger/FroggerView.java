@@ -1,25 +1,20 @@
 package main.Element.Frogger;
 
-import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import main.Element.Viewer;
+import main.Element.View;
 
-public class FroggerViewer extends Viewer {
+public class FroggerView extends View {
     private Image imgUp, imgLeft, imgRight, imgDown, imgUpJump, imgLeftJump, imgRightJump, imgDownJump;
     private Image waterDeath1, waterDeath2, waterDeath3, waterDeath4, roadDeath1, roadDeath2, roadDeath3;
-    private String filePath = "file:src/img/FroggerAction/";
+    private String filePath;
     private int imgSize = 40, timeInverval = 11;
     private double originPositionX, originPositionY;
     private double movementX, movementY;
     private boolean moveComplete = true;
+    private int deathFrame = 0;
 
-    public FroggerViewer(String filePath){
-        this.filePath = filePath;
-    }
-
-    public void init(){
+    public FroggerView(String filePath){
         imgUp = new Image(filePath + "froggerUp.png", imgSize, imgSize, true, true);
         imgLeft = new Image(filePath + "froggerLeft.png", imgSize, imgSize, true, true);
         imgDown = new Image(filePath + "froggerDown.png", imgSize, imgSize, true, true);
@@ -47,12 +42,12 @@ public class FroggerViewer extends Viewer {
     public void setBackToStart(){
         setX(originPositionX);
         setY(originPositionY);
+        deathFrame = 0;
         setImage(imgUp);
     }
 
     public void keyBoardPress(KeyCode pressedKey){
         if(moveComplete){
-//            System.out.println("1");
             switch (pressedKey){
                 case W:
                     move(0, -movementY);
@@ -81,7 +76,6 @@ public class FroggerViewer extends Viewer {
                 default:
             }
         }else{
-//            System.out.println("2");
             switch (pressedKey){
                 case W:
                     move(0, -movementY);
@@ -113,7 +107,6 @@ public class FroggerViewer extends Viewer {
     }
 
     public void keyBoardRelease(KeyCode releasedKey){
-//        System.out.println("3");
         switch (releasedKey) {
             case W:
                 move(0, -movementY);
@@ -144,25 +137,27 @@ public class FroggerViewer extends Viewer {
     }
 
     public boolean waterDeath(long timer){
-        int deathFrame = 0;
         if ((timer)% timeInverval == 0) {
             deathFrame++;
         }
         switch(deathFrame) {
             case 1:
                 setImage(waterDeath1);
+                return false;
 
             case 2:
                 setImage(waterDeath2);
+                return false;
 
             case 3:
                 setImage(waterDeath3);
+                return false;
 
             case 4:
                 setImage(waterDeath4);
+                return false;
 
             case 5:
-                setBackToStart();
                 return true;
 
             default:
@@ -171,22 +166,24 @@ public class FroggerViewer extends Viewer {
     }
 
     public boolean roadDeath(long timer) {
-        int deathFrame = 0;
         if ((timer) % timeInverval == 0) {
             deathFrame++;
         }
+        System.out.println(deathFrame);
         switch (deathFrame) {
             case 1:
                 setImage(roadDeath1);
+                return false;
 
             case 2:
                 setImage(roadDeath2);
+                return false;
 
             case 3:
                 setImage(roadDeath3);
+                return false;
 
             case 4:
-                setBackToStart();
                 return true;
 
             default:

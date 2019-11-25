@@ -6,7 +6,7 @@ import main.World;
 
 import java.util.ArrayList;
 
-public abstract class Viewer extends ImageView{
+public abstract class View extends ImageView{
 
     public void move(double dx, double dy) {
         setX(getX() + dx);
@@ -25,7 +25,7 @@ public abstract class Viewer extends ImageView{
         return this.getBoundsInLocal().getHeight();
     }
 
-    public <A extends Viewer> java.util.List<A> getIntersectingObjects(java.lang.Class<A> cls){
+    public <A extends View> java.util.List<A> getIntersectingObjects(java.lang.Class<A> cls){
         ArrayList<A> someArray = new ArrayList<A>();
         for (A viewer: getWorld().getObjects(cls)) {
             if (viewer != this && viewer.intersects(this.getBoundsInLocal())) {
@@ -35,7 +35,7 @@ public abstract class Viewer extends ImageView{
         return someArray;
     }
 
-    public <A extends Viewer> A getOneIntersectingObject(java.lang.Class<A> cls) {
+    public <A extends View> A getOneIntersectingObject(java.lang.Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
         for (A viewer: getWorld().getObjects(cls)) {
             if (viewer != this && viewer.intersects(this.getBoundsInLocal())) {

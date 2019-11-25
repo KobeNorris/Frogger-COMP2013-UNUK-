@@ -1,31 +1,31 @@
 package main.Element.Obstacle;
 
 import main.Element.Controller;
-import main.Element.Viewer;
+import main.Element.View;
 
 public class ObstacleController extends Controller {
-    private ObstacleViewer viewer;
+    private ObstacleView view;
     private ObstacleModel model;
 
     protected ObstacleController(){}
 
     public ObstacleController(String imageLink, int positionX, int positionY, double speed, double width, double height){
         this.model = new ObstacleModel(speed);
-        this.viewer = new ObstacleViewer(imageLink, positionX, positionY, width, height);
+        this.view = new ObstacleView(imageLink, positionX, positionY, width, height);
     }
 
     @Override
     public void act(long timer){
-        this.viewer.move(model.speed , 0);
-        if ( this.viewer.getX() > 600 &&  this.model.speed > 0)
-            this.viewer.setX(-200);
-        if ( this.viewer.getX() < -50 &&  this.model.speed < 0)
-            this.viewer.setX(600);
+        this.view.move(model.speed , 0);
+        if ( this.view.getX() > 600 &&  this.model.speed > 0)
+            this.view.setX(-200);
+        if ( this.view.getX() < -50 &&  this.model.speed < 0)
+            this.view.setX(600);
     }
 
     @Override
-    public Viewer getViewer(){
-        return this.viewer;
+    public View getView(){
+        return this.view;
     }
 
 }

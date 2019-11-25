@@ -1,15 +1,15 @@
 package main.Element.Platform.Turtle.DryTurtle;
 
 import javafx.scene.image.Image;
-import main.Element.Platform.PlatformViewer;
+import main.Element.Platform.PlatformView;
 
-public class DryTurtleViewer extends PlatformViewer {
+public class DryTurtleView extends PlatformView {
     private Image firstFrame, secondFrame, thirdFrame;
-    private String filePathFirstFrame = "file:src/img/Turtle/turtleAnimation1.png";
-    private String filePathSecondFrame = "file:src/img/Turtle/turtleAnimation2.png";
-    private String filePathThirdFrame = "file:src/img/Turtle/turtleAnimation3.png";
+    private String filePathFirstFrame = "file:src/img/Platform/Turtle/turtleAnimation1.png";
+    private String filePathSecondFrame = "file:src/img/Platform/Turtle/turtleAnimation2.png";
+    private String filePathThirdFrame = "file:src/img/Platform/Turtle/turtleAnimation3.png";
 
-    public DryTurtleViewer(int positionX, int positionY, double width, double height) {
+    public DryTurtleView(int positionX, int positionY, double width, double height) {
         this.firstFrame = new Image(filePathFirstFrame, width, height, true, true);
         this.secondFrame = new Image(filePathSecondFrame, width, height, true, true);
         this.thirdFrame = new Image(filePathThirdFrame, width, height, true, true);

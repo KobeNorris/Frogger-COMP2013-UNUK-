@@ -12,6 +12,7 @@ public class FroggerModel {
     boolean changeScore = false;
     double presentHighestPosition;
     double upBound = 114.4, leftBound = 22, bottomBound = 760.0, rightBound = 538.0;
+    String filePath = "file:src/img/FroggerAction/";
 
     public FroggerModel(){
         this.status = Status.ALIVE;

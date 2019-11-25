@@ -3,9 +3,9 @@ package main.Element.Background;
 		import javafx.scene.image.Image;
 		import main.Element.*;
 
-public class BackgroundImageViewer extends Viewer {
+public class BackgroundImageView extends View {
 
-	public BackgroundImageViewer(String imageLink) {
+	public BackgroundImageView(String imageLink) {
 		setImage(new Image(imageLink, 600, 800, true, true));
 
 	}

@@ -3,27 +3,26 @@ package main.Element.Platform.Turtle.DryTurtle;
 import main.Element.Platform.PlatformController;
 
 public class DryTurtleController extends PlatformController {
-    private DryTurtleViewer viewer;
+    private DryTurtleView view;
     private DryTurtleModel model;
-    private String imageLink = "file:src/img/Platform/Turtle/";
 
     public DryTurtleController(int positionX, int positionY, double speed, double width, double height){
         this.model = new DryTurtleModel(speed);
-        this.viewer = new DryTurtleViewer(positionX, positionY, width, height);
+        this.view = new DryTurtleView(positionX, positionY, width, height);
     }
 
     @Override
     public void act(long timer) {
-        this.viewer.move(this.model.speed , 0);
-        if (this.viewer.getX() > 600 && this.model.speed > 0)
-            this.viewer.setX(-180);
-        if (this.viewer.getX() < -300 && this.model.speed < 0)
-            this.viewer.setX(700);
-        viewer.turtleSwim(timer);
+        this.view.move(this.model.speed , 0);
+        if (this.view.getX() > 600 && this.model.speed > 0)
+            this.view.setX(-180);
+        if (this.view.getX() < -300 && this.model.speed < 0)
+            this.view.setX(700);
+        view.turtleSwim(timer);
     }
 
     @Override
-    public DryTurtleViewer getViewer(){
-        return this.viewer;
+    public DryTurtleView getView(){
+        return this.view;
     }
 }

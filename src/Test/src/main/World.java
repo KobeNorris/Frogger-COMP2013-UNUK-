@@ -34,8 +34,8 @@ public abstract class World extends Pane {
 							if(getOnKeyReleased() != null) 
 								getOnKeyReleased().handle(event);
 							for (Controller anController: myControllers) {
-								if (anController.getViewer().getOnKeyReleased() != null) {
-									anController.getViewer().getOnKeyReleased().handle(event);
+								if (anController.getView().getOnKeyReleased() != null) {
+									anController.getView().getOnKeyReleased().handle(event);
 								}
 							}
 						}
@@ -49,8 +49,8 @@ public abstract class World extends Pane {
 							if(getOnKeyPressed() != null) 
 								getOnKeyPressed().handle(event);
 							for (Controller anController: myControllers) {
-								if (anController.getViewer().getOnKeyPressed() != null) {
-									anController.getViewer().getOnKeyPressed().handle(event);
+								if (anController.getView().getOnKeyPressed() != null) {
+									anController.getView().getOnKeyPressed().handle(event);
 								}
 							}
 						}
@@ -87,19 +87,19 @@ public abstract class World extends Pane {
     }
     
     public void add(Controller Controller) {
-        getChildren().add(Controller.getViewer());
+        getChildren().add(Controller.getView());
         this.myControllers.add(Controller);
     }
 
     public void remove(Controller Controller) {
-        getChildren().remove(Controller.getViewer());
+        getChildren().remove(Controller.getView());
         this.myControllers.remove(Controller);
     }
-    public <A extends Viewer> ArrayList<A> getObjects(Class<A> cls) {
+    public <A extends View> ArrayList<A> getObjects(Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
         for (Controller anController: myControllers) {
-            if(cls.isInstance(anController.getViewer())){
-                someArray.add((A)(anController.getViewer()));
+            if(cls.isInstance(anController.getView())){
+                someArray.add((A)(anController.getView()));
             }
         }
         return someArray;
