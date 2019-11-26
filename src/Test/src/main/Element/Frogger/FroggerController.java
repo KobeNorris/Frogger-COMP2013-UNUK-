@@ -5,6 +5,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import main.Element.Controller;
 import main.Element.*;
+import main.Element.End.EndView;
 import main.Element.Obstacle.ObstacleView;
 import main.Element.Platform.PlatformView;
 import main.Element.Platform.Turtle.WetTurtle.WetTurtleView;
@@ -74,7 +75,7 @@ public class FroggerController extends Controller{
         }
     }
 
-    public boolean checkDeath(long timer){
+    public boolean checkStatus(long timer){
         if (this.view.getIntersectingObjects(ObstacleView.class).size() >= 1) {
             this.model.status = this.model.status.ROADDEATH;
             this.model.noMove = true;
@@ -88,6 +89,8 @@ public class FroggerController extends Controller{
                 this.model.status = this.model.status.WATERDEATH;
                 this.model.noMove = true;
                 return true;
+            }else if(this.view.getIntersectingObjects(EndView.class).size() >= 1){
+//                if()
             }
         }
         return false;
@@ -110,7 +113,7 @@ public class FroggerController extends Controller{
                 }
             }
         }else{
-            checkDeath(timer);
+            checkStatus(timer);
         }
     }
 

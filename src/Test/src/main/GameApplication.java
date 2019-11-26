@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.Element.Background.BackgroundImageController;
+import main.Element.End.EndController;
 import main.Element.Frogger.*;
 import main.Element.Obstacle.Car.CarController;
 import main.Element.Obstacle.ObstacleController;
@@ -63,6 +64,12 @@ public class GameApplication extends Application{
         background.add(new LogController("long", 800, 274, -2,280, 280));
 //        background.add(new LogController("short", 270, 150, 0.75,329, 329));
 //        background.add(new LogController("short", 490, 150, 0.75,329, 329));
+
+        background.add(new EndController(14,97, 63, 63));
+        background.add(new EndController(142,97, 63, 63));
+        background.add(new EndController(271,97, 63, 63));
+        background.add(new EndController(399,97, 63, 63));
+        background.add(new EndController(528,97, 63, 63));
 
         background.add(new DryTurtleController(500, 376, -1, 130, 130));
         background.add(new DryTurtleController(300, 376, -1, 130, 130));

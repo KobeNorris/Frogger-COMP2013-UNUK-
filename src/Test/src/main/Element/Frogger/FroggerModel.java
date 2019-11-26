@@ -1,6 +1,8 @@
 package main.Element.Frogger;
 
-public class FroggerModel {
+import main.Element.Model;
+
+public class FroggerModel extends Model {
     Status status;
 
     int points = 0;

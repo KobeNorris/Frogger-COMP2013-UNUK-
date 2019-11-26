@@ -169,7 +169,6 @@ public class FroggerView extends View {
         if ((timer) % timeInverval == 0) {
             deathFrame++;
         }
-        System.out.println(deathFrame);
         switch (deathFrame) {
             case 1:
                 setImage(roadDeath1);
