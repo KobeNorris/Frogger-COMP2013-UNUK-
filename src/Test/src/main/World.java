@@ -2,26 +2,23 @@ package main;
 
 
 import java.util.ArrayList;
-//import java.util.List;
 
 import javafx.animation.AnimationTimer;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
-//import javafx.scene.Node;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import main.Element.*;
+import main.Element.View;
 
 
 public abstract class World extends Pane {
     private AnimationTimer timer;
-    private ArrayList<Controller> myControllers;
     
     public World() {
 
-        this.myControllers = new ArrayList<Controller>();
     	sceneProperty().addListener(new ChangeListener<Scene>() {
 
 			@Override
@@ -33,9 +30,10 @@ public abstract class World extends Pane {
 						public void handle(KeyEvent event) {
 							if(getOnKeyReleased() != null) 
 								getOnKeyReleased().handle(event);
-							for (Controller anController: myControllers) {
-								if (anController.getView().getOnKeyReleased() != null) {
-									anController.getView().getOnKeyReleased().handle(event);
+							ArrayList<View> viewArrayList = getObjects(View.class);
+							for (View anView: viewArrayList) {
+								if (anView.getOnKeyReleased() != null) {
+                                    anView.getOnKeyReleased().handle(event);
 								}
 							}
 						}
@@ -48,10 +46,11 @@ public abstract class World extends Pane {
 						public void handle(KeyEvent event) {
 							if(getOnKeyPressed() != null) 
 								getOnKeyPressed().handle(event);
-							for (Controller anController: myControllers) {
-								if (anController.getView().getOnKeyPressed() != null) {
-									anController.getView().getOnKeyPressed().handle(event);
-								}
+							ArrayList<View> viewArrayList = getObjects(View.class);
+                            for (View anView: viewArrayList) {
+                                if (anView.getOnKeyReleased() != null) {
+                                    anView.getOnKeyReleased().handle(event);
+                                }
 							}
 						}
 
@@ -68,9 +67,10 @@ public abstract class World extends Pane {
             @Override
             public void handle(long now) {
                 act(now);
+                ArrayList<View> viewArrayList = getObjects(View.class);
                 
-                for (Controller anController: myControllers) {
-                	anController.act(now);
+                for (View anView: viewArrayList) {
+                    anView.act(now);
                 }
       
             }
@@ -86,23 +86,22 @@ public abstract class World extends Pane {
         timer.stop();
     }
     
-    public void add(Controller Controller) {
-        getChildren().add(Controller.getView());
-        this.myControllers.add(Controller);
+    public void add(View view) {
+        getChildren().add(view);
     }
 
-    public void remove(Controller Controller) {
-        getChildren().remove(Controller.getView());
-        this.myControllers.remove(Controller);
+    public void remove(View view) {
+        getChildren().remove(view);
     }
+
     public <A extends View> ArrayList<A> getObjects(Class<A> cls) {
-        ArrayList<A> someArray = new ArrayList<A>();
-        for (Controller anController: myControllers) {
-            if(cls.isInstance(anController.getView())){
-                someArray.add((A)(anController.getView()));
+        ArrayList<A> objectArray = new ArrayList<A>();
+        for (Node n: getChildren()) {
+            if (cls.isInstance(n)) {
+                objectArray.add((A)n);
             }
         }
-        return someArray;
+        return objectArray;
     }
 
     public abstract void act(long now);

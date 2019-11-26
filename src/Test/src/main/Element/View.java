@@ -7,6 +7,7 @@ import main.World;
 import java.util.ArrayList;
 
 public abstract class View extends ImageView{
+    public void manageInput(InputEvent e) {}
 
     public void move(double dx, double dy) {
         setX(getX() + dx);
@@ -46,9 +47,5 @@ public abstract class View extends ImageView{
         return someArray.get(0);
     }
 
-    public void manageInput(InputEvent e) {
-
-    }
-
-    public void act(long time){}
+    public abstract void act(long timer);
 }

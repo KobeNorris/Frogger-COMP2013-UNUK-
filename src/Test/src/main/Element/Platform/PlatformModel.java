@@ -5,8 +5,4 @@ public class PlatformModel {
     public boolean isSunk = false;
 
     protected PlatformModel(){};
-
-    public PlatformModel(int speed){
-        this.speed = speed;
-    }
 }

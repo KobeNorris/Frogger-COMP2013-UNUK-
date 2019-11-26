@@ -4,16 +4,17 @@ import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import main.Element.Background.BackgroundImageController;
-import main.Element.End.EndController;
-import main.Element.Frogger.*;
-import main.Element.Obstacle.Car.CarController;
-import main.Element.Obstacle.ObstacleController;
-import main.Element.Obstacle.Truck.ShortTruck.ShortTruckController;
-import main.Element.Obstacle.Truck.LongTruck.LongTruckController;
-import main.Element.Platform.Log.LogController;
-import main.Element.Platform.Turtle.DryTurtle.DryTurtleController;
-import main.Element.Platform.Turtle.WetTurtle.WetTurtleController;
+import main.Element.Background.BackgroundImageView;
+import main.Element.Background.BackgroundImageView;
+//import main.Element.End.EndView;
+//import main.Element.Frogger.*;
+import main.Element.Obstacle.Car.CarView;
+import main.Element.Obstacle.ObstacleView;
+import main.Element.Obstacle.Truck.ShortTruck.ShortTruckView;
+import main.Element.Obstacle.Truck.LongTruck.LongTruckView;
+//import main.Element.Platform.Log.LogView;
+//import main.Element.Platform.Turtle.DryTurtle.DryTurtleView;
+//import main.Element.Platform.Turtle.WetTurtle.WetTurtleView;
 
 public class GameApplication extends Application{
     private static GameApplication instance = null;
@@ -25,7 +26,7 @@ public class GameApplication extends Application{
 
     AnimationTimer timer;
     MyStage background;
-    FroggerController frogger;
+//    FroggerView frogger;
 
     public static GameApplication getInstance(){
         if(instance == null)
@@ -50,53 +51,53 @@ public class GameApplication extends Application{
     }
 
     public void initGameBackGround(){
-        BackgroundImageController froggerback = new BackgroundImageController(filePathToBackground + "background.png");
+        BackgroundImageView froggerback = new BackgroundImageView();
 
         background.add(froggerback);
-        background.add(new LogController("middle", 0, 170, 0.75, 170, 170));
-//        background.add(new LogController("middle", 220, 170, 0.75, 170, 170));
-        background.add(new LogController("middle", 440, 170, 0.75, 170, 170));
-        background.add(new LogController("short", 200, 328, -2,140, 140));
-//        background.add(new LogController("short", 400, 328, -2,150, 150));
-        background.add(new LogController("short", 600, 328, -2,140, 140));
-        background.add(new LogController("short", 800, 328, -2,140, 140));
-        background.add(new LogController("long", 400, 274, -2,280, 280));
-        background.add(new LogController("long", 800, 274, -2,280, 280));
-//        background.add(new LogController("short", 270, 150, 0.75,329, 329));
-//        background.add(new LogController("short", 490, 150, 0.75,329, 329));
+//        background.add(new LogView("middle", 0, 170, 0.75, 170, 170));
+////        background.add(new LogView("middle", 220, 170, 0.75, 170, 170));
+//        background.add(new LogView("middle", 440, 170, 0.75, 170, 170));
+//        background.add(new LogView("short", 200, 328, -2,140, 140));
+////        background.add(new LogView("short", 400, 328, -2,150, 150));
+//        background.add(new LogView("short", 600, 328, -2,140, 140));
+//        background.add(new LogView("short", 800, 328, -2,140, 140));
+//        background.add(new LogView("long", 400, 274, -2,280, 280));
+//        background.add(new LogView("long", 800, 274, -2,280, 280));
+////        background.add(new LogView("short", 270, 150, 0.75,329, 329));
+////        background.add(new LogView("short", 490, 150, 0.75,329, 329));
+//
+//        background.add(new EndView(14,97, 63, 63));
+//        background.add(new EndView(142,97, 63, 63));
+//        background.add(new EndView(271,97, 63, 63));
+//        background.add(new EndView(399,97, 63, 63));
+//        background.add(new EndView(528,97, 63, 63));
+//
+//        background.add(new DryTurtleView(500, 376, -1, 130, 130));
+//        background.add(new DryTurtleView(300, 376, -1, 130, 130));
+//
+//        background.add(new WetTurtleView(700, 376, -1, 130, 130));
+//        background.add(new WetTurtleView(600, 217, -1, 130, 130));
+//        background.add(new WetTurtleView(400, 217, -1, 130, 130));
+//        background.add(new WetTurtleView(200, 217, -1, 130, 130));
 
-        background.add(new EndController(14,97, 63, 63));
-        background.add(new EndController(142,97, 63, 63));
-        background.add(new EndController(271,97, 63, 63));
-        background.add(new EndController(399,97, 63, 63));
-        background.add(new EndController(528,97, 63, 63));
+        background.add(new CarView("right", 80, 701, 50, 2));
+        background.add(new CarView("right", 300, 701,  50, 2));
+        background.add(new CarView("right", 400, 701, 50, 2));
+        background.add(new CarView("right", 570, 701, 50, 2));
+        background.add(new ShortTruckView("right", 0, 649, 120, 1));
+        background.add(new ShortTruckView("right", 300, 649, 120, 1));
+        background.add(new ShortTruckView("right", 600, 649, 120, 1));
+        background.add(new ShortTruckView("right", 720, 649, 120, 1));
+        background.add(new CarView("left", 100, 597, 50, -1));
+        background.add(new CarView("left", 250, 597, 50, -1));
+        background.add(new CarView("left", 400, 597, 50, -1));
+        background.add(new CarView("left", 550, 597, 50, -1));
+        background.add(new LongTruckView("right", 0, 540, 200, 1));
+        background.add(new LongTruckView("right", 500, 540, 200, 1));
+        background.add(new CarView("left", 500, 490, 50, -5));
 
-        background.add(new DryTurtleController(500, 376, -1, 130, 130));
-        background.add(new DryTurtleController(300, 376, -1, 130, 130));
-
-        background.add(new WetTurtleController(700, 376, -1, 130, 130));
-        background.add(new WetTurtleController(600, 217, -1, 130, 130));
-        background.add(new WetTurtleController(400, 217, -1, 130, 130));
-        background.add(new WetTurtleController(200, 217, -1, 130, 130));
-
-        background.add(new CarController("right", 80, 701, 2, 50, 50));
-        background.add(new CarController("right", 300, 701, 2, 50, 50));
-        background.add(new CarController("right", 400, 701, 2, 50, 50));
-        background.add(new CarController("right", 570, 701, 2, 50, 50));
-        background.add(new ShortTruckController("right", 0, 649, 1, 120, 120));
-        background.add(new ShortTruckController("right", 300, 649, 1, 120, 120));
-        background.add(new ShortTruckController("right", 600, 649, 1, 120, 120));
-        background.add(new ShortTruckController("right", 720, 649, 1, 120, 120));
-        background.add(new CarController("left", 100, 597, -1, 50, 50));
-        background.add(new CarController("left", 250, 597, -1, 50, 50));
-        background.add(new CarController("left", 400, 597, -1, 50, 50));
-        background.add(new CarController("left", 550, 597, -1, 50, 50));
-        background.add(new LongTruckController("right", 0, 540, 1, 200, 200));
-        background.add(new LongTruckController("right", 500, 540, 1, 200, 200));
-        background.add(new CarController("left", 500, 490, -5, 50, 50));
-
-        frogger = new FroggerController();
-        background.add(frogger);
+//        frogger = new FroggerView();
+//        background.add(frogger);
         background.start();
     }
 
