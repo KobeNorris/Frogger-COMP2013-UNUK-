@@ -11,12 +11,10 @@ import main.Element.Platform.PlatformView;
 import main.Element.Platform.Turtle.WetTurtle.WetTurtleView;
 
 public class FroggerController extends Controller{
-    private FroggerView view;
     private FroggerModel model;
 
-    public FroggerController(){
-        this.model = new FroggerModel();
-        this.view = new FroggerView(this.model.filePath);
+    public FroggerController(FroggerModel model){
+        this.model = model;
 
         view.setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent event){
@@ -94,31 +92,5 @@ public class FroggerController extends Controller{
             }
         }
         return false;
-    }
-
-    @Override
-    public void act(long timer){
-        if(this.model.status != FroggerModel.Status.ALIVE){
-            if(this.model.status == FroggerModel.Status.ROADDEATH){
-                if(this.view.roadDeath(timer)){
-                    this.model.status = FroggerModel.Status.ALIVE;
-                    this.model.noMove = false;
-                    this.view.setBackToStart();
-                }
-            }else if(this.model.status == FroggerModel.Status.WATERDEATH){
-                if(this.view.waterDeath(timer)){
-                    this.model.status = FroggerModel.Status.ALIVE;
-                    this.model.noMove = false;
-                    this.view.setBackToStart();
-                }
-            }
-        }else{
-            checkStatus(timer);
-        }
-    }
-
-    @Override
-    public View getView(){
-        return this.view;
     }
 }

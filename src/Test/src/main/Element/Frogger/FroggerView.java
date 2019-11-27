@@ -1,7 +1,9 @@
 package main.Element.Frogger;
 
+import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import main.Element.View;
 
 public class FroggerView extends View {
@@ -10,11 +12,57 @@ public class FroggerView extends View {
     private String filePath;
     private int imgSize = 40, timeInverval = 11;
     private double originPositionX, originPositionY;
-    private double movementX, movementY;
+    private double movementX = 10.666666 * 2, movementY = 13.45 * 2;
     private boolean moveComplete = true;
     private int deathFrame = 0;
 
+    private FroggerController controller;
+    private FroggerModel model;
+
+
     public FroggerView(String filePath){
+        originPositionX = 280.0;
+        originPositionY = 730.0 + movementY;
+        loadImage();
+        setBackToStart();
+        createModel();
+        createController();
+
+        setOnKeyPressed(new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent event){
+//                if(!this.model.noMove){
+//                    keyBoardPress(event.getCode());
+//                }
+                keyBoardPress(event.getCode());
+            }
+        });
+
+        setOnKeyReleased(new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent event) {
+//                if(!this.model.noMove){
+//                    keyBoardRelease(event.getCode());
+//                }
+                keyBoardRelease(event.getCode());
+            }
+        });
+    }
+
+    public void createModel(){
+        this.model = new FroggerModel();
+    }
+
+    public void createController(){
+        this.controller = new FroggerController(this.model);
+    }
+
+    public void setBackToStart(){
+        setX(originPositionX);
+        setY(originPositionY);
+        deathFrame = 0;
+        setImage(imgUp);
+    }
+
+    public void loadImage(){
         imgUp = new Image(filePath + "froggerUp.png", imgSize, imgSize, true, true);
         imgLeft = new Image(filePath + "froggerLeft.png", imgSize, imgSize, true, true);
         imgDown = new Image(filePath + "froggerDown.png", imgSize, imgSize, true, true);
@@ -31,22 +79,11 @@ public class FroggerView extends View {
         roadDeath1 = new Image(filePath + "carDeath1.png", imgSize, imgSize, true, true);
         roadDeath2 = new Image(filePath + "carDeath2.png", imgSize, imgSize, true, true);
         roadDeath3 = new Image(filePath + "carDeath3.png", imgSize, imgSize, true, true);
-
-        movementY = 13.45 * 2;
-        movementX = 10.666666 * 2;
-        originPositionX = 280.0;
-        originPositionY = 730.0 + movementY;
-        setBackToStart();
-    }
-
-    public void setBackToStart(){
-        setX(originPositionX);
-        setY(originPositionY);
-        deathFrame = 0;
-        setImage(imgUp);
     }
 
     public void keyBoardPress(KeyCode pressedKey){
+        if(this.model.noMove)
+            return;
         if(moveComplete){
             switch (pressedKey){
                 case W:
@@ -187,6 +224,27 @@ public class FroggerView extends View {
 
             default:
                 return false;
+        }
+    }
+
+    @Override
+    public void act(long timer){
+        if(this.model.status != FroggerModel.Status.ALIVE){
+            if(this.model.status == FroggerModel.Status.ROADDEATH){
+                if(roadDeath(timer)){
+                    this.model.status = FroggerModel.Status.ALIVE;
+                    this.model.noMove = false;
+                    setBackToStart();
+                }
+            }else if(this.model.status == FroggerModel.Status.WATERDEATH){
+                if(waterDeath(timer)){
+                    this.model.status = FroggerModel.Status.ALIVE;
+                    this.model.noMove = false;
+                    setBackToStart();
+                }
+            }
+        }else{
+            checkStatus(timer);
         }
     }
 }
