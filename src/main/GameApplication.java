@@ -4,9 +4,24 @@ import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
-import main.Actor.*;
+import main.Element.Background.BackgroundImageView;
+import main.Element.Background.BackgroundImageView;
+//import main.Element.End.EndView;
+import main.Element.End.EndView;
+import main.Element.Frogger.*;
+import main.Element.Obstacle.Car.CarView;
+import main.Element.Obstacle.ObstacleView;
+import main.Element.Obstacle.Truck.ShortTruck.ShortTruckView;
+import main.Element.Obstacle.Truck.LongTruck.LongTruckView;
+import main.Element.Platform.Log.LogView;
+import main.Element.Platform.Turtle.DryTurtle.DryTurtleView;
+import main.Element.Platform.Turtle.WetTurtle.WetTurtleView;
+import main.Element.Score.DigitView;
+import main.Element.Score.PlayerScore.PlayerScoreView;
+//import main.Element.Platform.Log.LogView;
+//import main.Element.Platform.Turtle.DryTurtle.DryTurtleView;
+//import main.Element.Platform.Turtle.WetTurtle.WetTurtleView;
 
 public class GameApplication extends Application{
     private static GameApplication instance = null;
@@ -18,7 +33,8 @@ public class GameApplication extends Application{
 
     AnimationTimer timer;
     MyStage background;
-    Frogger frogger;
+    FroggerView frogger;
+    DigitView playerScoreBoard[];
 
     public static GameApplication getInstance(){
         if(instance == null)
@@ -43,46 +59,61 @@ public class GameApplication extends Application{
     }
 
     public void initGameBackGround(){
-        BackgroundImage froggerback = new BackgroundImage(filePathToBackground + "background.png");
+        BackgroundImageView froggerback = new BackgroundImageView();
 
         background.add(froggerback);
-        background.add(new Log(filePathToLog + "log3.png", 150, 0, 166, 0.75));
-        background.add(new Log(filePathToLog + "log3.png", 150, 220, 166, 0.75));
-        background.add(new Log(filePathToLog + "log3.png", 150, 440, 166, 0.75));
-        background.add(new Log(filePathToLog + "logs.png", 300, 400, 276, -2));
-        background.add(new Log(filePathToLog + "logs.png", 300, 800, 276, -2));
-        background.add(new Log(filePathToLog + "log3.png", 150, 270, 329, 0.75));
-        background.add(new Log(filePathToLog + "log3.png", 150, 490, 329, 0.75));
 
-        background.add(new Turtle(500, 376, -1, 130, 130));
-        background.add(new Turtle(300, 376, -1, 130, 130));
-        background.add(new WetTurtle(700, 376, -1, 130, 130));
-        background.add(new WetTurtle(600, 217, -1, 130, 130));
-        background.add(new WetTurtle(400, 217, -1, 130, 130));
-        background.add(new WetTurtle(200, 217, -1, 130, 130));
-        background.add(new End(13,96));
-        background.add(new End(141,96));
-        background.add(new End(270,96));
-        background.add(new End(399,96));
-        background.add(new End(528,96));
-        background.add(new Obstacle(filePathToCar + "car1Right.png", 80, 701, 2, 50, 50));
-        background.add(new Obstacle(filePathToCar + "car1Right.png", 300, 701, 2, 50, 50));
-        background.add(new Obstacle(filePathToCar + "car1Right.png", 400, 701, 2, 50, 50));
-        background.add(new Obstacle(filePathToCar + "car1Right.png", 570, 701, 2, 50, 50));
-        background.add(new Obstacle(filePathToTruck + "truck1"+"Right.png", 0, 649, 1, 120, 120));
-        background.add(new Obstacle(filePathToTruck + "truck1"+"Right.png", 300, 649, 1, 120, 120));
-        background.add(new Obstacle(filePathToTruck + "truck1"+"Right.png", 600, 649, 1, 120, 120));
-        background.add(new Obstacle(filePathToTruck + "truck1"+"Right.png", 720, 649, 1, 120, 120));
-        background.add(new Obstacle(filePathToCar + "car1Left.png", 100, 597, -1, 50, 50));
-        background.add(new Obstacle(filePathToCar + "car1Left.png", 250, 597, -1, 50, 50));
-        background.add(new Obstacle(filePathToCar + "car1Left.png", 400, 597, -1, 50, 50));
-        background.add(new Obstacle(filePathToCar + "car1Left.png", 550, 597, -1, 50, 50));
-        background.add(new Obstacle(filePathToTruck + "truck2Right.png", 0, 540, 1, 200, 200));
-        background.add(new Obstacle(filePathToTruck + "truck2Right.png", 500, 540, 1, 200, 200));
-        background.add(new Obstacle(filePathToCar + "car1Left.png", 500, 490, -5, 50, 50));
-        frogger = new Frogger(filePathToFrogger + "froggerUp.png");
+        background.add(new LogView("middle", -250, 170, 170, 170, 1));
+        background.add(new LogView("middle", 0, 170, 170, 170, 1));
+        background.add(new LogView("middle", 250, 170, 170, 170, 1));
+        background.add(new LogView("middle", 500, 170, 170, 170, 1));
+        background.add(new LogView("short", -200, 328,140, 140, 0.5));
+        background.add(new LogView("short", 0, 328,140, 140, 0.5));
+        background.add(new LogView("short", 200, 328,140, 140, 0.5));
+        background.add(new LogView("short", 400, 328, 150, 150, 0.5));
+        background.add(new LogView("short", 600, 328,140, 140, 0.5));
+        background.add(new LogView("long", 0, 274,280, 280, 1.5));
+        background.add(new LogView("long", 333, 274,280, 280, 1.5));
+        background.add(new LogView("long", 666, 274,280, 280, 1.5));
+        background.add(new EndView(14,97, 63, 63));
+        background.add(new EndView(142,97, 63, 63));
+        background.add(new EndView(271,97, 63, 63));
+        background.add(new EndView(399,97, 63, 63));
+        background.add(new EndView(528,97, 63, 63));
+
+        background.add(new DryTurtleView(-100, 376, 130, 130, -1.25));
+        background.add(new WetTurtleView(100, 376, 130, 130, -1.25));
+        background.add(new DryTurtleView(300, 376, 130, 130, -1.25));
+        background.add(new WetTurtleView(500, 376, 130, 130, -1.25));
+        background.add(new DryTurtleView(700, 376, 130, 130, -1.25));
+
+        background.add(new WetTurtleView(-150, 217, 130, 130, -1.25));
+        background.add(new DryTurtleView(50, 217, 130, 130, -1.25));
+        background.add(new WetTurtleView(250, 217, 130, 130, -1.25));
+        background.add(new DryTurtleView(450, 217, 130, 130, -1.25));
+        background.add(new WetTurtleView(650, 217, 130, 130, -1.25));
+
+//        background.add(new CarView("right", 80, 701, 50, 2));
+//        background.add(new CarView("right", 300, 701,  50, 2));
+//        background.add(new CarView("right", 400, 701, 50, 2));
+//        background.add(new CarView("right", 570, 701, 50, 2));
+//        background.add(new ShortTruckView("right", 0, 649, 120, 1));
+//        background.add(new ShortTruckView("right", 300, 649, 120, 1));
+//        background.add(new ShortTruckView("right", 600, 649, 120, 1));
+//        background.add(new ShortTruckView("right", 720, 649, 120, 1));
+//        background.add(new CarView("left", 100, 597, 50, -1));
+//        background.add(new CarView("left", 250, 597, 50, -1));
+//        background.add(new CarView("left", 400, 597, 50, -1));
+//        background.add(new CarView("left", 550, 597, 50, -1));
+//        background.add(new LongTruckView("right", 0, 540, 200, 1));
+//        background.add(new LongTruckView("right", 500, 540, 200, 1));
+//        background.add(new CarView("left", 500, 490, 50, -5));
+
+        background.add(new PlayerScoreView(110, 0, 90));
+        initNumber(200, 30);
+
+        frogger = new FroggerView();
         background.add(frogger);
-        setNumber(0, 150, 35);
         background.start();
     }
 
@@ -90,16 +121,16 @@ public class GameApplication extends Application{
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                if (frogger.changeScore())
-                    setNumber(frogger.getPoints(), 150, 35);
+                if (frogger.checkScore())
+                    updateScore(frogger.getPoints());
                 if (frogger.getStop()) {
                     System.out.print("STOP:");
                     background.stopMusic();
                     stop();
                     background.stop();
-                    Alert alert = new Alert(AlertType.INFORMATION);
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("You Have Won The Game!");
-                    alert.setHeaderText("Your High Score: "+ frogger.getPoints()+"!");
+//                    alert.setHeaderText("Your High Score: "+ frogger.getPoints()+"!");
                     alert.setContentText("Highest Possible Score: 800");
                     alert.show();
                 }
@@ -107,14 +138,24 @@ public class GameApplication extends Application{
         };
     }
 
-    public void setNumber(int num, int posX, int posY) {
+    public void updateScore(int num) {
         int shift = 0, digit, tempNum;
         for (int iTemp = 0; iTemp < 5; iTemp++){
             tempNum = num / 10;
             digit = num - tempNum * 10;
             num = tempNum;
-            background.add(new Digit(digit, 30, 60, posX - shift, posY));
-            shift+=30;
+            this.playerScoreBoard[iTemp].setDigit(digit);
+            shift += 30;
+        }
+    }
+
+    public void initNumber(double posX, double posY) {
+        this.playerScoreBoard = new DigitView[5];
+        int shift = 0;
+        for (int iTemp = 0; iTemp < 5; iTemp++){
+            this.playerScoreBoard[iTemp] = new DigitView(posX - shift, posY, 30);
+            background.add(this.playerScoreBoard[iTemp]);
+            shift += 30;
         }
     }
 

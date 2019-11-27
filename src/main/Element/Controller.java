@@ -1,4 +1,5 @@
 package main.Element;
 
-public class Controller {
+public abstract class Controller {
+
 }

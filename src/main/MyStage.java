@@ -5,11 +5,10 @@ import java.io.File;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-public class MyStage extends World_1 {
+public class MyStage extends World {
 	MediaPlayer mediaPlayer;
 	@Override
 	public void act(long now) {
-		
 	}
 	
 	public MyStage() {
