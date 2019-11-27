@@ -2,7 +2,6 @@ package main;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javafx.animation.AnimationTimer;
 import javafx.beans.value.ChangeListener;
@@ -12,54 +11,52 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import main.Actor.Actor;
+import main.Element.View;
 
 
 public abstract class World extends Pane {
     private AnimationTimer timer;
     
     public World() {
-    	
+
     	sceneProperty().addListener(new ChangeListener<Scene>() {
 
 			@Override
 			public void changed(ObservableValue<? extends Scene> observable, Scene oldValue, Scene newValue) {
 				if (newValue != null) {
 					newValue.setOnKeyReleased(new EventHandler<KeyEvent>() {
-
 						@Override
 						public void handle(KeyEvent event) {
 							if(getOnKeyReleased() != null) 
 								getOnKeyReleased().handle(event);
-							List<Actor> myActors = getObjects(Actor.class);
-							for (Actor anActor: myActors) {
-								if (anActor.getOnKeyReleased() != null) {
-									anActor.getOnKeyReleased().handle(event);
+							ArrayList<View> viewArrayList = getObjects(View.class);
+							for (View anView: viewArrayList) {
+								if (anView.getOnKeyReleased() != null) {
+                                    anView.getOnKeyReleased().handle(event);
 								}
 							}
 						}
-						
+
 					});
 					
 					newValue.setOnKeyPressed(new EventHandler<KeyEvent>() {
-
 						@Override
 						public void handle(KeyEvent event) {
 							if(getOnKeyPressed() != null) 
 								getOnKeyPressed().handle(event);
-							List<Actor> myActors = getObjects(Actor.class);
-							for (Actor anActor: myActors) {
-								if (anActor.getOnKeyPressed() != null) {
-									anActor.getOnKeyPressed().handle(event);
-								}
+							ArrayList<View> viewArrayList = getObjects(View.class);
+                            for (View anView: viewArrayList) {
+                                if (anView.getOnKeyPressed() != null) {
+                                    anView.getOnKeyPressed().handle(event);
+                                }
 							}
 						}
-						
+
 					});
 				}
-				
+
 			}
-    		
+
 		});
     }
 
@@ -68,10 +65,10 @@ public abstract class World extends Pane {
             @Override
             public void handle(long now) {
                 act(now);
-                List<Actor> actors = getObjects(Actor.class);
+                ArrayList<View> viewArrayList = getObjects(View.class);
                 
-                for (Actor anActor: actors) {
-                	anActor.act(now);
+                for (View anView: viewArrayList) {
+                    anView.act(now);
                 }
       
             }
@@ -87,22 +84,22 @@ public abstract class World extends Pane {
         timer.stop();
     }
     
-    public void add(Actor actor) {
-        getChildren().add(actor);
+    public void add(View view) {
+        getChildren().add(view);
     }
 
-    public void remove(Actor actor) {
-        getChildren().remove(actor);
+    public void remove(View view) {
+        getChildren().remove(view);
     }
 
-    public <A extends Actor> List<A> getObjects(Class<A> cls) {
-        ArrayList<A> someArray = new ArrayList<A>();
+    public <A extends View> ArrayList<A> getObjects(Class<A> cls) {
+        ArrayList<A> objectArray = new ArrayList<A>();
         for (Node n: getChildren()) {
             if (cls.isInstance(n)) {
-                someArray.add((A)n);
+                objectArray.add((A)n);
             }
         }
-        return someArray;
+        return objectArray;
     }
 
     public abstract void act(long now);
