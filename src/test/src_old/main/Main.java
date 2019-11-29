@@ -5,7 +5,7 @@ package main;
 
 public class Main{
 	public static void main(String[] args) {
-		GameApplication test = GameApplication.getInstance();
+		GameApplication test = new GameApplication();
 		test.play();
 	}
 }

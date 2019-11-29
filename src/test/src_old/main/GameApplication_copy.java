@@ -6,39 +6,35 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import main.Element.Background.BackgroundImageView;
-import main.Element.Background.BackgroundImageView;
-//import main.Element.End.EndView;
 import main.Element.End.EndView;
-import main.Element.Frogger.*;
-import main.Element.Obstacle.Car.CarView;
-import main.Element.Obstacle.ObstacleView;
-import main.Element.Obstacle.Truck.ShortTruck.ShortTruckView;
-import main.Element.Obstacle.Truck.LongTruck.LongTruckView;
+import main.Element.Frogger.FroggerView;
 import main.Element.Platform.Log.LogView;
 import main.Element.Platform.Turtle.DryTurtle.DryTurtleView;
 import main.Element.Platform.Turtle.WetTurtle.WetTurtleView;
 import main.Element.Score.DigitView;
 import main.Element.Score.PlayerScore.PlayerScoreView;
+
+//import main.Element.End.EndView;
 //import main.Element.Platform.Log.LogView;
 //import main.Element.Platform.Turtle.DryTurtle.DryTurtleView;
 //import main.Element.Platform.Turtle.WetTurtle.WetTurtleView;
 
-public class GameApplication extends Application{
-    private static GameApplication instance = null;
-    String filePathToBackground = "file:src/img/Background/";
-    String filePathToLog = "file:src/img/log/";
-    String filePathToCar = "file:src/img/Obstacle/Car/";
-    String filePathToTruck = "file:src/img/Obstacle/Truck/";
-    String filePathToFrogger = "file:src/img/FroggerAction/";
+public class GameApplication_copy extends Application{
+    private static GameApplication_copy instance = null;
+//    String filePathToBackground = "file:src/img/Background/";
+//    String filePathToLog = "file:src/img/log/";
+//    String filePathToCar = "file:src/img/Obstacle/Car/";
+//    String filePathToTruck = "file:src/img/Obstacle/Truck/";
+//    String filePathToFrogger = "file:src/img/FroggerAction/";
 
     AnimationTimer timer;
     MyStage background;
     FroggerView frogger;
     DigitView playerScoreBoard[];
 
-    public static GameApplication getInstance(){
+    public static GameApplication_copy getInstance(){
         if(instance == null)
-            instance = new GameApplication();
+            instance = new GameApplication_copy();
         return instance;
     }
 

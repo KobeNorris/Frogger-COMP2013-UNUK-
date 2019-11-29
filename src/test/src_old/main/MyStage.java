@@ -4,6 +4,7 @@ import java.io.File;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
 
 public class MyStage extends World {
 	MediaPlayer mediaPlayer;
@@ -12,16 +13,16 @@ public class MyStage extends World {
 	}
 	
 	public MyStage() {
-		
+
 //		mediaPlayer.play();
 //		mediaPlayer.setOnEndOfMedia(new Runnable() {
 //
 //			@Override
 //			public void run() {
 //				mediaPlayer.seek(Duration.ZERO);
-//				
+//
 //			}
-//			
+//
 //		});
 //		mediaPlayer.play();
 	}

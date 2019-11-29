@@ -18,11 +18,12 @@ public class FroggerView extends View {
     private int imgSize = 40, timeInverval = 11;
     private double originPositionX, originPositionY;
     private double movementX = 10.666666 * 2, movementY = 13.45 * 2;
-    private boolean moveComplete = false, jumpComplete = false, changeScore = false;
+    private boolean moveComplete = false, jumpComplete = false;
+    private static boolean changeScore = false;;
     private int deathFrame = 0;
 
     private FroggerController controller;
-    private FroggerModel model;
+    private static FroggerModel model;
 
 
     public FroggerView(){
@@ -298,11 +299,11 @@ public class FroggerView extends View {
         return false;
     }
 
-    public int getPoints(){
-        return this.model.points;
+    public static int getPoints(){
+        return FroggerView.model.points;
     }
 
-    public boolean checkScore(){
+    public static boolean checkScore(){
         if(changeScore){
             changeScore = false;
             return true;
@@ -311,8 +312,8 @@ public class FroggerView extends View {
         }
     }
 
-    public boolean getStop(){
-        return this.model.stop;
+    public static boolean getStop(){
+        return FroggerView.model.stop;
     }
 
     @Override
