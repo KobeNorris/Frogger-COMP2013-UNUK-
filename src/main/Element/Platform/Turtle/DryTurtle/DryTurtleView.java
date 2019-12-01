@@ -5,9 +5,9 @@ import main.Element.Platform.PlatformView;
 
 public class DryTurtleView extends PlatformView {
     private Image firstFrame, secondFrame, thirdFrame;
-    private String filePathFirstFrame = "file:src/img/Platform/Turtle/turtleAnimation1.png";
-    private String filePathSecondFrame = "file:src/img/Platform/Turtle/turtleAnimation2.png";
-    private String filePathThirdFrame = "file:src/img/Platform/Turtle/turtleAnimation3.png";
+    private String filePathFirstFrame = "file:src/resource/img/Platform/Turtle/turtleAnimation1.png";
+    private String filePathSecondFrame = "file:src/resource/img/Platform/Turtle/turtleAnimation2.png";
+    private String filePathThirdFrame = "file:src/resource/img/Platform/Turtle/turtleAnimation3.png";
 
     private DryTurtleController controller;
     private DryTurtleModel model;

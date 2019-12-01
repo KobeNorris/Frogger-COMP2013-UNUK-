@@ -7,8 +7,8 @@ public class LongTruckView extends ObstacleView {
     private Image LongTruckLeft, LongTruckRight;
     private LongTruckModel model;
     private LongTruckController controller;
-    private String filePathToLongTruckLeft = "file:src/img/Obstacle/Truck/longTruckLeft.png";
-    private String filePathToLongTruckRight = "file:src/img/Obstacle/Truck/longTruckRight.png";
+    private String filePathToLongTruckLeft = "file:src/resource/img/Obstacle/Truck/longTruckLeft.png";
+    private String filePathToLongTruckRight = "file:src/resource/img/Obstacle/Truck/longTruckRight.png";
 
     public LongTruckView(String longTruckType, double positionX, double positionY, double size, double speed) {
         creatLongTruckModel(speed);

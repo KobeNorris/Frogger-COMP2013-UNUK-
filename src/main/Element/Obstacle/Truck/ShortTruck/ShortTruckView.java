@@ -7,8 +7,8 @@ public class ShortTruckView extends ObstacleView {
     private Image ShortTruckLeft, ShortTruckRight;
     private ShortTruckModel model;
     private ShortTruckController controller;
-    private String filePathToShortTruckRight = "file:src/img/Obstacle/Truck/shortTruckRight.png";
-    private String filePathToShortTruckLeft = "file:src/img/Obstacle/Truck/shortTruckLeft.png";
+    private String filePathToShortTruckRight = "file:src/resource/img/Obstacle/Truck/shortTruckRight.png";
+    private String filePathToShortTruckLeft = "file:src/resource/img/Obstacle/Truck/shortTruckLeft.png";
 
     public ShortTruckView(String shortTruckType, double positionX, double positionY, double size, double speed) {
         creatShortTruckModel(speed);

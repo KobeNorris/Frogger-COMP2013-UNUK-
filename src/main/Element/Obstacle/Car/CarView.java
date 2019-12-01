@@ -7,8 +7,8 @@ public class CarView extends ObstacleView {
     private Image carLeft, carRight;
     private CarModel model;
     private CarController controller;
-    private String filePathToCarRight = "file:src/img/Obstacle/Car/carRight.png";
-    private String filePathToCarLeft = "file:src/img/Obstacle/Car/carLeft.png";
+    private String filePathToCarRight = "file:src/resource/img/Obstacle/Car/carRight.png";
+    private String filePathToCarLeft = "file:src/resource/img/Obstacle/Car/carLeft.png";
     
     public CarView(String carType, double positionX, double positionY, double size, double speed) {
         creatCarModel(speed);

@@ -6,12 +6,11 @@ package main.Element.Background;
 public class BackgroundImageView extends View {
     private BackgroundImageModel model;
     private BackgroundImageController controller;
-    private String filePathToBackgroundImage = "file:src/img/Background/background.png";
 
 	public BackgroundImageView() {
-		setImage(new Image(this.filePathToBackgroundImage, 600, 800, true, true));
 		creatBackgroundModel();
         creatBackgroundController(this.model);
+        setImage(new Image(this.model.getFilePathToBackgroundImage(), 600, 800, true, true));
 	}
 
     public void creatBackgroundModel(){

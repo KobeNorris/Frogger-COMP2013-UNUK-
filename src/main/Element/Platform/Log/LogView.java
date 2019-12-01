@@ -6,9 +6,9 @@ import main.Element.Platform.PlatformView;
 public class LogView extends PlatformView {
     private LogModel model;
     private LogController controller;
-    private String imageLinkShort = "file:src/img/Platform/Log/shortLog.png";
-    private String imageLinkMiddle = "file:src/img/Platform/Log/middleLog.png";
-    private String imageLinkLong = "file:src/img/Platform/Log/longLog.png";
+    private String imageLinkShort = "file:src/resource/img/Platform/Log/shortLog.png";
+    private String imageLinkMiddle = "file:src/resource/img/Platform/Log/middleLog.png";
+    private String imageLinkLong = "file:src/resource/img/Platform/Log/longLog.png";
 
     public LogView(String type, double positionX, double positionY, double width, double height, double speed) {
         switch(type){

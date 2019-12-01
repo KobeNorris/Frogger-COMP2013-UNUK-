@@ -5,7 +5,7 @@ import main.Element.View;
 
 public class DigitView extends View {
     private Image digits[];
-    private String filePath = "file:src/img/Digit/";
+    private String filePath = "file:src/resource/img/Digit/";
 
     public DigitView(double positionX, double positionY, double size){
         digits = new Image[10];

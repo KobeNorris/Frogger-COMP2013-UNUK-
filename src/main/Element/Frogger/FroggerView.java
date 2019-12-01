@@ -10,27 +10,41 @@ import main.Element.Obstacle.ObstacleView;
 import main.Element.Platform.PlatformView;
 import main.Element.Platform.Turtle.WetTurtle.WetTurtleView;
 import main.Element.View;
+import main.Main;
+import main.Stage.GameStages.HardGameStage;
 
 public class FroggerView extends View {
     private Image imgUp, imgLeft, imgRight, imgDown, imgUpJump, imgLeftJump, imgRightJump, imgDownJump;
     private Image waterDeath1, waterDeath2, waterDeath3, waterDeath4, roadDeath1, roadDeath2, roadDeath3;
-    private String filePath = "file:src/img/FroggerAction/";
+    private String filePath = "file:src/resource/img/FroggerAction/";
     private int imgSize = 40, timeInverval = 11;
     private double originPositionX, originPositionY;
     private double movementX = 10.666666 * 2, movementY = 13.45 * 2;
-    private boolean moveComplete = false, jumpComplete = false, changeScore = false;
+    private boolean moveComplete = false, jumpComplete = false;
     private int deathFrame = 0;
+    private KeyCode previousKey;
 
+    private static FroggerView view = null;
     private FroggerController controller;
     private FroggerModel model;
 
+    public static FroggerView getFroggerView(){
+        if(FroggerView.view == null)
+            FroggerView.view = new FroggerView();
+        return view;
+    }
 
-    public FroggerView(){
-        originPositionX = 280.0;
-        originPositionY = 730.0 + movementY;
+    private FroggerView(){
         createModel();
         createController();
+        model.changeScore = true;
+        model.changeLife = true;
+        originPositionX = 280.0;
+        originPositionY = 730.0 + movementY;
         loadImage();
+//        if(Main.getPresentMode().equals("Hard"))
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        HardGameStage.changeEnd();
         setBackToStart();
 
         setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -45,6 +59,8 @@ public class FroggerView extends View {
             }
         });
     }
+
+    public boolean checkReachedEnd(){return this.model.reachedEnd==5; }
 
     public void createModel(){
         this.model = new FroggerModel();
@@ -83,92 +99,78 @@ public class FroggerView extends View {
     }
 
     public void keyBoardPress(KeyCode pressedKey){
-        if(!this.model.noMove){
+        if(!this.model.noMove && (previousKey == pressedKey || previousKey == null)){
             if(moveComplete){
                 switch (pressedKey){
                     case W:
                         move(0, -movementY);
                         setImage(imgUp);
-                        moveComplete = false;
-                        jumpComplete = false;
                         break;
                     case A:
                         move(-movementX, 0);
                         setImage(imgLeft);
-                        moveComplete = false;
-                        jumpComplete = false;
                         break;
                     case S:
                         move(0, movementY);
                         setImage(imgDown);
-                        moveComplete = false;
-                        jumpComplete = false;
                         break;
                     case D:
                         move(movementX, 0);
                         setImage(imgRight);
-                        moveComplete = false;
-                        jumpComplete = false;
-                        break;
-                    default:
-                }
-            }else{
-                switch (pressedKey){
-                    case W:
-                        move(0, -movementY);
-                        setImage(imgUpJump);
-                        moveComplete = true;
-                        jumpComplete = true;
-                        checkPosition();
-                        break;
-                    case A:
-                        move(-movementX, 0);
-                        setImage(imgLeftJump);
-                        moveComplete = true;
-                        jumpComplete = true;
-                        break;
-                    case S:
-                        move(0, movementY);
-                        setImage(imgDownJump);
-                        moveComplete = true;
-                        jumpComplete = true;
-                        break;
-                    case D:
-                        move(movementX, 0);
-                        setImage(imgRightJump);
-                        moveComplete = true;
-                        jumpComplete = true;
                         break;
 
                     default:
                 }
+                moveComplete = false;
+                jumpComplete = false;
+            }else{
+                previousKey = pressedKey;
+                switch (pressedKey){
+                    case W:
+                        move(0, -movementY);
+                        setImage(imgUpJump);
+                        controller.checkPosition(this);
+                        break;
+                    case A:
+                        move(-movementX, 0);
+                        setImage(imgLeftJump);
+                        break;
+                    case S:
+                        move(0, movementY);
+                        setImage(imgDownJump);
+                        break;
+                    case D:
+                        move(movementX, 0);
+                        setImage(imgRightJump);
+                        break;
+                    default:
+                }
+                moveComplete = true;
+                jumpComplete = true;
             }
         }
     }
 
     public void keyBoardRelease(KeyCode releasedKey){
-        if(!this.model.noMove){
+        if(!this.model.noMove && previousKey == releasedKey){
+            previousKey = null;
             if(jumpComplete){
                 switch (releasedKey) {
                     case W:
                         move(0, -movementY);
                         setImage(imgUp);
-                        moveComplete = false;
                         break;
                     case A:
                         move(-movementX, 0);
                         setImage(imgLeft);
-                        moveComplete = false;
                         break;
                     case S:
                         move(0, movementY);
                         setImage(imgDown);
-                        moveComplete = false;
                         break;
                     case D:
                         move(movementX, 0);
                         setImage(imgRight);
-                        moveComplete = false;
                         break;
                     default:
                 }
@@ -176,24 +178,21 @@ public class FroggerView extends View {
                 switch (releasedKey) {
                     case W:
                         setImage(imgUp);
-                        moveComplete = false;
                         break;
                     case A:
                         setImage(imgLeft);
-                        moveComplete = false;
                         break;
                     case S:
                         setImage(imgDown);
-                        moveComplete = false;
                         break;
                     case D:
                         setImage(imgRight);
-                        moveComplete = false;
                         break;
                     default:
                 }
             }
         }
+        moveComplete = false;
     }
 
     public boolean waterDeath(long timer){
@@ -239,34 +238,8 @@ public class FroggerView extends View {
         }
     }
 
-    public void checkPosition(){
-        double positionY = getY();
-        if(model.presentHighestPosition > positionY){
-            this.model.changePoints(10);
-            this.changeScore = true;
-            model.presentHighestPosition = positionY;
-        }
-    }
-
-    public void checkBoundary(){
-        double positionX = getX();
-        double positionY = getY();
-
-        if(positionX > model.rightBound){
-            setX(model.rightBound);
-        }else if(positionX < model.leftBound){
-            setX(model.leftBound);
-        }
-
-        if(positionY < model.upBound){
-            setY(model.upBound);
-        }else if(positionY > model.bottomBound){
-            setY(model.bottomBound);
-        }
-    }
-
     public boolean checkStatus(long timer){
-        checkBoundary();
+        controller.checkBoundary(this);
         if (getIntersectingObjects(ObstacleView.class).size() >= 1) {
             this.model.setStatus(FroggerModel.Status.ROADDEATH);
             this.model.noMove = true;
@@ -282,37 +255,79 @@ public class FroggerView extends View {
                     this.model.setStatus(FroggerModel.Status.WATERDEATH);
                     this.model.noMove = true;
                     return true;
+
+
+
+
                 }else if(getIntersectingObjects(EndView.class).size() >= 1){
-                    if(!getIntersectingObjects(EndView.class).get(0).checkStatus()){
+                    EndView tempEndView = getIntersectingObjects(EndView.class).get(0);
+                    if(tempEndView.checkStatusFROGOCCUPIED()){
                         this.model.setStatus(FroggerModel.Status.WATERDEATH);
                         this.model.noMove = true;
                         return true;
+                    }else if(tempEndView.checkStatusCROCOCCUPIED()){
+                        this.model.setStatus(FroggerModel.Status.ROADDEATH);
+                        this.model.noMove = true;
+                        return true;
                     }else{
-                        getIntersectingObjects(EndView.class).get(0).occupyEnd();
+                        tempEndView.occupyEnd("frog");
+                        if(!Main.getPresentMode().equals("Easy")){
+                            if(tempEndView.checkStatusBUGOCCUPIED()){
+
+                            }
+                            if(Main.getPresentMode().equals("Hard"))
+                                HardGameStage.changeEnd();
+                        }
                         setBackToStart();
                         this.model.presentHighestPosition = 800;
+                        if(++this.model.reachedEnd >= 5){
+                            if(Main.getPresentMode().equals("Infinite")){
+                                //TODO restart the game and change the difficulty
+                            }else{
+                                this.model.noMove = true;
+                                this.model.stop = true;
+                            }
+                        }
                     }
                 }
+
+
+
+
+
             }
         }
         return false;
     }
 
+    public void resetToStart(){this.controller.resetToStart();}
+
     public int getPoints(){
         return this.model.points;
     }
 
-    public boolean checkScore(){
-        if(changeScore){
-            changeScore = false;
-            return true;
-        }else{
-            return false;
-        }
+    public int getLife(){
+        return this.model.life;
     }
 
     public boolean getStop(){
         return this.model.stop;
+    }
+
+    public  boolean checkScore(){
+        if(model.changeScore){
+            model.changeScore = false;
+            return true;
+        }else
+            return false;
+    }
+
+    public  boolean checkLife(){
+        if(model.changeLife){
+            model.changeLife = false;
+            return true;
+        }else
+            return false;
     }
 
     @Override
@@ -321,18 +336,16 @@ public class FroggerView extends View {
         if( status != FroggerModel.Status.ALIVE){
             if( status == FroggerModel.Status.ROADDEATH){
                 if(roadDeath(timer)){
-                    this.model.setStatus(FroggerModel.Status.ALIVE);
-                    this.model.noMove = false;
-                    this.model.changePoints(-50);
-                    this.changeScore = true;
+                    this.controller.revive();
+                    previousKey = null;
+                    model.changeScore = true;
                     setBackToStart();
                 }
             }else if(status == FroggerModel.Status.WATERDEATH){
                 if(waterDeath(timer)){
-                    this.model.setStatus(FroggerModel.Status.ALIVE);
-                    this.model.noMove = false;
-                    this.model.changePoints(-50);
-                    this.changeScore = true;
+                    this.controller.revive();
+                    previousKey = null;
+                    model.changeScore = true;
                     setBackToStart();
                 }
             }

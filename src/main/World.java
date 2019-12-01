@@ -15,7 +15,8 @@ import main.Element.View;
 
 
 public abstract class World extends Pane {
-    private AnimationTimer timer;
+//    private AnimationTimer timer;
+    public AnimationTimer timer;
     
     public World() {
 
@@ -75,11 +76,13 @@ public abstract class World extends Pane {
         };
     }
 
+    // Start timer
     public void start() {
     	createTimer();
         timer.start();
     }
 
+    // Stop timer
     public void stop() {
         timer.stop();
     }
