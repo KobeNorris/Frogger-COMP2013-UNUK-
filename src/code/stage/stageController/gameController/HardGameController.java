@@ -1,4 +1,4 @@
-package code.stage.gameStages;
+package code.stage.stageController.gameController;
 
 import code.com.background.BackgroundImageView;
 import code.com.end.EndView;
@@ -11,15 +11,17 @@ import code.com.platform.log.LogView;
 import code.com.platform.turtle.dryTurtle.DryTurtleView;
 import code.com.platform.turtle.wetTurtle.WetTurtleView;
 import code.com.score.playerScore.PlayerScoreView;
+import javafx.fxml.FXML;
 
 import java.util.Date;
 import java.util.Random;
 
-public class HardGameStage extends GameStage {
-    private static EndView[] endList;
+public class HardGameController extends GameController{
+    protected static EndView[] endList;
 
-    @Override
-    public void initGameBackGround(){
+    @FXML
+    protected void initialize(){
+        initGameStage();
         BackgroundImageView froggerBack = new BackgroundImageView();
 
         this.add(froggerBack);
@@ -75,12 +77,13 @@ public class HardGameStage extends GameStage {
 
         this.add(new PlayerScoreView(120, 10, 90));
         this.add(new GameModeView(350, 10));
-        initScore(210, 45);
-        initLife(105,0.5);
 
         frogger = FroggerView.getFroggerView();
         frogger.enableChangeEnd();
         this.add(frogger);
+
+        initScore(210, 45);
+        initLife(105,0.5);
         start();
     }
 
@@ -122,4 +125,7 @@ public class HardGameStage extends GameStage {
             }
         }
     }
+
+    @Override
+    public void act(long timer){}
 }

@@ -3,7 +3,8 @@ package code.com.frogger;
 import code.com.obstacle.ObstacleView;
 import code.com.platform.PlatformView;
 import code.com.platform.turtle.wetTurtle.WetTurtleView;
-import code.stage.gameStages.InfiniteGameStage;
+import code.stageController.gameController.HardGameController;
+import code.stageController.gameController.InfiniteGameController;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
@@ -12,7 +13,6 @@ import javafx.scene.input.KeyEvent;
 import code.com.end.EndView;
 import code.com.View;
 import code.Main;
-import code.stage.gameStages.HardGameStage;
 
 public class FroggerView extends View {
     private Image imgUp, imgLeft, imgRight, imgDown, imgUpJump, imgLeftJump, imgRightJump, imgDownJump;
@@ -77,9 +77,9 @@ public class FroggerView extends View {
 
     public void enableChangeEnd(){
         if(Main.getPresentMode().equals("Hard")){
-            HardGameStage.changeEnd();
+            HardGameController.changeEnd();
         }else if(Main.getPresentMode().equals("Infinite")){
-            InfiniteGameStage.changeEnd();
+            InfiniteGameController.changeEnd();
         }
     }
 
@@ -254,7 +254,7 @@ public class FroggerView extends View {
                 this.model.noMove = true;
                 return true;
             }else{
-                move(getIntersectingObjects(PlatformView.class).get(0).getSpeed() , 0);
+                move(getIntersectingObjects(PlatformView.class).get(0).getSpeed() * Main.diffficulty , 0);
                 if(getIntersectingObjects(WetTurtleView.class).size() >= 1 && (int)(timer/600000000 % 4) == 3){
                     this.model.setStatus(FroggerModel.Status.WATERDEATH);
                     this.model.noMove = true;
@@ -280,7 +280,7 @@ public class FroggerView extends View {
                         if(++this.model.reachedEnd >= 5){
                             this.model.reachedEnd = 0;
                             if(Main.getPresentMode().equals("Infinite")){
-                                InfiniteGameStage.resetGame();
+                                InfiniteGameController.resetGame();
                             }else{
                                 this.model.noMove = true;
                                 this.model.stop = true;

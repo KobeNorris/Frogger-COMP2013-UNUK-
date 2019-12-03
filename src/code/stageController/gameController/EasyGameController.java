@@ -1,23 +1,22 @@
-package code.stage.gameStages;
+package code.stageController.gameController;
 
-import code.World;
 import code.com.background.BackgroundImageView;
 import code.com.end.EndView;
 import code.com.frogger.FroggerView;
+import code.com.gameMode.GameModeView;
 import code.com.obstacle.car.CarView;
 import code.com.obstacle.truck.longTruck.LongTruckView;
 import code.com.obstacle.truck.shortTruck.ShortTruckView;
 import code.com.platform.log.LogView;
 import code.com.platform.turtle.dryTurtle.DryTurtleView;
 import code.com.platform.turtle.wetTurtle.WetTurtleView;
-import code.com.score.DigitView;
 import code.com.score.playerScore.PlayerScoreView;
+import javafx.fxml.FXML;
 
-public class GameStage extends World {
-    public FroggerView frogger;
-    private DigitView playerScoreBoard[], playerLifeBoard;
-
-    public void initGameBackGround(){
+public class EasyGameController extends GameController{
+    @FXML
+    protected void initialize(){
+        initGameStage();
         BackgroundImageView froggerback = new BackgroundImageView();
 
         this.add(froggerback);
@@ -53,66 +52,30 @@ public class GameStage extends World {
         this.add(new DryTurtleView(450, 217, 130, 130, -1.25));
         this.add(new WetTurtleView(650, 217, 130, 130, -1.25));
 
-        this.add(new CarView("right", 80, 701, 50, 2));
+        this.add(new CarView("right", 50, 701, 50, 2));
         this.add(new CarView("right", 300, 701,  50, 2));
-        this.add(new CarView("right", 400, 701, 50, 2));
-        this.add(new CarView("right", 570, 701, 50, 2));
+        this.add(new CarView("right", 550, 701, 50, 2));
         this.add(new ShortTruckView("right", 0, 649, 120, 1));
         this.add(new ShortTruckView("right", 300, 649, 120, 1));
         this.add(new ShortTruckView("right", 600, 649, 120, 1));
-        this.add(new ShortTruckView("right", 720, 649, 120, 1));
         this.add(new CarView("left", 100, 597, 50, -1));
-        this.add(new CarView("left", 250, 597, 50, -1));
-        this.add(new CarView("left", 400, 597, 50, -1));
-        this.add(new CarView("left", 550, 597, 50, -1));
+        this.add(new CarView("left", 300, 597, 50, -1));
+        this.add(new CarView("left", 500, 597, 50, -1));
         this.add(new LongTruckView("right", 0, 540, 200, 1));
         this.add(new LongTruckView("right", 500, 540, 200, 1));
         this.add(new CarView("left", 500, 490, 50, -5));
 
-        this.add(new PlayerScoreView(110, 0, 90));
-        initScore(200, 30);
-        initLife(400,30);
+        this.add(new PlayerScoreView(120, 10, 90));
+        this.add(new GameModeView(350, 10));
 
         frogger = FroggerView.getFroggerView();
         this.add(frogger);
+
+        initScore(210, 45);
+        initLife(105,0.5);
         start();
     }
 
-    public void updateScore(int num) {
-        int digit, tempNum;
-        for (int iTemp = 0; iTemp < 5; iTemp++){
-            tempNum = num / 10;
-            digit = num - tempNum * 10;
-            num = tempNum;
-            this.playerScoreBoard[iTemp].setDigit(digit);
-        }
-    }
-
-    public void updateLife(int num) {
-        this.playerLifeBoard.setDigit(num);
-    }
-
-    public void initScore(double posX, double posY) {
-        this.playerScoreBoard = new DigitView[5];
-        int shift = 0;
-        for (int iTemp = 0; iTemp < 5; iTemp++){
-            this.playerScoreBoard[iTemp] = new DigitView(posX - shift, posY, 30);
-            this.add(this.playerScoreBoard[iTemp]);
-            shift += 30;
-        }
-    }
-
-    public void initLife(double posX, double posY) {
-        this.playerLifeBoard = new DigitView(posX, posY, 40);
-        this.add(this.playerLifeBoard);
-    }
-
-    public void stopGame() {
-        frogger.resetPresentHighestPosition();
-        stop();
-    }
-
     @Override
-    public void act(long now) {
-    }
+    public void act(long timer){}
 }

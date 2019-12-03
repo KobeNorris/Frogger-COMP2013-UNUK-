@@ -1,6 +1,6 @@
 package code;
 
-import code.stage.gameStages.GameStage;
+import code.stageController.gameController.GameController;
 import code.util.FileProcesscer;
 import code.util.SceneSwitcher;
 import javafx.animation.AnimationTimer;
@@ -12,13 +12,13 @@ import java.io.IOException;
 public class Main extends Application{
     private static AnimationTimer timer;
     private static Stage presentStage;
-    private static GameStage background;
+    private static GameController controller;
     private static String presentMode;
     public static int points = 0, diffficulty = 1;
     public static String getPresentMode() {return Main.presentMode;}
     public static void setPresentMode(String targetMode){presentMode = targetMode;}
     public static Stage getPresentStage(){return presentStage;}
-    public static void setBackground(GameStage targetStage){background = targetStage;}
+    public static void setController(GameController targetController){controller = targetController;}
 
     public static void main(String[] args){
         launch(args);
@@ -34,19 +34,19 @@ public class Main extends Application{
         timer = new AnimationTimer() {
             @Override
             public void handle(long timer) {
-                if (background.frogger.checkScore())
-                    background.updateScore(background.frogger.getPoints());
-                if(background.frogger.checkLife())
-                    background.updateLife(background.frogger.getLife());
-                if (background.frogger.getStop()){
-                    background.frogger.resetToStart();
-                    background.stopGame();
+                if (controller.frogger.checkScore())
+                    controller.updateScore(controller.frogger.getPoints());
+                if(controller.frogger.checkLife())
+                    controller.updateLife(controller.frogger.getLife());
+                if (controller.frogger.getStop()){
+                    controller.frogger.resetToStart();
+                    controller.stopGame();
                     stop();
                     try{
                         FileProcesscer i = new FileProcesscer(5);
                         i.readFile("src/resource/highScoreFile/rank.txt");
-                        points = background.frogger.getPoints();
-                        if(i.checkInsertable(background.frogger.getPoints())){
+                        points = controller.frogger.getPoints();
+                        if(i.checkInsertable(controller.frogger.getPoints())){
                             SceneSwitcher.jumpToInputName();
                         }else{
                             SceneSwitcher.jumpToHighScore();
@@ -54,7 +54,7 @@ public class Main extends Application{
                     }catch(Exception e){
                         System.out.println(e);
                     }
-                    background.frogger.resetPoints();
+                    controller.frogger.resetPoints();
                 }
             }
         };

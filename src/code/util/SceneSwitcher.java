@@ -1,13 +1,14 @@
 package code.util;
 
-import code.stage.gameStages.EasyGameStage;
-import code.stage.gameStages.GameStage;
-import code.stage.gameStages.HardGameStage;
-import code.stage.gameStages.InfiniteGameStage;
+//import code.stage.stageController.gameController.EasyGameController;
+//import code.stage.gameStages.GameController;
+//import code.stage.gameStages.HardGameController;
+//import code.stage.gameStages.InfiniteGameController;
+import code.stageController.gameController.GameController;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import code.Main;
+import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 
@@ -15,7 +16,7 @@ public enum SceneSwitcher {
     ;
 
     public static void jumpToMenu() throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("/code/stage/stageView/MenuView.fxml"));
+        Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/MenuView.fxml"));
         Scene gameMenu = new Scene(root, 600, 800);
         Main.getPresentStage().setScene(gameMenu);
         Main.getPresentStage().setResizable(false);
@@ -24,7 +25,7 @@ public enum SceneSwitcher {
     }
 
     public static void jumpToDifficultyLevelSelection() throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("/code/stage/stageView/DifficultyLevelSelectionView.fxml"));
+        Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/DifficultyLevelSelectionView.fxml"));
         Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
         Main.getPresentStage().setScene(gameDifficultyLevelSelection);
         Main.getPresentStage().setResizable(false);
@@ -33,7 +34,7 @@ public enum SceneSwitcher {
     }
 
     public static void jumpToFirstHelpPage() throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("/code/stage/stageView/helpPagesView/FirstHelpPageView.fxml"));
+        Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/helpPagesView/FirstHelpPageView.fxml"));
         Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
         Main.getPresentStage().setScene(gameDifficultyLevelSelection);
         Main.getPresentStage().setResizable(false);
@@ -42,7 +43,7 @@ public enum SceneSwitcher {
     }
 
     public static void jumpToSecondHelpPage() throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("/code/stage/stageView/helpPagesView/SecondHelpPageView.fxml"));
+        Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/helpPagesView/SecondHelpPageView.fxml"));
         Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
         Main.getPresentStage().setScene(gameDifficultyLevelSelection);
         Main.getPresentStage().setResizable(false);
@@ -51,7 +52,7 @@ public enum SceneSwitcher {
     }
 
     public static void jumpToThirdHelpPage() throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("/code/stage/stageView/helpPagesView/ThirdHelpPageView.fxml"));
+        Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/helpPagesView/ThirdHelpPageView.fxml"));
         Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
         Main.getPresentStage().setScene(gameDifficultyLevelSelection);
         Main.getPresentStage().setResizable(false);
@@ -60,7 +61,7 @@ public enum SceneSwitcher {
     }
 
     public static void jumpToFourthHelpPage() throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("/code/stage/stageView/helpPagesView/FourthHelpPageView.fxml"));
+        Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/helpPagesView/FourthHelpPageView.fxml"));
         Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
         Main.getPresentStage().setScene(gameDifficultyLevelSelection);
         Main.getPresentStage().setResizable(false);
@@ -68,26 +69,12 @@ public enum SceneSwitcher {
         MusicPlayer.loadMusic("Menu");
     }
 
-    public static void jumpToGame(){
-        Main.diffficulty = 1;
-        GameStage background = new GameStage();
-        background.initGameBackGround();
-        Scene game  = new Scene(background,600,800);
-        Main.setBackground(background);
-        Main.getPresentStage().setScene(game);
-        Main.getPresentStage().setResizable(false);
-        Main.getPresentStage().show();
-        MusicPlayer.loadMusic("Game");
-        Main.start();
-    }
-
-    public static void jumpToEasyGame(){
+    public static void jumpToEasyGame() throws IOException {
         Main.setPresentMode("Easy");
         Main.diffficulty = 1;
-        GameStage background = new EasyGameStage();
-        background.initGameBackGround();
-        Scene game  = new Scene(background,600,800);
-        Main.setBackground(background);
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/resource/stageView/gameView/EasyGameView.fxml"));
+        Scene game  = new Scene(loader.load(),600,800);
+        Main.setController(loader.<GameController>getController());
         Main.getPresentStage().setScene(game);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
@@ -95,13 +82,12 @@ public enum SceneSwitcher {
         Main.start();
     }
 
-    public static void jumpToHardGame(){
+    public static void jumpToHardGame() throws IOException {
         Main.setPresentMode("Hard");
         Main.diffficulty = 1;
-        GameStage background = new HardGameStage();
-        background.initGameBackGround();
-        Scene game  = new Scene(background,600,800);
-        Main.setBackground(background);
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/resource/stageView/gameView/HardGameView.fxml"));
+        Scene game  = new Scene(loader.load(),600,800);
+        Main.setController(loader.<GameController>getController());
         Main.getPresentStage().setScene(game);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
@@ -109,13 +95,12 @@ public enum SceneSwitcher {
         Main.start();
     }
 
-    public static void jumpToInfiniteGame(){
+    public static void jumpToInfiniteGame() throws IOException {
         Main.setPresentMode("Infinite");
         Main.diffficulty = 1;
-        GameStage background = new InfiniteGameStage();
-        background.initGameBackGround();
-        Scene game  = new Scene(background,600,800);
-        Main.setBackground(background);
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/resource/stageView/gameView/InfiniteGameView.fxml"));
+        Scene game  = new Scene(loader.load(),600,800);
+        Main.setController(loader.<GameController>getController());
         Main.getPresentStage().setScene(game);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
@@ -123,8 +108,8 @@ public enum SceneSwitcher {
         Main.start();
     }
 
-    public static void jumpToHighScore()throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("/code/stage/stageView/HighScoreView.fxml"));
+    public static void jumpToHighScore() throws IOException {
+        Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/HighScoreView.fxml"));
         Scene gameHighScore = new Scene(root, 600, 800);
         Main.getPresentStage().setScene(gameHighScore);
         Main.getPresentStage().setResizable(false);
@@ -132,8 +117,8 @@ public enum SceneSwitcher {
         MusicPlayer.loadMusic("ScoreBoard");
     }
 
-    public static void jumpToInputName()throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("/code/stage/stageView/InputNameView.fxml"));
+    public static void jumpToInputName() throws IOException {
+        Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/InputNameView.fxml"));
         Scene inputNameField = new Scene(root, 600, 800);
         Main.getPresentStage().setScene(inputNameField);
         Main.getPresentStage().setResizable(false);

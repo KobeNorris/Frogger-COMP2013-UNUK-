@@ -14,11 +14,11 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 
 
-public abstract class World extends Pane {
+public abstract class GamePane extends Pane {
 //    private AnimationTimer timer;
     public AnimationTimer timer;
     
-    public World() {
+    public GamePane() {
 
     	sceneProperty().addListener(new ChangeListener<Scene>() {
 

@@ -1,4 +1,4 @@
-package code.stage.gameStages;
+package code.stageController.gameController;
 
 import code.com.background.BackgroundImageView;
 import code.com.end.EndView;
@@ -10,19 +10,18 @@ import code.com.obstacle.truck.shortTruck.ShortTruckView;
 import code.com.platform.log.LogView;
 import code.com.platform.turtle.dryTurtle.DryTurtleView;
 import code.com.platform.turtle.wetTurtle.WetTurtleView;
-import code.com.score.DigitView;
 import code.com.score.playerScore.PlayerScoreView;
-import code.Main;
+import javafx.fxml.FXML;
 
 import java.util.Date;
 import java.util.Random;
 
-public class InfiniteGameStage extends GameStage {
-    private static EndView[] endList;
-    private static DigitView tempDigitView;
+public class HardGameController extends GameController{
+    protected static EndView[] endList;
 
-    @Override
-    public void initGameBackGround(){
+    @FXML
+    protected void initialize(){
+        initGameStage();
         BackgroundImageView froggerBack = new BackgroundImageView();
 
         this.add(froggerBack);
@@ -78,13 +77,13 @@ public class InfiniteGameStage extends GameStage {
 
         this.add(new PlayerScoreView(120, 10, 90));
         this.add(new GameModeView(350, 10));
-        initScore(210, 45);
-        initLife(105,0.5);
-        initLevel(450,40);
 
         frogger = FroggerView.getFroggerView();
         frogger.enableChangeEnd();
         this.add(frogger);
+
+        initScore(210, 45);
+        initLife(105,0.5);
         start();
     }
 
@@ -93,7 +92,6 @@ public class InfiniteGameStage extends GameStage {
         Date date = new Date();
         Random rand = new Random(date.getTime());
         for(int iTemp = 0; iTemp < 5; iTemp++){
-            EndView temp = endList[iTemp];
             if(!endList[iTemp].checkStatusFROGOCCUPIED()){
                 emptyEndCounter++;
                 endList[iTemp].occupyEnd("empty");
@@ -128,20 +126,6 @@ public class InfiniteGameStage extends GameStage {
         }
     }
 
-    public static void resetGame(){
-        updateDifficulty(++Main.diffficulty);
-        for(int iTemp = 0; iTemp < 5; iTemp++){
-            endList[iTemp].occupyEnd("empty");
-        }
-    }
-
-    public static void updateDifficulty(int num){
-        tempDigitView.setDigit(num);
-    }
-
-    public void initLevel(double posX, double posY){
-        tempDigitView = new DigitView(posX, posY, 30);
-        updateDifficulty(Main.diffficulty);
-        this.add(tempDigitView);
-    }
+    @Override
+    public void act(long timer){}
 }

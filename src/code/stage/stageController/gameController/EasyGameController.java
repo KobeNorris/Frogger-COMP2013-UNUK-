@@ -1,5 +1,6 @@
-package code.stage.gameStages;
+package code.stage.stageController.gameController;
 
+import code.GamePane;
 import code.com.background.BackgroundImageView;
 import code.com.end.EndView;
 import code.com.frogger.FroggerView;
@@ -10,14 +11,13 @@ import code.com.obstacle.truck.shortTruck.ShortTruckView;
 import code.com.platform.log.LogView;
 import code.com.platform.turtle.dryTurtle.DryTurtleView;
 import code.com.platform.turtle.wetTurtle.WetTurtleView;
-import code.com.score.DigitView;
 import code.com.score.playerScore.PlayerScoreView;
-import javafx.scene.control.Label;
+import javafx.fxml.FXML;
 
-public class EasyGameStage extends GameStage {
-
-    @Override
-    public void initGameBackGround(){
+public class EasyGameController extends GameController{
+    @FXML
+    protected void initialize(){
+        initGameStage();
         BackgroundImageView froggerback = new BackgroundImageView();
 
         this.add(froggerback);
@@ -68,11 +68,15 @@ public class EasyGameStage extends GameStage {
 
         this.add(new PlayerScoreView(120, 10, 90));
         this.add(new GameModeView(350, 10));
-        initScore(210, 45);
-        initLife(105,0.5);
 
         frogger = FroggerView.getFroggerView();
         this.add(frogger);
+
+        initScore(210, 45);
+        initLife(105,0.5);
         start();
     }
+
+    @Override
+    public void act(long timer){}
 }

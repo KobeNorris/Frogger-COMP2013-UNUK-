@@ -1,8 +1,9 @@
 package code.com;
 
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.InputEvent;
-import code.World;
+import javafx.scene.layout.Pane;
 
 import java.util.ArrayList;
 
@@ -14,8 +15,8 @@ public abstract class View extends ImageView{
         setY(getY() + dy);
     }
 
-    public World getWorld() {
-        return (World) getParent();
+    public Pane getWorld() {
+        return (Pane) getParent();
     }
 
     public double getWidth() {
@@ -28,9 +29,9 @@ public abstract class View extends ImageView{
 
     public <A extends View> java.util.List<A> getIntersectingObjects(java.lang.Class<A> cls){
         ArrayList<A> someArray = new ArrayList<A>();
-        for (A viewer: getWorld().getObjects(cls)) {
-            if (viewer != this && viewer.intersects(this.getBoundsInLocal())) {
-                someArray.add(viewer);
+        for (Node viewer: getWorld().getChildren()) {
+            if (viewer != this && viewer.intersects(this.getBoundsInLocal()) && cls.isInstance(viewer)) {
+                someArray.add((A)viewer);
             }
         }
         return someArray;
@@ -38,9 +39,9 @@ public abstract class View extends ImageView{
 
     public <A extends View> A getOneIntersectingObject(java.lang.Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
-        for (A viewer: getWorld().getObjects(cls)) {
-            if (viewer != this && viewer.intersects(this.getBoundsInLocal())) {
-                someArray.add(viewer);
+        for (Node viewer: getWorld().getChildren()) {
+            if (viewer != this && viewer.intersects(this.getBoundsInLocal()) && cls.isInstance(viewer)) {
+                someArray.add((A)viewer);
                 break;
             }
         }
