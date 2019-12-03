@@ -91,6 +91,7 @@ public class InfiniteGameController extends HardGameController{
         for(int iTemp = 0; iTemp < 5; iTemp++){
             endList[iTemp].occupyEnd("empty");
         }
+        frogger.enableChangeEnd();
     }
 
     public static void updateDifficulty(int num){

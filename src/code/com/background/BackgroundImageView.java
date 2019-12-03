@@ -1,8 +1,12 @@
 package code.com.background;
 
-		import javafx.scene.image.Image;
-		import code.com.View;
+import javafx.scene.image.Image;
+import code.com.View;
 
+/**
+ * Load a background Page to the game, get url of the background
+ * image from its model
+*/
 public class BackgroundImageView extends View {
     private BackgroundImageModel model;
     private BackgroundImageController controller;

@@ -30,6 +30,10 @@ public class Main extends Application{
         SceneSwitcher.jumpToMenu();
     }
 
+    /**
+     * Create another thread to observe the update of the points & life of the frogger
+     * and switch to other pages if the game is ended
+     */
     public static void createTimer() {
         timer = new AnimationTimer() {
             @Override
@@ -39,7 +43,7 @@ public class Main extends Application{
                 if(controller.frogger.checkLife())
                     controller.updateLife(controller.frogger.getLife());
                 if (controller.frogger.getStop()){
-                    controller.frogger.resetToStart();
+                    controller.frogger.resetFroggerModelToStart();
                     controller.stopGame();
                     stop();
                     try{
@@ -60,6 +64,9 @@ public class Main extends Application{
         };
     }
 
+    /**
+     * Create the observer and start the observation
+     */
     public static void start() {
         createTimer();
         timer.start();

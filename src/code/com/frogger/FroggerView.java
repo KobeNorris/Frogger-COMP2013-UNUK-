@@ -293,7 +293,7 @@ public class FroggerView extends View {
         return false;
     }
 
-    public void resetToStart(){this.controller.resetToStart();}
+    public void resetFroggerModelToStart(){this.controller.resetToStart();}
 
     public void resetPresentHighestPosition(){this.model.presentHighestPosition = 800;}
 

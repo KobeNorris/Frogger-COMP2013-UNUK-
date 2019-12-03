@@ -19,7 +19,7 @@
    <children>
       <ImageView fitHeight="255.0" fitWidth="436.0" layoutX="161.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/stageImg/Frogger.jpg" />
+            <Image url="@../img/StageImg/Frogger.jpg" />
          </image>
       </ImageView>
       <Button id="startButton" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#jumpToGame" prefHeight="90.0" prefWidth="600.0" text="Start">

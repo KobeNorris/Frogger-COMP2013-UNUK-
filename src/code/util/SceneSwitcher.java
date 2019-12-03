@@ -12,9 +12,13 @@ import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 
-public enum SceneSwitcher {
-    ;
-
+/**
+ * Preload and switch the pages of the game amd switch the page's bgm
+ */
+public class SceneSwitcher {
+    /**
+     * Jumps from present page to Menu page and change the bgm to "Menu"
+     */
     public static void jumpToMenu() throws IOException {
         Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/MenuView.fxml"));
         Scene gameMenu = new Scene(root, 600, 800);
@@ -24,6 +28,9 @@ public enum SceneSwitcher {
         MusicPlayer.loadMusic("Menu");
     }
 
+    /**
+     * Jumps from present page to Difficulty Level Selection page and change the bgm to "Menu"
+     */
     public static void jumpToDifficultyLevelSelection() throws IOException {
         Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/DifficultyLevelSelectionView.fxml"));
         Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
@@ -33,6 +40,9 @@ public enum SceneSwitcher {
         MusicPlayer.loadMusic("Menu");
     }
 
+    /**
+     * Jumps from present page to First Help page and change the bgm to "Menu"
+     */
     public static void jumpToFirstHelpPage() throws IOException {
         Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/helpPagesView/FirstHelpPageView.fxml"));
         Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
@@ -42,6 +52,9 @@ public enum SceneSwitcher {
         MusicPlayer.loadMusic("Menu");
     }
 
+    /**
+     * Jumps from present page to Second Help page and change the bgm to "Menu"
+     */
     public static void jumpToSecondHelpPage() throws IOException {
         Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/helpPagesView/SecondHelpPageView.fxml"));
         Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
@@ -51,6 +64,9 @@ public enum SceneSwitcher {
         MusicPlayer.loadMusic("Menu");
     }
 
+    /**
+     * Jumps from present page to Third Help page and change the bgm to "Menu"
+     */
     public static void jumpToThirdHelpPage() throws IOException {
         Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/helpPagesView/ThirdHelpPageView.fxml"));
         Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
@@ -60,6 +76,9 @@ public enum SceneSwitcher {
         MusicPlayer.loadMusic("Menu");
     }
 
+    /**
+     * Jumps from present page to Fourth Help page and change the bgm to "Menu"
+     */
     public static void jumpToFourthHelpPage() throws IOException {
         Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/helpPagesView/FourthHelpPageView.fxml"));
         Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
@@ -69,6 +88,9 @@ public enum SceneSwitcher {
         MusicPlayer.loadMusic("Menu");
     }
 
+    /**
+     * Jumps from present page to Easy Game page and change the bgm to "Game"
+     */
     public static void jumpToEasyGame() throws IOException {
         Main.setPresentMode("Easy");
         Main.diffficulty = 1;
@@ -82,6 +104,9 @@ public enum SceneSwitcher {
         Main.start();
     }
 
+    /**
+     * Jumps from present page to Hard Game page and change the bgm to "Game"
+     */
     public static void jumpToHardGame() throws IOException {
         Main.setPresentMode("Hard");
         Main.diffficulty = 1;
@@ -95,6 +120,9 @@ public enum SceneSwitcher {
         Main.start();
     }
 
+    /**
+     * Jumps from present page to Infinite Game page and change the bgm to "Game"
+     */
     public static void jumpToInfiniteGame() throws IOException {
         Main.setPresentMode("Infinite");
         Main.diffficulty = 1;
@@ -108,6 +136,9 @@ public enum SceneSwitcher {
         Main.start();
     }
 
+    /**
+     * Jumps from present page to High Score page and change the bgm to "Score Board"
+     */
     public static void jumpToHighScore() throws IOException {
         Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/HighScoreView.fxml"));
         Scene gameHighScore = new Scene(root, 600, 800);
@@ -117,6 +148,9 @@ public enum SceneSwitcher {
         MusicPlayer.loadMusic("ScoreBoard");
     }
 
+    /**
+     * Jumps from present page to Input Name page and change the bgm to "Score Board"
+     */
     public static void jumpToInputName() throws IOException {
         Pane root = FXMLLoader.load(Main.class.getResource("/resource/stageView/InputNameView.fxml"));
         Scene inputNameField = new Scene(root, 600, 800);
