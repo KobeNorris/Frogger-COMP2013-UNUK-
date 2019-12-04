@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: rgb(20,20,20);" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.helpPagesController.ThirdPageController">
+    <stylesheets>
+        <URL value="@../../../resources/css/helpPages.css" />
+    </stylesheets>
+    <children>
+        <Label alignment="CENTER" prefHeight="100.0" prefWidth="600.0" text="Platforms" />
+        <ImageView fitHeight="518.0" fitWidth="444.0" layoutX="147.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../resources/img/helpPageCom/thirdPage.png" />
+            </image>
+        </ImageView>
+        <Button layoutY="710.0" mnemonicParsing="false" onMouseClicked="#jumpToMenu" prefHeight="90.0" prefWidth="600.0" text="Back To Main" />
+        <Button layoutX="300.0" layoutY="620.0" mnemonicParsing="false" onMouseClicked="#jumpToFourthHelpPage" prefHeight="90.0" prefWidth="300.0" text="Next" />
+        <Button layoutY="620.0" mnemonicParsing="false" onMouseClicked="#jumpToSecondHelpPage" prefHeight="90.0" prefWidth="300.0" text="Prev" />
+    </children>
+</Pane>
