@@ -14,7 +14,7 @@ public class SnakeView extends ObstacleView {
         creatSnakeModel(speed);
         creatSnakeController();
         snake = new Image[10];
-        for(int iTemp = 0; iTemp < 10; iTemp++){
+        for(int iTemp = 0; iTemp < 7; iTemp++){
             snake[iTemp] = new Image(this.model.getFilePath()+"snake"+ (iTemp+1) +".png", size, size, true, true);
         }
         setImage(snake[0]);
@@ -39,7 +39,7 @@ public class SnakeView extends ObstacleView {
         if (getX() < -300 && this.model.speed < 0)
             setX(700);
         if(timer % timerInterval == 0){
-            if(imageIndex >= 9)
+            if(imageIndex >= 6)
                 imageIndex = 0;
             else
                 imageIndex++;
