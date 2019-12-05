@@ -245,28 +245,28 @@ public class FroggerView extends View {
         controller.checkBoundary(this);
         if (getIntersectingObjects(ObstacleView.class).size() >= 1) {
             this.model.setStatus(FroggerModel.Status.ROADDEATH);
-            this.model.noMove = true;
+            blockMove();
             return true;
         }else if(getY() < 413){
             if (getIntersectingObjects(PlatformView.class).size() == 0){
                 this.model.setStatus(FroggerModel.Status.WATERDEATH);
-                this.model.noMove = true;
+                blockMove();
                 return true;
             }else{
                 move(getIntersectingObjects(PlatformView.class).get(0).getSpeed() * Main.diffficulty , 0);
                 if(getIntersectingObjects(WetTurtleView.class).size() >= 1 && (int)(timer/600000000 % 4) == 3){
                     this.model.setStatus(FroggerModel.Status.WATERDEATH);
-                    this.model.noMove = true;
+                    blockMove();
                     return true;
                 }else if(getIntersectingObjects(EndView.class).size() >= 1){
                     EndView tempEndView = getIntersectingObjects(EndView.class).get(0);
                     if(tempEndView.checkStatusFROGOCCUPIED()){
                         this.model.setStatus(FroggerModel.Status.WATERDEATH);
-                        this.model.noMove = true;
+                        blockMove();
                         return true;
                     }else if(tempEndView.checkStatusCROCOCCUPIED()){
                         this.model.setStatus(FroggerModel.Status.ROADDEATH);
-                        this.model.noMove = true;
+                        blockMove();
                         return true;
                     }else{
                         previousKey = null;
@@ -281,7 +281,7 @@ public class FroggerView extends View {
                             if(this.model.gameMode.equals("Infinite")){
                                 InfiniteGameController.resetGame();
                             }else{
-                                this.model.noMove = true;
+                                blockMove();
                                 this.model.stop = true;
                             }
                         }
@@ -314,20 +314,39 @@ public class FroggerView extends View {
         return this.model.stop;
     }
 
-    public  boolean checkScore(){
-        if(model.changeScore){
-            model.changeScore = false;
-            return true;
-        }else
-            return false;
-    }
+    public void blockMove(){this.model.noMove = true;}
 
-    public  boolean checkLife(){
-        if(model.changeLife){
-            model.changeLife = false;
-            return true;
-        }else
-            return false;
+    public void releaseMove(){this.model.noMove = false;}
+
+//    public boolean checkScore(){
+//        if(model.changeScore){
+//            model.changeScore = false;
+//            return true;
+//        }else
+//            return false;
+//    }
+//
+//    public boolean checkLife(){
+//        if(model.changeLife){
+//            model.changeLife = false;
+//            return true;
+//        }else
+//            return false;
+//    }
+//
+//    public boolean checkPause(){return this.model.pause;}
+//
+//    public boolean checkRestart(){return this.model.restart;}
+
+    public boolean checkAttribute(String attribute){
+        switch(attribute){
+            case "Score":
+                return this.model.checkScore();
+            case "Life":
+                return this.model.checkLife();
+            default:
+                return false;
+        }
     }
 
     @Override

@@ -1,5 +1,7 @@
 package main.java.util;
 
+import javafx.event.EventHandler;
+import javafx.scene.input.KeyEvent;
 import main.java.controller.gameController.GameController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,6 +14,9 @@ import java.io.IOException;
  * Preload and switch the pages of the game amd switch the page's bgm
  */
 public class SceneSwitcher {
+    private static GameController controller;
+//    private static Object KeyBoardListener;
+
     /**
      * Jumps from present page to Menu page and change the bgm to "Menu"
      */
@@ -97,7 +102,9 @@ public class SceneSwitcher {
         Main.diffficulty = 1;
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/main/java/view/gameView/EasyGameView.fxml"));
         Scene game  = new Scene(loader.load(),600,800);
-        Main.setController(loader.<GameController>getController());
+        controller = loader.<GameController>getController();
+        game.addEventHandler(KeyEvent.KEY_PRESSED, new KeyBoardListener());
+        Main.setController(controller);
         Main.getPresentStage().setScene(game);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
@@ -112,7 +119,9 @@ public class SceneSwitcher {
         Main.diffficulty = 1;
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/main/java/view/gameView/HardGameView.fxml"));
         Scene game  = new Scene(loader.load(),600,800);
-        Main.setController(loader.<GameController>getController());
+        controller = loader.<GameController>getController();
+        game.addEventHandler(KeyEvent.KEY_PRESSED, new KeyBoardListener());
+        Main.setController(controller);
         Main.getPresentStage().setScene(game);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
@@ -127,7 +136,9 @@ public class SceneSwitcher {
         Main.diffficulty = 1;
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/main/java/view/gameView/InfiniteGameView.fxml"));
         Scene game  = new Scene(loader.load(),600,800);
-        Main.setController(loader.<GameController>getController());
+        controller = loader.<GameController>getController();
+        game.addEventHandler(KeyEvent.KEY_PRESSED, new KeyBoardListener());
+        Main.setController(controller);
         Main.getPresentStage().setScene(game);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
@@ -159,5 +170,22 @@ public class SceneSwitcher {
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
         MusicPlayer.loadMusic("ScoreBoard");
+    }
+
+    public static class KeyBoardListener implements EventHandler<javafx.scene.input.KeyEvent> {
+        @Override
+        public void handle(KeyEvent event){
+            switch(event.getCode()){
+                case SPACE:
+                    if(controller.running){
+                        controller.pause = true;
+                        controller.frogger.blockMove();
+                    }else{
+                        controller.restart = true;
+                        controller.frogger.releaseMove();
+                    }
+                    controller.running = !controller.running;
+            }
+        }
     }
 }

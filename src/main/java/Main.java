@@ -47,10 +47,14 @@ public class Main extends Application{
         timer = new AnimationTimer() {
             @Override
             public void handle(long timer) {
-                if (controller.frogger.checkScore())
+                if (controller.frogger.checkAttribute("Score"))
                     controller.updateScore(controller.frogger.getPoints());
-                if(controller.frogger.checkLife())
+                if(controller.frogger.checkAttribute("Life"))
                     controller.updateLife(controller.frogger.getLife());
+                if(controller.checkPause())
+                    controller.stop();
+                if(controller.checkRestart())
+                    controller.start();
                 if (controller.frogger.getStop()){
                     controller.frogger.resetFroggerModelToStart();
                     controller.stopGame();

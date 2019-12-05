@@ -6,7 +6,7 @@ import main.java.com.obstacle.ObstacleView;
 
 public class SnakeView extends ObstacleView {
     private Image snake[];
-    private int imageIndex = 0;
+    private int imageIndex = 0, timerInterval = 500;
     private SnakeModel model;
     private SnakeController controller;
 
@@ -38,10 +38,12 @@ public class SnakeView extends ObstacleView {
             setX(-300);
         if (getX() < -300 && this.model.speed < 0)
             setX(700);
-        if(imageIndex >= 9)
-            imageIndex = 0;
-        else
-            imageIndex++;
-        setImage(snake[imageIndex]);
+        if(timer % timerInterval == 0){
+            if(imageIndex >= 9)
+                imageIndex = 0;
+            else
+                imageIndex++;
+            setImage(snake[imageIndex]);
+        }
     }
 }

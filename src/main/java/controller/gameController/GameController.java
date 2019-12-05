@@ -1,5 +1,6 @@
 package main.java.controller.gameController;
 
+import javafx.event.ActionEvent;
 import main.java.com.View;
 import main.java.com.frogger.FroggerView;
 import main.java.com.score.DigitView;
@@ -15,9 +16,10 @@ import javafx.scene.layout.Pane;
 
 import java.util.ArrayList;
 
-public abstract class GameController {
+public abstract class GameController{
     public AnimationTimer timer;
     public static FroggerView frogger;
+    public boolean restart = false, pause = false, running = true;
     protected static DigitView playerScoreBoard[], playerLifeBoard;
 
     @FXML
@@ -139,6 +141,22 @@ public abstract class GameController {
             }
         }
         return objectArray;
+    }
+
+    public boolean checkPause(){
+        if(pause){
+            pause = false;
+            return true;
+        }else
+            return false;
+    }
+
+    public boolean checkRestart(){
+        if(restart){
+            restart = false;
+            return true;
+        }else
+            return false;
     }
 
     public abstract void act(long now);
