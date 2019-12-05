@@ -240,7 +240,7 @@
   
   <target name="compile.module.sm_coursework_02.production" depends="register.custom.compilers" description="Compile module sm_coursework_02; production classes">
     <mkdir dir="${sm_coursework_02.output.dir}"/>
-    <javac2 destdir="${sm_coursework_02.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sm_coursework_02}/javac">
+    <javac2 destdir="${sm_coursework_02.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sm_coursework_02}/javac" includeantruntime="flase">
       <compilerarg line="${compiler.args.sm_coursework_02}"/>
       <bootclasspath refid="sm_coursework_02.module.bootclasspath"/>
       <classpath refid="sm_coursework_02.module.production.classpath"/>
