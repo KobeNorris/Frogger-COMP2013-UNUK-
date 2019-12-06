@@ -23,7 +23,7 @@
             <Image url="@../../resources/img/StageImg/openCG.gif" />
          </image>
       </ImageView>
-      <Button id="startButton" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#jumpToGame" prefHeight="90.0" prefWidth="600.0" text="Start">
+      <Button id="startButton" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#jumpToDifficultyLevelSelection" prefHeight="90.0" prefWidth="600.0" text="Start">
       </Button>
        <Button id="helpButton" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#jumpToFirstHelpPage" prefHeight="90.0" prefWidth="600.0" text="Help">
        </Button>

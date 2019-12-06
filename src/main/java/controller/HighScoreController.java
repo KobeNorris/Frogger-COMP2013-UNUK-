@@ -8,15 +8,25 @@ import main.java.util.SceneSwitcher;
 
 import java.io.IOException;
 
+/**
+ * This file is a controller for the high score page, it will display the 5 most highest score to the player.
+ */
 public class HighScoreController {
     @FXML
     public Label name1, score1, name2, score2, name3, score3, name4, score4, name5, score5;
 
+    /**
+     * Launch the data before user access the page
+     */
     @FXML
     protected void initialize(){
         updateLabel();
     }
 
+    /**
+     * This function will call the file processor and allocate all data of present high score properly
+     * into the FXML file.
+     */
     @FXML
     public void updateLabel(){
         String[] nameList;
@@ -57,6 +67,11 @@ public class HighScoreController {
         }
     }
 
+    /**
+     * Jumps from present stage to the start menu
+     *
+     * @throws IOException Invalid FXML file
+     */
     @FXML
     private void jumpToMenu()throws IOException {
         SceneSwitcher.jumpToMenu();

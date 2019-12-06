@@ -15,9 +15,15 @@ import main.java.com.platform.turtle.wetTurtle.WetTurtleView;
 import main.java.com.score.DigitView;
 import main.java.com.score.playerScore.PlayerScoreView;
 
+/**
+ *
+ */
 public class InfiniteGameController extends HardGameController{
     private static DigitView tempDigitView;
 
+    /**
+     * Load all traffics, logs, turtles and snake to the game stage and set the game mode into
+     */
     @Override
     public void initialize(){
         initGameStage();
@@ -90,6 +96,9 @@ public class InfiniteGameController extends HardGameController{
         start();
     }
 
+    /**
+     *
+     */
     public static void resetGame(){
         updateDifficulty(++Main.diffficulty);
         for(int iTemp = 0; iTemp < 5; iTemp++){
@@ -98,10 +107,21 @@ public class InfiniteGameController extends HardGameController{
         frogger.enableChangeEnd();
     }
 
+    /**
+     *
+     *
+     * @param num
+     */
     public static void updateDifficulty(int num){
         tempDigitView.setDigit(num);
     }
 
+    /**
+     * This function initialise the position and
+     *
+     * @param posX
+     * @param posY
+     */
     public void initLevel(double posX, double posY){
         tempDigitView = new DigitView(posX, posY, 30);
         updateDifficulty(Main.diffficulty);
