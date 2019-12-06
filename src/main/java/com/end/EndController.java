@@ -2,7 +2,7 @@ package main.java.com.end;
 
 import main.java.com.Controller;
 
-public class EndController extends Controller {
+public class EndController implements Controller {
     private EndModel model;
 
     public EndController(EndModel model){

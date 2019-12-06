@@ -2,7 +2,7 @@ package main.java.com.end;
 
 import main.java.com.Model;
 
-public class EndModel extends Model {
+public class EndModel implements Model {
     private Status status;
     private String filePath = "file:src/main/resources/img/End/";
 

@@ -2,7 +2,7 @@ package main.java.com.frogger;
 
 import main.java.com.Model;
 
-public class FroggerModel extends Model {
+public class FroggerModel implements Model {
     private Status status;
     private int points = 0;
     private String filePath = "file:src/main/resources/img/FroggerAction/";

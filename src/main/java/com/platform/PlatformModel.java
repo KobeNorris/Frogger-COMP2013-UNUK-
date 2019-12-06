@@ -1,6 +1,8 @@
 package main.java.com.platform;
 
-public class PlatformModel {
+import main.java.com.Model;
+
+public abstract class PlatformModel implements Model {
     public int speed;
     public boolean isSunk = false;
 

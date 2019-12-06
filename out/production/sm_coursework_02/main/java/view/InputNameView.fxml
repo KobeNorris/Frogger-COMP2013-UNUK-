@@ -27,7 +27,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: rgb(20,20,20);">
+      <Pane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: rgb(0,0,0);">
          <children>
             <TextField fx:id="nameInputField" alignment="CENTER" layoutX="136.0" layoutY="579.0" prefHeight="80.0" prefWidth="334.0" />
             <Button layoutY="671.0" mnemonicParsing="false" onMouseClicked="#insertRank" prefHeight="90.0" prefWidth="600.0" text="Confirm" />

@@ -2,7 +2,7 @@ package main.java.com.frogger;
 
 import main.java.com.Controller;
 
-public class FroggerController extends Controller{
+public class FroggerController implements Controller{
     private FroggerModel model;
 
     public FroggerController(FroggerModel model){

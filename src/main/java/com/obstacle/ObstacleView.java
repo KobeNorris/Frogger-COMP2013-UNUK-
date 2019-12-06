@@ -3,7 +3,7 @@ package main.java.com.obstacle;
 import javafx.scene.image.Image;
 import main.java.com.View;
 
-public class ObstacleView extends View {
+public abstract class ObstacleView extends View {
     protected ObstacleView(){}
 
     @Override

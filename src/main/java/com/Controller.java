@@ -1,4 +1,4 @@
 package main.java.com;
 
-public abstract class Controller {
+public interface Controller {
 }
