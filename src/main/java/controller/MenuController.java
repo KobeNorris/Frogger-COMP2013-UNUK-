@@ -6,6 +6,9 @@ import main.java.util.SceneSwitcher;
 
 import java.io.IOException;
 
+/**
+ * This class is the controller for
+ */
 public class MenuController {
     @FXML
     private Button startButton;
