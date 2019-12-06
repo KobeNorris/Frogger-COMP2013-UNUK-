@@ -32,7 +32,7 @@ public class FileProcesscer {
      * A method to check whether a score could be inserted into the function
      *
      * @param score: The target score user wants to insert into the file
-     * @return  a boolean element indicates whether this the target score
+     * @return  A boolean element indicates whether this the target score
      *          could be inserted into the file.
      */
     public boolean checkInsertable(int score){
@@ -68,8 +68,9 @@ public class FileProcesscer {
     /**
      * This method reads in the file store in the filePath parameter
      *
-     * @param filePath: The
-     * @throws IOException
+     * @param filePath: The absolute directory to access the txt file storing the
+     *                  data of high score.
+     * @throws IOException: The exceptions always caused by invalid file path
      */
     public void readFile(String filePath) throws IOException {
 
@@ -91,7 +92,7 @@ public class FileProcesscer {
     }
 
     /**
-     * Print out the read in list
+     * Print out the list which have already been read in
      */
     public void showLists(){
         for(int iTemp = 0; iTemp < nameList.length; iTemp++){
@@ -100,10 +101,11 @@ public class FileProcesscer {
     }
 
     /**
+     * This method writes in the file store in the filePath parameter
      *
-     *
-     * @param filePath
-     * @throws IOException
+     * @param filePath: The absolute directory to access the txt file storing the
+     *                  data of high score.
+     * @throws IOException: The exceptions always caused by invalid file path
      */
     public void writeFile(String filePath) throws IOException{
         File file = new File(filePath);

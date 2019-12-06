@@ -5,10 +5,22 @@ import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 
+/**
+ * This class is removed form the original MyStage class and presently
+ * being used as a professional media player. It is developed to handle
+ * background music switching process, is the background music is not
+ * changed, music will not be switched.
+ */
 public class MusicPlayer {
     private static MediaPlayer mediaPlayer;
     private static String onPlayMusic = "";
 
+    /**
+     * This method will identify whether same music has been loaded and if not
+     * it will stop present music and start playing the new background music
+     *
+     * @param stage
+     */
     public static void loadMusic(String stage) {
         if(!onPlayMusic.equals(stage)){
             if(!onPlayMusic.equals("")){
@@ -46,6 +58,9 @@ public class MusicPlayer {
 
     public static void pauseMusic() {mediaPlayer.pause();}
 
+    /**
+     * By stopping the music, the onPlayMusic will be set to EMPTY
+     */
     public static void stopMusic() {
         onPlayMusic = "";
         mediaPlayer.stop();
