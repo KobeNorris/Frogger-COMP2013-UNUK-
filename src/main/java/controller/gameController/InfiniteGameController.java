@@ -57,7 +57,7 @@ public class InfiniteGameController extends HardGameController{
         this.add(new WetTurtleView(350, 217, 130, 130, -1.25));
         this.add(new WetTurtleView(600, 217, 130, 130, -1.25));
 
-        this.add(new SnakeView(0, 420, 60, 6));
+        this.add(new SnakeView(0, 420, 60, 2));
 
         this.add(new CarView("right", 80, 701, 50, 2));
         this.add(new CarView("right", 300, 701,  50, 2));

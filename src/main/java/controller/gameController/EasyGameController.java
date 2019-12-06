@@ -75,6 +75,7 @@ public class EasyGameController extends GameController{
 
         initScore(210, 45);
         initLife(105,0.5);
+
         start();
     }
 

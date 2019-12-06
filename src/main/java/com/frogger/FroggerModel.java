@@ -37,6 +37,22 @@ public class FroggerModel extends Model {
             this.points = 0;
     }
 
+    public boolean checkScore(){
+        if(changeScore){
+            changeScore = false;
+            return true;
+        }else
+            return false;
+    }
+
+    public boolean checkLife(){
+        if(changeLife){
+            changeLife = false;
+            return true;
+        }else
+            return false;
+    }
+
     public String getFilePath(){return this.filePath;}
 
     enum Status{
