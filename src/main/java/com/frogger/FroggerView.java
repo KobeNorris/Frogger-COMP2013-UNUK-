@@ -254,7 +254,7 @@ public class FroggerView extends View {
                 return true;
             }else{
                 move(getIntersectingObjects(PlatformView.class).get(0).getSpeed() * Main.diffficulty , 0);
-                if(getIntersectingObjects(WetTurtleView.class).size() >= 1 && (int)(timer/600000000 % 4) == 3){
+                if(getIntersectingObjects(PlatformView.class).get(0).isSunk()){
                     this.model.setStatus(FroggerModel.Status.WATERDEATH);
                     blockMove();
                     return true;

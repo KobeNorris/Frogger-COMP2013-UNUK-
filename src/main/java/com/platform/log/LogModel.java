@@ -1,7 +1,10 @@
 package main.java.com.platform.log;
 
-public class LogModel {
+import main.java.com.platform.PlatformModel;
+
+public class LogModel extends PlatformModel {
     private String filePath = "file:src/main/resources/img/Platform/Log/";
+    public boolean isSunk = false;
     public double speed;
 
     public LogModel(double speed){

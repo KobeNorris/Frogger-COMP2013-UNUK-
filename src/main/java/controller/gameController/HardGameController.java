@@ -8,6 +8,8 @@ import main.java.com.obstacle.car.CarView;
 import main.java.com.obstacle.snake.SnakeView;
 import main.java.com.obstacle.truck.longTruck.LongTruckView;
 import main.java.com.obstacle.truck.shortTruck.ShortTruckView;
+import main.java.com.platform.crocodile.crocodileBody.CrocodileBodyView;
+import main.java.com.platform.crocodile.crocodileHead.CrocodileHeadView;
 import main.java.com.platform.log.LogView;
 import main.java.com.platform.turtle.dryTurtle.DryTurtleView;
 import main.java.com.platform.turtle.wetTurtle.WetTurtleView;
@@ -28,8 +30,10 @@ public class HardGameController extends GameController{
         this.add(froggerBack);
 
         this.add(new LogView("middle", 0, 170, 170, 170, 1));
-        this.add(new LogView("middle", 333, 170, 170, 170, 1));
-        this.add(new LogView("middle", 666, 170, 170, 170, 1));
+        this.add(new LogView("middle", 250, 170, 170, 170, 1));
+        this.add(new LogView("middle", 500, 170, 170, 170, 1));
+        this.add(new CrocodileBodyView(-230, 150, 90, 90, 1));
+        this.add(new CrocodileHeadView(-145, 150, 60, 60, 1));
         this.add(new LogView("short", 0, 328,140, 140, 0.5));
         this.add(new LogView("short", 250, 328,140, 140, 0.5));
         this.add(new LogView("short", 500, 328,140, 140, 0.5));

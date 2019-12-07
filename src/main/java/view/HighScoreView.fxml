@@ -7,7 +7,8 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: rgb(0,0,0);" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.HighScoreController">
     <stylesheets>
-        <URL value="@../../resources/css/highScore.css" />
+<!--        <URL value="@../../resources/css/highScore.css" />-->
+        <URL value="@../../../css/highScore.css" />
     </stylesheets>
 
     <children>

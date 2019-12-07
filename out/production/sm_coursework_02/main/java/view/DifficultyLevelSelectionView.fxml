@@ -10,7 +10,8 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: rgb(0,0,0);" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.DifficultyLevelSelectionController">
     <stylesheets>
-        <URL value="@../../resources/css/difficultyLevelSelection.css" />
+<!--        <URL value="@../../resources/css/difficultyLevelSelection.css" />-->
+        <URL value="@../../../css/difficultyLevelSelection.css" />
     </stylesheets>
 
    <children>

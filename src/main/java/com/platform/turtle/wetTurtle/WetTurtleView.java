@@ -6,10 +6,6 @@ import main.java.com.platform.PlatformView;
 
 public class WetTurtleView extends PlatformView {
     private Image firstFrame, secondFrame, thirdFrame, fourthFrame;
-//    private String filePathFirstFrame = "file:src/resource/img/Platform/Turtle/turtleAnimation1.png";
-//    private String filePathSecondFrame = "file:src/resource/img/Platform/Turtle/turtleAnimation2Wet.png";
-//    private String filePathThirdFrame = "file:src/resource/img/Platform/Turtle/turtleAnimation3Wet.png";
-//    private String getFilePathFourthFrame = "file:src/resource/img/Platform/Turtle/turtleAnimation4Wet.png";
 
     private WetTurtleController controller;
     private WetTurtleModel model;
@@ -59,6 +55,8 @@ public class WetTurtleView extends PlatformView {
             default:
         }
     }
+
+    public boolean isSunk(){return this.model.isSunk;}
 
     @Override
     public double getSpeed(){return this.model.speed;}

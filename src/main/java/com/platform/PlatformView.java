@@ -7,5 +7,7 @@ public abstract class PlatformView extends View {
 
     public double getSpeed(){return 0.0;};
 
+    public boolean isSunk(){return false;};
+
     public void act(long timer){};
 }

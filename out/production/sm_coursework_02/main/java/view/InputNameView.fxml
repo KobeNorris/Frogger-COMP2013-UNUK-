@@ -18,7 +18,8 @@
 
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.InputNameController">
    <stylesheets>
-      <URL value="@../../resources/css/inputName.css" />
+<!--      <URL value="@../../resources/css/inputName.css" />-->
+      <URL value="@../../../css/inputName.css" />
    </stylesheets>
    <columnConstraints>
       <ColumnConstraints />
@@ -36,7 +37,8 @@
             <Label layoutX="34.0" layoutY="527.0" text=" Please leave your name!" />
             <ImageView fitHeight="237.0" fitWidth="267.0" layoutX="176.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@/main/resources/img/StageImg/frogger.gif" />
+<!--                  <Image url="@/main/resources/img/StageImg/frogger.gif" />-->
+                  <Image url="@/img/StageImg/frogger.gif" />
                </image>
             </ImageView>
          </children>

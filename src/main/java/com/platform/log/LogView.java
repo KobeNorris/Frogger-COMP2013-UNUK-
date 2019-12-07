@@ -42,6 +42,8 @@ public class LogView extends PlatformView {
         this.controller = new LogController(this.model);
     }
 
+    public boolean isSunk(){return this.model.isSunk;}
+
     @Override
     public double getSpeed(){return this.model.speed;}
 

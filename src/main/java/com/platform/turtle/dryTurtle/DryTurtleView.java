@@ -48,6 +48,8 @@ public class DryTurtleView extends PlatformView {
         }
     }
 
+    public boolean isSunk(){return this.model.isSunk;}
+
     @Override
     public double getSpeed(){return this.model.speed;}
 
