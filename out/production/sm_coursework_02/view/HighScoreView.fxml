@@ -45,6 +45,6 @@
       <Label id="rank10" alignment="CENTER" layoutX="54.0" layoutY="600" prefHeight="30.0" prefWidth="70.0" text="10" />
       <Label fx:id="name10" alignment="CENTER" layoutX="181.0" layoutY="600" prefHeight="30.0" prefWidth="250.0" text="EMPTY" />
       <Label fx:id="score10" alignment="CENTER" layoutX="412.0" layoutY="600" prefHeight="30.0" prefWidth="180.0" text="EMPTY" />
-      <Button layoutY="660.0" mnemonicParsing="false" onMouseClicked="#jumpToMenu" prefHeight="90.0" prefWidth="600.0" text="BACK TO MAIN" />
+      <Button layoutY="680.0" mnemonicParsing="false" onMouseClicked="#jumpToMenu" prefHeight="90.0" prefWidth="600.0" text="BACK TO MAIN" />
    </children>
 </AnchorPane>

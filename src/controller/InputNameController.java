@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-import gameApp.GameApp;
+import gameApp.Main;
 import util.FileProcesscer;
 import util.SceneSwitcher;
 
@@ -28,7 +28,7 @@ public class InputNameController {
         FileProcesscer i = new FileProcesscer(5);
         try{
             i.readFile("resources/highScoreFile/rank.txt");
-            i.insertElement(nameInputField.getText().trim(), GameApp.points);
+            i.insertElement(nameInputField.getText().trim(), Main.points);
             i.writeFile("resources/highScoreFile/rank.txt");
         }catch(Exception e){
             System.out.println(e);

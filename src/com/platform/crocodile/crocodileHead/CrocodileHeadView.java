@@ -2,7 +2,7 @@ package com.platform.crocodile.crocodileHead;
 
 import javafx.scene.image.Image;
 import com.platform.PlatformView;
-import gameApp.GameApp;
+import gameApp.Main;
 
 public class CrocodileHeadView extends PlatformView {
     private Image mouthCloseFrame, mouthOpenFrame;
@@ -52,7 +52,7 @@ public class CrocodileHeadView extends PlatformView {
 
     @Override
     public void act(long timer) {
-        move(this.model.speed  * GameApp.diffficulty, 0);
+        move(this.model.speed  * Main.diffficulty, 0);
         if (getX() > 700 && this.model.speed > 0)
             setX(-300);
         if (getX() < -300 && this.model.speed < 0)

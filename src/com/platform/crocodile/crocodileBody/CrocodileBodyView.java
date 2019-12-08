@@ -2,7 +2,7 @@ package com.platform.crocodile.crocodileBody;
 
 import javafx.scene.image.Image;
 import com.platform.PlatformView;
-import gameApp.GameApp;
+import gameApp.Main;
 
 public class CrocodileBodyView extends PlatformView {
     private CrocodileBodyModel model;
@@ -29,7 +29,7 @@ public class CrocodileBodyView extends PlatformView {
 
     @Override
     public void act(long timer) {
-        move(this.model.speed  * GameApp.diffficulty, 0);
+        move(this.model.speed  * Main.diffficulty, 0);
         if (getX() > 700 && this.model.speed > 0)
             setX(-300);
         if (getX() < -300 && this.model.speed < 0)

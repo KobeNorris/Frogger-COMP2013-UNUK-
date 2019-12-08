@@ -17,7 +17,7 @@ import com.platform.crocodile.crocodileHead.CrocodileHeadView;
 import com.platform.log.LogView;
 import com.platform.turtle.dryTurtle.DryTurtleView;
 import com.platform.turtle.wetTurtle.WetTurtleView;
-import gameApp.GameApp;
+import gameApp.Main;
 
 /**
  *
@@ -107,7 +107,7 @@ public class InfiniteGameController extends HardGameController{
      *
      */
     public static void resetGame(){
-        updateDifficulty(++GameApp.diffficulty);
+        updateDifficulty(++Main.diffficulty);
         for(int iTemp = 0; iTemp < 5; iTemp++){
             endList[iTemp].occupyEnd("empty");
         }

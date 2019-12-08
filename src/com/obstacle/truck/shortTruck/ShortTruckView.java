@@ -2,7 +2,7 @@ package com.obstacle.truck.shortTruck;
 
 import javafx.scene.image.Image;
 import com.obstacle.ObstacleView;
-import gameApp.GameApp;
+import gameApp.Main;
 
 public class ShortTruckView extends ObstacleView {
     private Image ShortTruckLeft, ShortTruckRight;
@@ -32,7 +32,7 @@ public class ShortTruckView extends ObstacleView {
 
     @Override
     public void act(long timer) {
-        move(this.model.speed  * GameApp.diffficulty , 0);
+        move(this.model.speed  * Main.diffficulty , 0);
         if (getX() > 700 && this.model.speed > 0)
             setX(-300);
         if (getX() < -300 && this.model.speed < 0)
