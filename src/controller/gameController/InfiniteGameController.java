@@ -20,12 +20,13 @@ import com.platform.turtle.wetTurtle.WetTurtleView;
 import gameApp.Main;
 
 /**
- *
+ * This function initialise the information demonstration and load the map for infinite game mode.
+ * It enable the change of Ends status and the infinite playing terms.
  */
 public class InfiniteGameController extends HardGameController{
     private static Text playerDifficultyLevelBoard;
     /**
-     * Load all traffics, logs, turtles and snake to the game stage and set the game mode into
+     * Add the infinite game mode's map and initialise the data demonstration.
      */
     @Override
     public void initialize(){
@@ -104,7 +105,7 @@ public class InfiniteGameController extends HardGameController{
     }
 
     /**
-     *
+     * Reset the frogger and ends back to the start status and position
      */
     public static void resetGame(){
         updateDifficulty(++Main.diffficulty);
@@ -115,14 +116,19 @@ public class InfiniteGameController extends HardGameController{
     }
 
     /**
+     * Update the difficulty stored in the Main class.
      *
-     *
-     * @param presentLevel
+     * @param presentLevel Present difficulty level player has reached
      */
     public static void updateDifficulty(int presentLevel){
         playerDifficultyLevelBoard.setText(presentLevel + "");
     }
 
+    /**
+     * initialise the difficulty level.
+     *
+     * @param presentLevel Present difficulty level player has reached
+     */
     public void initLevel(int presentLevel){
         playerDifficultyLevelBoard = new Text(340, 65, presentLevel + "");
         playerDifficultyLevelBoard.setFont(Font.font ("Verdana", 25));

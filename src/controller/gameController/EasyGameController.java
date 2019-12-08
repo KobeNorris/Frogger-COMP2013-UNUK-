@@ -12,7 +12,13 @@ import com.platform.turtle.dryTurtle.DryTurtleView;
 import com.platform.turtle.wetTurtle.WetTurtleView;
 import javafx.fxml.FXML;
 
+/**
+ * This function initialise the information demonstration and load the map for easy game mode.
+ */
 public class EasyGameController extends GameController{
+    /**
+     * Add the easy game mode's map and initialise the data demonstration.
+     */
     @FXML
     protected void initialize(){
         initGameStage();
@@ -64,7 +70,6 @@ public class EasyGameController extends GameController{
         this.add(new LongTruckView("right", 500, 540, 200, 1));
         this.add(new CarView("left", 500, 490, 50, -5));
 
-//        this.add(new PlayerScoreView(60, 10, 90));
         this.add(new GameModeView("Easy", 240, 10));
 
         frogger = FroggerView.getFroggerView();
@@ -78,6 +83,11 @@ public class EasyGameController extends GameController{
         start();
     }
 
+    /**
+     * Disabled the changes amongst ends
+     *
+     * @param timer The time counter initialise by controller himself
+     */
     @Override
     public void act(long timer){
         long timeInterval = 1000000000L ;

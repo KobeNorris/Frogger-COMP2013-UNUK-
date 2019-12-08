@@ -18,9 +18,15 @@ import javafx.fxml.FXML;
 import java.util.Date;
 import java.util.Random;
 
+/**
+ * This function initialise the information demonstration and load the map for Hard game mode.
+ * It enable the change of Ends status.
+ */
 public class HardGameController extends GameController{
     protected static EndView[] endList;
-
+    /**
+     * Add the easy game mode's map and initialise the data demonstration.
+     */
     @FXML
     protected void initialize(){
         initGameStage();
@@ -94,6 +100,11 @@ public class HardGameController extends GameController{
         start();
     }
 
+    /**
+     * This function changes the status of ends, there is going to be only one
+     * pair of CrocEnd and BugEnd exist simultaneously at most. And if there is
+     * only one End left, it will be set to BugEnd.
+     */
     public static void changeEnd(){
         int emptyEndCounter = 0;
         Date date = new Date();

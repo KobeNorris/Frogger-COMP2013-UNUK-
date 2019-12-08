@@ -25,7 +25,7 @@ public class InputNameController {
      */
     @FXML
     public void insertRank() throws IOException {
-        FileProcesscer i = new FileProcesscer(5);
+        FileProcesscer i = new FileProcesscer(10);
         try{
             i.readFile("resources/highScoreFile/rank.txt");
             i.insertElement(nameInputField.getText().trim(), Main.points);
