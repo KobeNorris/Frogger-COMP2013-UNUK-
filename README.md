@@ -1,73 +1,95 @@
 # SM_Coursework_02
 ## For maintenance
 
-* **Bugs refactor**
-    1. Removed the bug generates from long-term keyboard press, frogger will no longer jump into the boundaries between blocks;
-
-    2. Removed the bug exists in the score display process, refresh entire ```playerScoreBoard``` after player's score has changed;
-
-* **Appliance of MVC**
-    1. Rewrite the ```World``` class into ```GameController``` class. Then develop different game levels classes extends from ```GameController``` class.
-
-    2. Changed all game elements into MVC design pattern. Divided each class into ```View```, ```Controller``` and ```Model```.
-
-* **Alliance of SINGLETON**
-    1. Because there will be only one frogger that exists on the screen, it is refacted by using SINGLETON design pattern.
-
-* **Classes and interfaces**
-    1. Add ```Platform``` class to describe standable elements such as ```Log``` and ```Turtle```. Preserve ```Obstacle``` class to describle lethal elements such as ```car``` and ```truck```;
-
-    2. Rename ```Animal``` class to ```FroggerView``` class;
-
-    3. Removed the ```musicPlayer``` 
-
 * **Package rearrangement**
-    1. Allocated all game elements into com package;
+    1. ```src``` directory:
 
-    2. Built a util package to keep 
+        ![avatar](resources/img/com/src.jpg)
+        * ```com``` <19/Nov/2019>: Contains game elements;
+        * ```controller``` <28/Nov/2019>: Contains FXML controllers;
+        * ```gameApp``` <19/Nov/2019>: Contains Main class;
+        * ```util``` <20/Nov/2019>: Contains tools.
+
+    2. ```resources``` directory <20/Nov/2019>
+
+        ![avatar](resources/img/com/resources.jpg)
+
+    3. ```test``` directory:
+
+        ![avatar](resources/img/com/test.jpg)
+        * ```com``` <21/Nov/2019>
+
+* **Bugs refactor**
+    1. Frogger move <21/Nov/2019>:
+        * Generates from coniguous ```keyboardPress```;
+        * Fixed by checking position after ```keyboardRelease```.
+
+    2. Points display <21/Nov/2019>:
+        * Generates from points deduction;
+        * Fixed by applying ```Text``` ```playerScoreBoard```;
+
+* **MVC design pattern**
+    1. Refactored ```MyStage``` and ```World``` <03/Dec/2019>:
+        * ```World``` is refactored into ```GameController``` to be extends into different game modes;
+        * Background image is allocated in FXML files of game modes;
+        * Main features of ```MyStage``` is refactored into ```MusicPlayer```.
+
+    2. Refactored ```Actor``` and all of its child classes <26/Nov/2019>:
+        * ```Actor``` is refactored into ```View```, ```Controller``` and ```Model```;
+        * Other game elements have their own ```View``` class.
+
+    3. New pages all applied MVC design pattern <01/Dec/2019>
+
+* **SINGLETON  design pattern**
+    1. ```FroggerView``` <20/Nov/2019>: Only be accessed by ```getInstance()```;
+
+    2. ```MusicPlayer``` <29/Nov/2019>: Only contains ```static``` methods.
+
+* **Factory design pattern**
+    1. ```ElementFactory``` for ```View``` and all of its child classes.
 ----
 ## For extension
 
 * **Additional pages**
-    1. A start menu with animation;
-    
-    2. A difficulty selection page;
-
-    3. A high score page and high score name input page:
-        * This board could be accessed by the termination of game;
-        * It could be accessedfrom the start menu.
-
-    4. Three gameView pages for different levels of game mode.
-
+    1. ```MenuView``` <29/Nov/2019>;
+    2. ```DifficultyLevelSelectionView``` <29/Nov/2019>;
+    3. Three ```gameView``` <02/Nov/2019>;
+    4. ````InputNameView```` <01/Nov/2019>;
+    5. ```HighScoreView``` <01/Dec/2019>;
+    6. Four ```helpPageeView``` <02/Dec/2019>.
     
 * **Game termination**
-    1. Reached all ends:
-        * Game will terminates if player reaches all 5 ends in ```EasyGame``` mode and ```HardGame``` mode;
-    2. Wasted all life:
-        * Game will terminates if player used up his three chances of life.
-        * Player will get a deduction of 50 points after each time they die.
+    1. Lost all lifes <27/Nov/2019>:
+        * Player used up his three chances of life;
+        * Player gets a deduction of 50 points each time.
+    2. Used all time <08/Dec/2019>:
+        * Each time player used up his 90 seconds, frogger dies automatically;
+        * Time will be refreshed after frogger dies or reaches end.
 
 * **Extra game elements**
-    1. ```CrocEnd``` and ```BugEnd``` classes:
-        * More ```End``` status, implemented in ```Hard``` mode and ```Infinite``` mode;
-        * The position of different types of ```End``` could change after each time frogger reached one of the ```End``` and survive;
+    1. ```CrocEnd``` and ```BugEnd``` classes <01/Dec/2019>:
+        * Implemented in ```Hard``` mode and ```Infinite``` mode;
+        * ```End``` status could change in every 6 seconds;
         * ```CrocEnd```: A lethal ```End``` which could kill the frogger;
         * ```BugEnd```: An ```End``` with a snack which provides player extra bonus.
-    2. ```Snake``` class:
+    2. ```Snake``` <05/Dec/2019>:
         * Implemented in ```Hard``` mode and ```Infinite``` mode;
         * A lethal ```Snake``` appears in the middle lane of the game stage.
-    3. ```InfiniteGameController``` class:
-        * Implemented in ```Infinite``` mode;
-        * Player could play infinite terms of game with an increasing difficulty.
-    4. ```GameModeView``` class:
-        * Display present game mode;
-        * DIsplay present difficulty of the game, if the mode is inifinite.
+    3. ```Crocodile``` <07/Dec/2019>:
+        * Implemented in ```Hard``` mode and ```Infinite``` mode;
+        * The head of ```Crocodile``` is lethal when it is open.
 
 * **Extra game feature**
-    1. Pause: Player could press SPACE on the keyboard to pause and restart the game;
-    2. Opening Cinematic: The original opening cinematic has been remade and allocated on the start menu.
-
-* **High score board**
-    1. ```Main``` will check whether the player's score is high enough to be kept in game record;
-    2. If so, ```InputNameView``` will ask player to leave their name;
-    3. This board could be accessed from menu and after the game's termination.
+    1. Pause <05/Dec/2019>:
+        * Press SPACE on the keyboard to pause;
+        * Press SPACE to restart the game.
+    2. Animation <05/Dec/2019>:
+        * Remade the original one in ```MenuView```;
+        * Another in ````InputNameView````.
+    3. Time counter <08/Dec/2019>:
+        * Player only have 90 seconds in each term of the game;
+        * Time counter will be refreshed after each time player die or reach the end;
+        * When time is counted down to 0, ```Frogger``` will die immediately. 
+    4. ```InfiniteGameController``` <02/Dec/2019>:
+        * Implemented in ```Infinite``` mode;
+        * Player could play infinite terms of game with increasing difficulty.
