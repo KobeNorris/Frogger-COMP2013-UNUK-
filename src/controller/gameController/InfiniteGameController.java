@@ -3,20 +3,17 @@ package controller.gameController;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-//import main.GameApp;
-import com.background.BackgroundImageView;
 import com.end.EndView;
 import com.frogger.FroggerView;
-import com.gameMode.GameModeView;
 import com.obstacle.car.CarView;
 import com.obstacle.snake.SnakeView;
-import com.obstacle.truck.longTruck.LongTruckView;
-import com.obstacle.truck.shortTruck.ShortTruckView;
-import com.platform.crocodile.crocodileBody.CrocodileBodyView;
-import com.platform.crocodile.crocodileHead.CrocodileHeadView;
+import com.obstacle.truck.LongTruckView;
+import com.obstacle.truck.ShortTruckView;
+import com.platform.crocodile.CrocodileBodyView;
+import com.platform.crocodile.CrocodileHeadView;
 import com.platform.log.LogView;
-import com.platform.turtle.dryTurtle.DryTurtleView;
-import com.platform.turtle.wetTurtle.WetTurtleView;
+import com.platform.turtle.DryTurtleView;
+import com.platform.turtle.WetTurtleView;
 import gameApp.Main;
 
 /**
@@ -31,9 +28,6 @@ public class InfiniteGameController extends HardGameController{
     @Override
     public void initialize(){
         initGameStage();
-        BackgroundImageView froggerBack = new BackgroundImageView();
-
-        this.add(froggerBack);
 
         this.add(new LogView("middle", 0, 170, 170, 170, 1));
         this.add(new LogView("middle", 250, 170, 170, 170, 1));
@@ -88,8 +82,6 @@ public class InfiniteGameController extends HardGameController{
         this.add(new CarView("left", 500, 490, 50, -5));
         this.add(new CarView("left", 700, 490, 50, -5));
 
-        this.add(new GameModeView("Infinite", 240, 10));
-
         frogger = FroggerView.getFroggerView();
         frogger.setGameMode("Infinite");
         frogger.changeEnd();
@@ -98,6 +90,7 @@ public class InfiniteGameController extends HardGameController{
         initTime(90);
         initScore(0);
         initLife(3);
+        initGameMode("Infinite");
 
         initLevel(1);
 
@@ -121,7 +114,7 @@ public class InfiniteGameController extends HardGameController{
      * @param presentLevel Present difficulty level player has reached
      */
     public static void updateDifficulty(int presentLevel){
-        playerDifficultyLevelBoard.setText(presentLevel + "");
+        playerDifficultyLevelBoard.setText("Difficulty" + presentLevel);
     }
 
     /**
@@ -130,7 +123,7 @@ public class InfiniteGameController extends HardGameController{
      * @param presentLevel Present difficulty level player has reached
      */
     public void initLevel(int presentLevel){
-        playerDifficultyLevelBoard = new Text(340, 65, presentLevel + "");
+        playerDifficultyLevelBoard = new Text(240, 70, "Difficulty" + presentLevel);
         playerDifficultyLevelBoard.setFont(Font.font ("Verdana", 25));
         playerDifficultyLevelBoard.setFill(Color.RED);
         this.gameStage.getChildren().add(playerDifficultyLevelBoard);

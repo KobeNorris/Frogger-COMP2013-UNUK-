@@ -3,7 +3,7 @@ package com.end;
 import com.Controller;
 
 public class EndController implements Controller {
-    private EndModel model;
+    public EndModel model;
 
     public EndController(EndModel model){
         this.model = model;

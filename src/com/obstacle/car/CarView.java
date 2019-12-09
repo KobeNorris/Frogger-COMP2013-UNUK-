@@ -1,20 +1,22 @@
 package com.obstacle.car;
 
-//import main.GameApp;
+import com.obstacle.ObstacleController;
+import com.obstacle.ObstacleModel;
 import javafx.scene.image.Image;
 import com.obstacle.ObstacleView;
 import gameApp.Main;
 
 public class CarView extends ObstacleView {
     private Image carLeft, carRight;
-    private CarModel model;
-    private CarController controller;
+    private ObstacleModel model;
+    private ObstacleController controller;
+    private String filePath = "file:resources/img/Obstacle/car/";
     
     public CarView(String carType, double positionX, double positionY, double size, double speed) {
-        creatCarModel(speed);
-        creatCarController();
-        carRight = new Image(this.model.getFilePath()+"carRight.png", size, size, true, true);
-        carLeft = new Image(this.model.getFilePath()+"carLeft.png", size, size, true, true);
+        createModel(speed);
+        createController();
+        carRight = new Image(this.filePath + "carRight.png", size, size, true, true);
+        carLeft = new Image(this.filePath + "carLeft.png", size, size, true, true);
         if(carType.equals("right"))
             setImage(carRight);
         else
@@ -23,12 +25,14 @@ public class CarView extends ObstacleView {
         setY(positionY);
     }
 
-    public void creatCarModel(double speed){
-        this.model = new CarModel(speed);
+    @Override
+    protected void createModel(double speed){
+        this.model = new ObstacleModel(speed);
     }
 
-    public void creatCarController(){
-        this.controller = new CarController(this.model);
+    @Override
+    protected void createController(){
+        this.controller = new ObstacleController(this.model);
     }
 
     @Override

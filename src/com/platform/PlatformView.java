@@ -5,9 +5,13 @@ import com.View;
 public abstract class PlatformView extends View {
     protected PlatformView(){};
 
-    public double getSpeed(){return 0.0;};
+    public abstract double getSpeed();
 
-    public boolean isSunk(){return false;};
+    protected abstract void createModel(double speed);
+
+    protected abstract void createController();
+
+    public abstract boolean isSunk();
 
     public void act(long timer){};
 }

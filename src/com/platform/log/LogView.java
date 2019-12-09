@@ -1,15 +1,15 @@
 package com.platform.log;
 
+import com.platform.PlatformController;
+import com.platform.PlatformModel;
 import javafx.scene.image.Image;
 import com.platform.PlatformView;
 import gameApp.Main;
 
 public class LogView extends PlatformView {
-    private LogModel model;
-    private LogController controller;
-    private String imageLinkShort = "file:src/main/resources/img/Platform/Log/shortLog.png";
-    private String imageLinkMiddle = "file:src/main/resources/img/Platform/Log/middleLog.png";
-    private String imageLinkLong = "file:src/resources/img/Platform/Log/longLog.png";
+    private PlatformModel model;
+    private PlatformController controller;
+    private String filePath = "file:resources/img/Platform/Log/";
 
     public LogView(String type, double positionX, double positionY, double width, double height, double speed) {
         createModel(speed);
@@ -17,15 +17,15 @@ public class LogView extends PlatformView {
 
         switch(type){
             case "long":
-                setImage(new Image(this.model.getFilePath() + "longLog.png", width, height, true, true));
+                setImage(new Image(this.filePath + "longLog.png", width, height, true, true));
                 break;
 
             case "middle":
-                setImage(new Image(this.model.getFilePath() + "middleLog.png", width, height, true, true));
+                setImage(new Image(this.filePath + "middleLog.png", width, height, true, true));
                 break;
 
             case "short":
-                setImage(new Image(this.model.getFilePath() + "shortLog.png", width, height, true, true));
+                setImage(new Image(this.filePath + "shortLog.png", width, height, true, true));
                 break;
 
             default:
@@ -34,12 +34,14 @@ public class LogView extends PlatformView {
         setY(positionY);
     }
 
+    @Override
     public void createModel(double speed){
-        this.model = new LogModel(speed);
+        this.model = new PlatformModel(speed);
     }
 
+    @Override
     public void createController(){
-        this.controller = new LogController(this.model);
+        this.controller = new PlatformController(this.model);
     }
 
     public boolean isSunk(){return this.model.isSunk;}

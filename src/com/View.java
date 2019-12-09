@@ -8,31 +8,55 @@ import javafx.scene.layout.Pane;
 import java.util.ArrayList;
 
 /**
- *
- * Refactor:
- *  The original Actor class, been refactored to View
- *
+ * This class is refactored from original Actor class and is used as the parent class for all
+ * game elements.
  */
 public abstract class View extends ImageView{
-    public void manageInput(InputEvent e) {}
-
+    /**
+     * 
+     *
+     * @param dx
+     * @param dy
+     */
     public void move(double dx, double dy) {
         setX(getX() + dx);
         setY(getY() + dy);
     }
 
+    /**
+     *
+     *
+     * @return
+     */
     public Pane getWorld() {
         return (Pane) getParent();
     }
 
+    /**
+     *
+     *
+     * @return
+     */
     public double getWidth() {
         return this.getBoundsInLocal().getWidth();
     }
 
+    /**
+     *
+     *
+     * @return
+     */
     public double getHeight() {
         return this.getBoundsInLocal().getHeight();
     }
 
+    /**
+     *
+     *
+     * @param cls
+     * @param <A>
+     * @return
+     */
     public <A extends View> java.util.List<A> getIntersectingObjects(java.lang.Class<A> cls){
         ArrayList<A> someArray = new ArrayList<A>();
         for (Node viewer: getWorld().getChildren()) {
@@ -43,6 +67,13 @@ public abstract class View extends ImageView{
         return someArray;
     }
 
+    /**
+     *
+     *
+     * @param cls
+     * @param <A>
+     * @return
+     */
     public <A extends View> A getOneIntersectingObject(java.lang.Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
         for (Node viewer: getWorld().getChildren()) {
@@ -54,5 +85,10 @@ public abstract class View extends ImageView{
         return someArray.get(0);
     }
 
+    /**
+     *
+     *
+     * @param timer
+     */
     public abstract void act(long timer);
 }

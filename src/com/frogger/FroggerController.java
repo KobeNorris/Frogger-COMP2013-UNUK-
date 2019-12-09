@@ -9,7 +9,7 @@ import com.end.EndView;
 import gameApp.Main;
 
 public class FroggerController implements Controller{
-    private FroggerModel model;
+    public FroggerModel model;
 
     public FroggerController(FroggerModel model){
         this.model = model;

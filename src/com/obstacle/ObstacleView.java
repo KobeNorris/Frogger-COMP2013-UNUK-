@@ -6,6 +6,10 @@ import com.View;
 public abstract class ObstacleView extends View {
     protected ObstacleView(){}
 
+    protected abstract void createModel(double speed);
+
+    protected abstract void createController();
+
     @Override
     public void act(long timer){};
 

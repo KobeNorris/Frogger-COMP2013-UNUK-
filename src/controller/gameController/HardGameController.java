@@ -1,18 +1,16 @@
 package controller.gameController;
 
-import com.background.BackgroundImageView;
 import com.end.EndView;
 import com.frogger.FroggerView;
-import com.gameMode.GameModeView;
 import com.obstacle.car.CarView;
 import com.obstacle.snake.SnakeView;
-import com.obstacle.truck.longTruck.LongTruckView;
-import com.obstacle.truck.shortTruck.ShortTruckView;
-import com.platform.crocodile.crocodileBody.CrocodileBodyView;
-import com.platform.crocodile.crocodileHead.CrocodileHeadView;
+import com.obstacle.truck.LongTruckView;
+import com.obstacle.truck.ShortTruckView;
+import com.platform.crocodile.CrocodileBodyView;
+import com.platform.crocodile.CrocodileHeadView;
 import com.platform.log.LogView;
-import com.platform.turtle.dryTurtle.DryTurtleView;
-import com.platform.turtle.wetTurtle.WetTurtleView;
+import com.platform.turtle.DryTurtleView;
+import com.platform.turtle.WetTurtleView;
 import javafx.fxml.FXML;
 
 import java.util.Date;
@@ -30,9 +28,6 @@ public class HardGameController extends GameController{
     @FXML
     protected void initialize(){
         initGameStage();
-        BackgroundImageView froggerBack = new BackgroundImageView();
-
-        this.add(froggerBack);
 
         this.add(new LogView("middle", 0, 170, 170, 170, 1));
         this.add(new LogView("middle", 250, 170, 170, 170, 1));
@@ -87,8 +82,6 @@ public class HardGameController extends GameController{
         this.add(new CarView("left", 500, 490, 50, -5));
         this.add(new CarView("left", 700, 490, 50, -5));
 
-        this.add(new GameModeView("Hard", 240, 10));
-
         frogger = FroggerView.getFroggerView();
         frogger.setGameMode("Hard");
         frogger.changeEnd();
@@ -97,6 +90,7 @@ public class HardGameController extends GameController{
         initTime(90);
         initScore(0);
         initLife(3);
+        initGameMode("Hard");
         start();
     }
 

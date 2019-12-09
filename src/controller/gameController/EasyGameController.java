@@ -1,15 +1,13 @@
 package controller.gameController;
 
-import com.background.BackgroundImageView;
 import com.end.EndView;
 import com.frogger.FroggerView;
-import com.gameMode.GameModeView;
 import com.obstacle.car.CarView;
-import com.obstacle.truck.longTruck.LongTruckView;
-import com.obstacle.truck.shortTruck.ShortTruckView;
+import com.obstacle.truck.LongTruckView;
+import com.obstacle.truck.ShortTruckView;
 import com.platform.log.LogView;
-import com.platform.turtle.dryTurtle.DryTurtleView;
-import com.platform.turtle.wetTurtle.WetTurtleView;
+import com.platform.turtle.DryTurtleView;
+import com.platform.turtle.WetTurtleView;
 import javafx.fxml.FXML;
 
 /**
@@ -22,9 +20,6 @@ public class EasyGameController extends GameController{
     @FXML
     protected void initialize(){
         initGameStage();
-        BackgroundImageView froggerback = new BackgroundImageView();
-
-        this.add(froggerback);
 
         this.add(new LogView("middle", -250, 170, 170, 170, 1));
         this.add(new LogView("middle", 0, 170, 170, 170, 1));
@@ -70,8 +65,6 @@ public class EasyGameController extends GameController{
         this.add(new LongTruckView("right", 500, 540, 200, 1));
         this.add(new CarView("left", 500, 490, 50, -5));
 
-        this.add(new GameModeView("Easy", 240, 10));
-
         frogger = FroggerView.getFroggerView();
         frogger.setGameMode("Easy");
         this.add(frogger);
@@ -79,6 +72,7 @@ public class EasyGameController extends GameController{
         initTime(90);
         initScore(0);
         initLife(3);
+        initGameMode("Easy");
 
         start();
     }

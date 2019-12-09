@@ -31,7 +31,7 @@ public abstract class GameController{
     public AnimationTimer timer;
     public static FroggerView frogger;
     public boolean restart = false, pause = false, running = true;
-    protected static Text playerScoreBoard, playerTimeBoard, playerLifeBoard;
+    protected static Text playerScoreBoard, playerTimeBoard, playerLifeBoard, gameMode;
     protected long lastTimer;
     protected int leftEndChangeTime = 5;
 
@@ -166,6 +166,16 @@ public abstract class GameController{
         playerLifeBoard.setFont(Font.font ("Verdana", 30));
         playerLifeBoard.setFill(Color.GREEN);
         this.gameStage.getChildren().add(playerLifeBoard);
+    }
+
+    /**
+     *
+     */
+    public void initGameMode(String gameMode){
+        this.gameMode = new Text(210, 40, gameMode + " Mode");
+        this.gameMode.setFont(Font.font ("Verdana", 30));
+        this.gameMode.setFill(Color.WHITE);
+        this.gameStage.getChildren().add(this.gameMode);
     }
 
     /**
