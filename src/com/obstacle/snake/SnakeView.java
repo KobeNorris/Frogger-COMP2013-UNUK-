@@ -7,6 +7,9 @@ import javafx.scene.image.Image;
 import com.obstacle.ObstacleView;
 import gameApp.Main;
 
+/**
+ * This is the view of snake elements in game, extends from Obstacle class
+ */
 public class SnakeView extends ObstacleView {
     private Image snake[];
     private int imageIndex = 0, timerInterval = 500;
@@ -14,6 +17,14 @@ public class SnakeView extends ObstacleView {
     private ObstacleController controller;
     private String filePath = "file:resources/img/Obstacle/snake/";
 
+    /**
+     * This constructor initialise the position, size and speed of SnakeView
+     *
+     * @param positionX SnakeView's X position
+     * @param positionY SnakeView's Y position
+     * @param size  SnakeView's size
+     * @param speed  SnakeView's speed
+     */
     public SnakeView(double positionX, double positionY, double size, double speed) {
         createModel(speed);
         createController();

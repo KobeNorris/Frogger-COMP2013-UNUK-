@@ -6,12 +6,25 @@ import javafx.scene.image.Image;
 import com.platform.PlatformView;
 import gameApp.Main;
 
+/**
+ * This is the view of dry turtle elements in game, extends from Obstacle class,
+ * it includes three frames in total.
+ */
 public class DryTurtleView extends PlatformView {
     private Image firstFrame, secondFrame, thirdFrame;
     private PlatformController controller;
     private PlatformModel model;
     private String filePath = "file:resources/img/Platform/Turtle/";
 
+    /**
+     * This constructor initialise the position, size and speed of DryTurtleView
+     *
+     * @param positionX DryTurtleView's X position
+     * @param positionY DryTurtleView's Y position
+     * @param width  DryTurtleView's width
+     * @param height DryTurtleView's height
+     * @param speed  DryTurtleView's speed
+     */
     public DryTurtleView(double positionX, double positionY, double width, double height, double speed) {
         createModel(speed);
         createController();
@@ -34,6 +47,11 @@ public class DryTurtleView extends PlatformView {
         this.controller = new PlatformController(this.model);
     }
 
+    /**
+     * The change frequency of dry turtle animation frames
+     *
+     * @param timer The value of current time counter
+     */
     public void turtleSwim(long timer){
         switch ((int)(timer/600000000 % 3)){
             case 0:
@@ -52,6 +70,7 @@ public class DryTurtleView extends PlatformView {
         }
     }
 
+    @Override
     public boolean isSunk(){return this.model.isSunk;}
 
     @Override

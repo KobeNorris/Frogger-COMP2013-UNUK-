@@ -23,6 +23,12 @@ public class Main extends Application{
     private static GameController controller;
     public static int points = 0, diffficulty = 1;
     public static Stage getPresentStage(){return presentStage;}
+
+    /**
+     * Set target controller to be the present controller which is used to observe game status
+     *
+     * @param targetController The controller of present game mode
+     */
     public static void setController(GameController targetController){controller = targetController;}
 
     public static void main(String[] args){

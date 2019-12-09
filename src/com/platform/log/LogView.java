@@ -6,11 +6,28 @@ import javafx.scene.image.Image;
 import com.platform.PlatformView;
 import gameApp.Main;
 
+/**
+ * This is the view of log elements in game, extends from Platform class,
+ * it includes three types in total:
+ *      1. Long;
+ *      2. Middle;
+ *      3. Short.
+ */
 public class LogView extends PlatformView {
     private PlatformModel model;
     private PlatformController controller;
     private String filePath = "file:resources/img/Platform/Log/";
 
+    /**
+     * This constructor initialise the type, position, size and speed of LogView
+     *
+     * @param type Type of the log View
+     * @param positionX LogView's X position
+     * @param positionY LogView's Y position
+     * @param width  LogView's width
+     * @param height LogView's height
+     * @param speed  LogView's speed
+     */
     public LogView(String type, double positionX, double positionY, double width, double height, double speed) {
         createModel(speed);
         createController();
@@ -44,6 +61,7 @@ public class LogView extends PlatformView {
         this.controller = new PlatformController(this.model);
     }
 
+    @Override
     public boolean isSunk(){return this.model.isSunk;}
 
     @Override

@@ -8,6 +8,9 @@ import com.Controller;
 import com.end.EndView;
 import gameApp.Main;
 
+/**
+ *
+ */
 public class FroggerController implements Controller{
     public FroggerModel model;
 

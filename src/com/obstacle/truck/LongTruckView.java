@@ -6,12 +6,27 @@ import javafx.scene.image.Image;
 import com.obstacle.ObstacleView;
 import gameApp.Main;
 
+/**
+ * This is the view of long truck elements in game, extends from Obstacle class,
+ * it includes two types in total:
+ *      1. Left direction long truck;
+ *      2. Right direction long truck.
+ */
 public class LongTruckView extends ObstacleView {
     private Image LongTruckLeft, LongTruckRight;
     private ObstacleModel model;
     private ObstacleController controller;
     private String filePath = "file:resources/img/Obstacle/Truck/";
 
+    /**
+     * This constructor initialise the type, position, size and speed of LongTruckView
+     *
+     * @param longTruckType Type of the truck
+     * @param positionX LongTruckView's X position
+     * @param positionY LongTruckView's Y position
+     * @param size  LongTruckView's size
+     * @param speed  LongTruckView's speed
+     */
     public LongTruckView(String longTruckType, double positionX, double positionY, double size, double speed) {
         createModel(speed);
         createController();

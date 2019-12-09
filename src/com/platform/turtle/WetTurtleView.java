@@ -6,12 +6,25 @@ import javafx.scene.image.Image;
 import com.platform.PlatformView;
 import gameApp.Main;
 
+/**
+ * This is the view of wet turtle elements in game, extends from Obstacle class,
+ * it includes four frames in total.
+ */
 public class WetTurtleView extends PlatformView {
     private Image firstFrame, secondFrame, thirdFrame, fourthFrame;
     private PlatformController controller;
     private PlatformModel model;
     private String filePath = "file:resources/img/Platform/Turtle/";
 
+    /**
+     * This constructor initialise the position, size and speed of WetTurtleView
+     *
+     * @param positionX WetTurtleView's X position
+     * @param positionY WetTurtleView's Y position
+     * @param width  WetTurtleView's width
+     * @param height WetTurtleView's height
+     * @param speed  WetTurtleView's speed
+     */
     public WetTurtleView(int positionX, int positionY, double width, double height, double speed) {
         createModel(speed);
         createController();
@@ -35,6 +48,11 @@ public class WetTurtleView extends PlatformView {
         this.controller = new PlatformController(this.model);
     }
 
+    /**
+     * The change frequency of wet turtle animation frames and isSunk status
+     *
+     * @param timer The value of current time counter
+     */
     public void turtleSwim(long timer){
         switch ((int)(timer/600000000 % 4)){
             case 0:
@@ -60,6 +78,7 @@ public class WetTurtleView extends PlatformView {
         }
     }
 
+    @Override
     public boolean isSunk(){return this.model.isSunk;}
 
     @Override

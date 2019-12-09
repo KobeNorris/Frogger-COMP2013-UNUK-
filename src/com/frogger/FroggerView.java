@@ -9,6 +9,10 @@ import javafx.scene.input.KeyEvent;
 
 import com.View;
 
+/**
+ * This is the View class for frogger, which displays the moving frames, death animation and
+ * defines the key board listener
+ */
 public class FroggerView extends View {
     private Image imgUp, imgLeft, imgRight, imgDown, imgUpJump, imgLeftJump, imgRightJump, imgDownJump;
     private Image waterDeath1, waterDeath2, waterDeath3, waterDeath4, roadDeath1, roadDeath2, roadDeath3;
@@ -24,6 +28,11 @@ public class FroggerView extends View {
 
     public KeyCode previousKey;
 
+    /**
+     * This method implements the SINGLETON design pattern
+     *
+     * @return The instance of frogger
+     */
     public static FroggerView getFroggerView(){
         if(FroggerView.view == null)
             FroggerView.view = new FroggerView();
@@ -274,6 +283,12 @@ public class FroggerView extends View {
 
     public void releaseMove(){this.model.noMove = false;}
 
+    /**
+     *
+     *
+     * @param attribute
+     * @return
+     */
     public boolean checkAttribute(String attribute){
         switch(attribute){
             case "Score":
