@@ -13,10 +13,10 @@ import java.util.ArrayList;
  */
 public abstract class View extends ImageView{
     /**
-     * 
+     * Move the image's position in stage
      *
-     * @param dx
-     * @param dy
+     * @param dx The distance of X direction move
+     * @param dy The distance of Y direction move
      */
     public void move(double dx, double dy) {
         setX(getX() + dx);
@@ -24,38 +24,38 @@ public abstract class View extends ImageView{
     }
 
     /**
+     * It returns current Pane's parent
      *
-     *
-     * @return
+     * @return The Parent of current Pane
      */
     public Pane getWorld() {
         return (Pane) getParent();
     }
 
     /**
+     * It returns current Pane's width
      *
-     *
-     * @return
+     * @return The width of current Pane
      */
     public double getWidth() {
         return this.getBoundsInLocal().getWidth();
     }
 
     /**
+     * It returns current Pane's height
      *
-     *
-     * @return
+     * @return The height of current Pane
      */
     public double getHeight() {
         return this.getBoundsInLocal().getHeight();
     }
 
     /**
+     * Get all elements intersected with present View element
      *
-     *
-     * @param cls
-     * @param <A>
-     * @return
+     * @param cls Target class
+     * @param <A> Target class range
+     * @return Array list of intersected elements.
      */
     public <A extends View> java.util.List<A> getIntersectingObjects(java.lang.Class<A> cls){
         ArrayList<A> someArray = new ArrayList<A>();
@@ -68,11 +68,11 @@ public abstract class View extends ImageView{
     }
 
     /**
+     * Get the first element intersected with present View element
      *
-     *
-     * @param cls
-     * @param <A>
-     * @return
+     * @param cls Target class
+     * @param <A> Target class range
+     * @return The first intersected element.
      */
     public <A extends View> A getOneIntersectingObject(java.lang.Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
@@ -86,9 +86,9 @@ public abstract class View extends ImageView{
     }
 
     /**
+     * The action of the View element during the execution of game
      *
-     *
-     * @param timer
+     * @param timer Value of present timer counter
      */
     public abstract void act(long timer);
 }

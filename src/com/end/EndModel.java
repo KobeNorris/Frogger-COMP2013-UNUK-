@@ -2,6 +2,9 @@ package com.end;
 
 import com.Model;
 
+/**
+ * This is the model class for view which stores End's present status
+ */
 public class EndModel implements Model {
     private Status status;
     private String filePath = "file:resources/img/End/";
@@ -22,11 +25,29 @@ public class EndModel implements Model {
         this.status = status;
     }
 
+    /**
+     * Set End status to frogger occupied
+     */
     public void frogOccupied(){this.status = Status.FROGOCCUPIED;}
+
+    /**
+     * Set End status to crocodile occupied
+     */
     public void crocOccupied(){this.status = Status.CROCOCCUPIED;}
+
+    /**
+     * Set End status to bug occupied
+     */
     public void bugOccupied(){this.status = Status.BUGOCCUPIED;}
+
+    /**
+     * Set End status to empty
+     */
     public void setToEmpty(){this.status = Status.EMPTY;}
 
+    /**
+     * The status of Ends
+     */
     enum Status{
         EMPTY(0),
         FROGOCCUPIED(1),

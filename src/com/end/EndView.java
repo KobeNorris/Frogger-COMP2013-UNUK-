@@ -3,12 +3,23 @@ package com.end;
 import javafx.scene.image.Image;
 import com.View;
 
+/**
+ * This End class is refactored from original End class, has 4 status in total.
+ */
 public class EndView extends View {
     private Image emptyEnd, frogOccupiedEnd, crocOccupiedEnd, bugOccupiedEnd;
 
     private EndController controller;
     private EndModel model;
 
+    /**
+     * This constructor initialise the position and size of End
+     *
+     * @param positionX End's X position
+     * @param positionY End's Y position
+     * @param width  End's width
+     * @param height  End's height
+     */
     public EndView(int positionX, int positionY, double width, double height) {
         createModel();
         createController();
@@ -31,11 +42,44 @@ public class EndView extends View {
         this.controller = new EndController(this.model);
     }
 
+    /**
+     * Checks whether this End is Empty
+     *
+     * @return Whether this End is Empty
+     */
     public boolean checkStatusEMPTY(){return this.model.getStatus() == EndModel.Status.EMPTY;}
+
+    /**
+     * Checks whether this End is Occupied by Bug
+     *
+     * @return Whether this End is Occupied by Bug
+     */
     public boolean checkStatusBUGOCCUPIED(){return this.model.getStatus() == EndModel.Status.BUGOCCUPIED;}
+
+    /**
+     * Checks whether this End is Occupied by Crocodile
+     *
+     * @return Whether this End is Occupied by Crocodile
+     */
     public boolean checkStatusCROCOCCUPIED(){return this.model.getStatus() == EndModel.Status.CROCOCCUPIED;}
+
+    /**
+     * Checks whether this End is Occupied by frogger
+     *
+     * @return Whether this End is Occupied by frogger
+     */
     public boolean checkStatusFROGOCCUPIED(){return this.model.getStatus() == EndModel.Status.FROGOCCUPIED;}
 
+    /**
+     * This method update the present status of the End, the
+     * status include:
+     *      1. Empty;
+     *      2. Occupied by frogger;
+     *      3. Occupied by bug;
+     *      4. Occupied by crocodile.
+     *
+     * @param type The type of End that it needs to be updated to be
+     */
     public void occupyEnd(String type){
         switch(type){
             case "frog":

@@ -2,6 +2,9 @@ package com.end;
 
 import com.Controller;
 
+/**
+ *
+ */
 public class EndController implements Controller {
     public EndModel model;
 
@@ -9,6 +12,11 @@ public class EndController implements Controller {
         this.model = model;
     }
 
+    /**
+     * Sets the status of End to target status
+     *
+     * @param type Target status of the End
+     */
     public void setStatus(String type){
         switch(type){
             case "frog":
