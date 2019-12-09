@@ -4,6 +4,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test the functionality of FroggerModel
+ */
 public class FroggerModelTest {
     FroggerModel instance = null;
 

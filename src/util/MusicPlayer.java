@@ -65,4 +65,13 @@ public class MusicPlayer {
         onPlayMusic = "";
         mediaPlayer.stop();
     }
+
+    /**
+     * Get the name of present music name
+     *
+     * @return Present music name
+     */
+    public static String getPresentMusic(){
+        return onPlayMusic;
+    }
 }

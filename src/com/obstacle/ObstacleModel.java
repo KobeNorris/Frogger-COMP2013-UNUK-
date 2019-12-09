@@ -8,7 +8,7 @@ import com.Model;
 public class ObstacleModel implements Model {
     public double speed;
 
-    protected ObstacleModel(){};
+    protected ObstacleModel(){}
 
     public ObstacleModel(double speed){
         this.speed = speed;

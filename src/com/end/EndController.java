@@ -3,7 +3,7 @@ package com.end;
 import com.Controller;
 
 /**
- *
+ * This is the controller class for view which stores End's present status
  */
 public class EndController implements Controller {
     public EndModel model;

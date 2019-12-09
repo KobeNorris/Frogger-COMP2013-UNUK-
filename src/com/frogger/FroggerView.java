@@ -39,6 +39,9 @@ public class FroggerView extends View {
         return view;
     }
 
+    /**
+     * Initialise frogger's position, status and image, add keyboard listeners
+     */
     private FroggerView(){
         createModel();
         createController();
@@ -70,6 +73,9 @@ public class FroggerView extends View {
         this.controller = new FroggerController(this.model);
     }
 
+    /**
+     * Set frogger's position and status back to the start of the game
+     */
     public void setBackToStart(){
         setX(originPositionX);
         setY(originPositionY);
@@ -81,6 +87,9 @@ public class FroggerView extends View {
         setImage(imgUp);
     }
 
+    /**
+     * Call the game end functions
+     */
     public void changeEnd(){
         if(this.model.gameMode.equals("Hard")){
             HardGameController.changeEnd();
@@ -89,6 +98,9 @@ public class FroggerView extends View {
         }
     }
 
+    /**
+     * Pre-load the image resources
+     */
     public void loadImage(){
         imgUp = new Image(this.model.getFilePath() + "froggerUp.png", imgSize, imgSize, true, true);
         imgLeft = new Image(this.model.getFilePath() + "froggerLeft.png", imgSize, imgSize, true, true);
@@ -108,6 +120,11 @@ public class FroggerView extends View {
         roadDeath3 = new Image(this.model.getFilePath() + "carDeath3.png", imgSize, imgSize, true, true);
     }
 
+    /**
+     * Listen to the key board press event, listens to W, A, S and D keys
+     *
+     * @param pressedKey The key has been pressed
+     */
     public void keyBoardPress(KeyCode pressedKey){
         if(!this.model.noMove && (previousKey == pressedKey || previousKey == null)){
             if(moveComplete){
@@ -161,6 +178,11 @@ public class FroggerView extends View {
         }
     }
 
+    /**
+     * Listen to the key board release event, listens to W, A, S and D keys
+     *
+     * @param releasedKey The key has been released
+     */
     public void keyBoardRelease(KeyCode releasedKey){
         if(!this.model.noMove && previousKey == releasedKey){
             previousKey = null;
@@ -205,6 +227,12 @@ public class FroggerView extends View {
         moveComplete = false;
     }
 
+    /**
+     * Demonstrate the frames of water death
+     *
+     * @param timer The current value of time counter
+     * @return Whether the demonstration is finished
+     */
     public boolean waterDeath(long timer){
         if ((timer)% frameTimeInverval == 0)
             deathFrame++;
@@ -228,6 +256,12 @@ public class FroggerView extends View {
         }
     }
 
+    /**
+     * Demonstrate the frames of road death
+     *
+     * @param timer The current value of time counter
+     * @return Whether the demonstration is finished
+     */
     public boolean roadDeath(long timer) {
         if ((timer) % frameTimeInverval == 0)
             deathFrame++;
@@ -284,10 +318,10 @@ public class FroggerView extends View {
     public void releaseMove(){this.model.noMove = false;}
 
     /**
+     * Check frogger's selected attributes
      *
-     *
-     * @param attribute
-     * @return
+     * @param attribute Target attribute
+     * @return The value of the attribute
      */
     public boolean checkAttribute(String attribute){
         switch(attribute){

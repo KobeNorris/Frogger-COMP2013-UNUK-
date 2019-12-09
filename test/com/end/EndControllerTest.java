@@ -1,17 +1,23 @@
 package com.end;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test the functionality of EndController
+ */
 public class EndControllerTest {
     EndController instance = null;
 
+    @Before
+    public void initialise(){
+        instance = new EndController(new EndModel());
+    }
+
     @Test
     public void setStatus() {
-        if(this.instance == null)
-            instance = new EndController(new EndModel());
-
         instance.setStatus("frog");
         assertEquals(instance.model.getStatus(), EndModel.Status.FROGOCCUPIED);
         instance.setStatus("bug");

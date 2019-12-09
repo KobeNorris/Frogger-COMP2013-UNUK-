@@ -1,30 +1,35 @@
 package com.frogger;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test the functionality of FroggerController
+ */
 public class FroggerControllerTest {
     FroggerController instance = null;
 
+    @Before
+    public void initialise(){
+        instance = new FroggerController(new FroggerModel());
+    }
+
     @Test
     public void revive() {
-        if(instance == null)
-            instance = new FroggerController(new FroggerModel());
+        int lifeNumber = instance.model.life;
 
         instance.revive();
         assertEquals(instance.model.getStatus(), FroggerModel.Status.ALIVE);
         assertFalse(instance.model.noMove);
         assertTrue(instance.model.changeLife);
         assertEquals(instance.model.getPoints(), 0);
-        assertEquals(instance.model.life, 3);
+        assertEquals(instance.model.life, lifeNumber - 1);
     }
 
     @Test
     public void resetToStart() {
-        if(instance == null)
-            instance = new FroggerController(new FroggerModel());
-
         instance.resetToStart();
         assertEquals(instance.model.getStatus(), FroggerModel.Status.ALIVE);
         assertFalse(instance.model.noMove);
@@ -35,9 +40,6 @@ public class FroggerControllerTest {
 
     @Test
     public void bonusPoints() {
-        if(instance == null)
-            instance = new FroggerController(new FroggerModel());
-
         int originPoints = instance.model.getPoints();
         instance.bonusPoints();
         assertEquals(instance.model.getPoints(), originPoints + 50);
@@ -45,10 +47,7 @@ public class FroggerControllerTest {
 
     @Test
     public void blockMove() {
-        if(instance == null)
-            instance = new FroggerController(new FroggerModel());
-
         instance.blockMove();
-        assertFalse(instance.model.noMove);
+        assertTrue(instance.model.noMove);
     }
 }

@@ -1,23 +1,28 @@
 package com.end;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test the functionality of EndModel
+ */
 public class EndModelTest {
     EndModel instance = null;
 
+    @Before
+    public void initialise(){
+        instance = new EndModel();
+    }
+
     @Test
     public void getStatus() {
-        if(instance == null)
-            instance = new EndModel();
         assertEquals(instance.getStatus(), EndModel.Status.EMPTY);
     }
 
     @Test
     public void setStatus() {
-        if(instance == null)
-            instance = new EndModel();
         instance.setStatus(EndModel.Status.FROGOCCUPIED);
         assertEquals(instance.getStatus(), EndModel.Status.FROGOCCUPIED);
         instance.setStatus(EndModel.Status.BUGOCCUPIED);
@@ -30,8 +35,6 @@ public class EndModelTest {
 
     @Test
     public void frogOccupied() {
-        if(instance == null)
-            instance = new EndModel();
         instance.setStatus(EndModel.Status.BUGOCCUPIED);
         instance.frogOccupied();
         assertEquals(instance.getStatus(), EndModel.Status.FROGOCCUPIED);
@@ -45,8 +48,6 @@ public class EndModelTest {
 
     @Test
     public void crocOccupied() {
-        if(instance == null)
-            instance = new EndModel();
         instance.setStatus(EndModel.Status.FROGOCCUPIED);
         instance.crocOccupied();
         assertEquals(instance.getStatus(), EndModel.Status.CROCOCCUPIED);
@@ -60,8 +61,6 @@ public class EndModelTest {
 
     @Test
     public void bugOccupied() {
-        if(instance == null)
-            instance = new EndModel();
         instance.setStatus(EndModel.Status.FROGOCCUPIED);
         instance.bugOccupied();
         assertEquals(instance.getStatus(), EndModel.Status.BUGOCCUPIED);
@@ -75,8 +74,6 @@ public class EndModelTest {
 
     @Test
     public void setToEmpty() {
-        if(instance == null)
-            instance = new EndModel();
         instance.setStatus(EndModel.Status.FROGOCCUPIED);
         instance.setToEmpty();
         assertEquals(instance.getStatus(), EndModel.Status.EMPTY);
