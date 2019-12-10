@@ -19,14 +19,13 @@ public class CrocodileBodyView extends PlatformView {
      *
      * @param positionX CrocodileBodyView's X position
      * @param positionY CrocodileBodyView's Y position
-     * @param width  CrocodileBodyView's width
-     * @param height CrocodileBodyView's height
-     * @param speed  CrocodileBodyView's speed
+     * @param size CrocodileBodyView's size
+     * @param speed CrocodileBodyView's speed
      */
-    public CrocodileBodyView(double positionX, double positionY, double width, double height, double speed) {
+    public CrocodileBodyView(double positionX, double positionY, double size, double speed) {
         createModel(speed);
         createController();
-        setImage(new Image(this.filePath, width, height, true, true));
+        setImage(new Image(this.filePath, size, size, true, true));
         setX(positionX);
         setY(positionY);
     }

@@ -23,16 +23,15 @@ public class CrocodileHeadView extends PlatformView {
      *
      * @param positionX CrocodileHeadView's X position
      * @param positionY CrocodileHeadView's Y position
-     * @param width  CrocodileHeadView's width
-     * @param height CrocodileHeadView's height
+     * @param size  CrocodileHeadView's size
      * @param speed  CrocodileHeadView's speed
      */
-    public CrocodileHeadView(int positionX, int positionY, double width, double height, double speed) {
+    public CrocodileHeadView(double positionX, double positionY, double size, double speed) {
         createModel(speed);
         createController();
 
-        this.mouthCloseFrame = new Image(this.filePath + "cro_closed.png", width, height, true, true);
-        this.mouthOpenFrame = new Image(this.filePath + "cro_open.png", width, height, true, true);
+        this.mouthCloseFrame = new Image(this.filePath + "cro_closed.png", size, size, true, true);
+        this.mouthOpenFrame = new Image(this.filePath + "cro_open.png", size, size, true, true);
 
         setX(positionX);
         setY(positionY);

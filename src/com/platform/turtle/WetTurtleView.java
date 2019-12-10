@@ -21,18 +21,17 @@ public class WetTurtleView extends PlatformView {
      *
      * @param positionX WetTurtleView's X position
      * @param positionY WetTurtleView's Y position
-     * @param width  WetTurtleView's width
-     * @param height WetTurtleView's height
+     * @param size  WetTurtleView's size
      * @param speed  WetTurtleView's speed
      */
-    public WetTurtleView(int positionX, int positionY, double width, double height, double speed) {
+    public WetTurtleView(double positionX, double positionY, double size, double speed) {
         createModel(speed);
         createController();
 
-        this.firstFrame = new Image(this.filePath + "turtleAnimation1.png", width, height, true, true);
-        this.secondFrame = new Image(this.filePath + "turtleAnimation2Wet.png", width, height, true, true);
-        this.thirdFrame = new Image(this.filePath + "turtleAnimation3Wet.png", width, height, true, true);
-        this.fourthFrame = new Image(this.filePath + "turtleAnimation4Wet.png", width, height, true, true);
+        this.firstFrame = new Image(this.filePath + "turtleAnimation1.png", size, size, true, true);
+        this.secondFrame = new Image(this.filePath + "turtleAnimation2Wet.png", size, size, true, true);
+        this.thirdFrame = new Image(this.filePath + "turtleAnimation3Wet.png", size, size, true, true);
+        this.fourthFrame = new Image(this.filePath + "turtleAnimation4Wet.png", size, size, true, true);
 
         setX(positionX);
         setY(positionY);

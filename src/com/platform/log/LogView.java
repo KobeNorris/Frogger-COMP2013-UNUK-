@@ -24,25 +24,24 @@ public class LogView extends PlatformView {
      * @param type Type of the log View
      * @param positionX LogView's X position
      * @param positionY LogView's Y position
-     * @param width  LogView's width
-     * @param height LogView's height
+     * @param size  LogView's size
      * @param speed  LogView's speed
      */
-    public LogView(String type, double positionX, double positionY, double width, double height, double speed) {
+    public LogView(String type, double positionX, double positionY, double size, double speed) {
         createModel(speed);
         createController();
 
         switch(type){
             case "long":
-                setImage(new Image(this.filePath + "longLog.png", width, height, true, true));
+                setImage(new Image(this.filePath + "longLog.png", size, size, true, true));
                 break;
 
             case "middle":
-                setImage(new Image(this.filePath + "middleLog.png", width, height, true, true));
+                setImage(new Image(this.filePath + "middleLog.png", size, size, true, true));
                 break;
 
             case "short":
-                setImage(new Image(this.filePath + "shortLog.png", width, height, true, true));
+                setImage(new Image(this.filePath + "shortLog.png", size, size, true, true));
                 break;
 
             default:
