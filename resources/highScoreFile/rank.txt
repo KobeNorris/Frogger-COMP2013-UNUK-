@@ -12,9 +12,9 @@ ja
 50
 sdasdas
 0
-Empty
--1
-Empty
--1
+kobe
+0
+asdsad
+0
 Empty
 -1
