@@ -1,5 +1,6 @@
 package controller.gameController;
 
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -15,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 
+import javax.swing.text.html.ImageView;
 import java.util.ArrayList;
 
 /**
@@ -31,7 +33,8 @@ public abstract class GameController{
     public AnimationTimer timer;
     public static FroggerView frogger;
     public boolean restart = false, pause = false, running = true;
-    protected static Text playerScoreBoard, playerTimeBoard, playerLifeBoard, gameMode;
+    protected Text playerScoreBoard, playerTimeBoard, playerLifeBoard, gameMode;
+    protected ImageView[] lifeIcon;
     protected long lastTimer;
     protected int leftEndChangeTime = 5;
 
@@ -90,7 +93,7 @@ public abstract class GameController{
      * @param presentScore Present score player gaines
      */
     public void updateScore(int presentScore) {
-        playerScoreBoard.setText("score: " + presentScore);
+        playerScoreBoard.setText("Score: " + presentScore);
     }
 
     /**
@@ -120,7 +123,7 @@ public abstract class GameController{
      * @param presentLife Present life player has
      */
     public void updateLife(int presentLife) {
-        playerLifeBoard.setText(presentLife + " - UP");
+        playerLifeBoard.setText(presentLife + "-UP");
         if(presentLife > 2)
             playerLifeBoard.setFill(Color.GREEN);
         else if(presentLife == 2)
@@ -136,8 +139,8 @@ public abstract class GameController{
      * @param presentScore
      */
     public void initScore(int presentScore) {
-        playerScoreBoard = new Text(50, 70, "score: " + presentScore);
-        playerScoreBoard.setFont(Font.font ("Verdana", 20));
+        playerScoreBoard = new Text(20, 70, "Score: " + presentScore);
+        playerScoreBoard.setFont(Font.font ("Press Start 2P", 18));
         playerScoreBoard.setFill(Color.rgb(255,255,255));
         this.gameStage.getChildren().add(playerScoreBoard);
     }
@@ -149,8 +152,8 @@ public abstract class GameController{
      * @param presentTime
      */
     public void initTime(int presentTime) {
-        playerTimeBoard = new Text(430, 50, "Time: " + presentTime);
-        playerTimeBoard.setFont(Font.font ("Verdana", 30));
+        playerTimeBoard = new Text(430, 40, "Time: " + presentTime);
+        playerTimeBoard.setFont(Font.font ("Press Start 2P", 20));
         playerTimeBoard.setFill(Color.GREEN);
         this.gameStage.getChildren().add(playerTimeBoard);
     }
@@ -162,18 +165,22 @@ public abstract class GameController{
      * @param presentLife
      */
     protected void initLife(int presentLife) {
-        playerLifeBoard = new Text(55, 40, presentLife + " - UP");
-        playerLifeBoard.setFont(Font.font ("Verdana", 30));
+        playerLifeBoard = new Text(30, 40, presentLife + "-UP");
+        playerLifeBoard.setFont(Font.font ("Press Start 2P", 25));
         playerLifeBoard.setFill(Color.GREEN);
         this.gameStage.getChildren().add(playerLifeBoard);
+//        lifeIcon = new ImageView[3];
+//        for(int iTemp = 0; iTemp < 3; iTemp++){
+//            lifeIcon[iTemp] = new ImageView(new Image(getClass().class.getResourceAsStream("@/img/StageImg/openCG.gif"));
+//        }
     }
 
     /**
      *
      */
     public void initGameMode(String gameMode){
-        this.gameMode = new Text(210, 40, gameMode + " Mode");
-        this.gameMode.setFont(Font.font ("Verdana", 30));
+        this.gameMode = new Text(170, 40, gameMode + " Mode");
+        this.gameMode.setFont(Font.font ("Press Start 2P", 30));
         this.gameMode.setFill(Color.WHITE);
         this.gameStage.getChildren().add(this.gameMode);
     }

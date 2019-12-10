@@ -13,6 +13,10 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="controller.gameController.EasyGameController"
       prefHeight="800.0" prefWidth="600.0">
+    <stylesheets>
+        <URL value="@/css/gameStage.css" />
+    </stylesheets>
+
     <children>
         <ImageView fitHeight="800" fitWidth="600" layoutX="0" layoutY="0" pickOnBounds="true" preserveRatio="true">
             <image>

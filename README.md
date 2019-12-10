@@ -29,25 +29,31 @@
         * Fixed by applying ```Text``` ```playerScoreBoard```;
 
 * **MVC design pattern**
-    1. Refactored ```MyStage``` and ```World``` <03/Dec/2019>:
-        * ```World``` is refactored into ```GameController``` to be extends into different game modes;
+    1. Refactored ```World``` <03/Dec/2019>:
+        * ```World``` is refactored into ```GameController```;
         * Background image is allocated in FXML files of game modes;
-        * Main features of ```MyStage``` is refactored into ```MusicPlayer```.
+        * Better extendability, different game modes could be extended from it.
 
     2. Refactored ```Actor``` and all of its child classes <26/Nov/2019>:
         * ```Actor``` is refactored into ```View```, ```Controller``` and ```Model```;
         * Elements will large classes e.g.```Animal```, are broken down into three classes;
-        * Other game elements have their own ```View``` class.
+        * Other game elements have their own ```View``` class;
+        * Better testability, extendability (```Controller``` and ```Model``` provide extra interfaces).
 
-    3. New pages all applied MVC design pattern <01/Dec/2019>
+    3. New pages all applied MVC design pattern <01/Dec/2019>:
+        * Easy for future maintenance and extension.
 
 * **SINGLETON  design pattern**
-    1. ```FroggerView``` <20/Nov/2019>: Only be accessed by ```getInstance()```;
+    1. ```FroggerView``` <20/Nov/2019>: 
+        * Only be accessed by ```getInstance()```.
 
-    2. ```MusicPlayer``` <29/Nov/2019>: Only contains ```static``` methods.
+    2. ```MusicPlayer``` <29/Nov/2019>: 
+        * ```MyStage```'s feature is refactored into ```MusicPlayer``` (Better utility);
+        * Only contains ```static``` methods.
 
 * **Factory design pattern**
-    1. ```ElementFactory```<10/Dec/2019>: A factory for ```View``` and all of its child classes.
+    1. ```ElementFactory```<10/Dec/2019>: 
+        * A factory for ```View``` and all of its child classes.
 ----
 ## For extension
 
@@ -61,7 +67,7 @@
     
 * **Game termination**
     1. Lost all lifes <27/Nov/2019>:
-        * Player used up his three chances of life;
+        * Player used up his all chances of life;
         * Player gets a deduction of 50 points each time.
     2. Used all time <08/Dec/2019>:
         * Each time player used up his 90 seconds, frogger dies automatically;
@@ -69,14 +75,24 @@
 
 * **Extra game elements**
     1. ```CrocEnd``` and ```BugEnd``` classes <01/Dec/2019>:
+    
+        ![avatar](resources/img/End/EmptyEnd.png)
+        ![avatar](resources/img/End/FrogEnd.png)
+        ![avatar](resources/img/End/CrocEnd.png)
+        ![avatar](resources/img/End/BugEnd.png)
         * Implemented in ```Hard``` mode and ```Infinite``` mode;
         * ```End``` status could change in every 6 seconds;
         * ```CrocEnd```: A lethal ```End``` which could kill the frogger;
         * ```BugEnd```: An ```End``` with a snack which provides player extra bonus.
     2. ```Snake``` <05/Dec/2019>:
+    
+        ![avatar](resources/img/Obstacle/snake/snake.gif)
         * Implemented in ```Hard``` mode and ```Infinite``` mode;
         * A lethal ```Snake``` appears in the middle lane of the game stage.
     3. ```Crocodile``` <07/Dec/2019>:
+    
+        ![avatar](resources/img/Platform/Crocodile/cro_body.png)
+        ![avatar](resources/img/Platform/Crocodile/cro_open.png)
         * Implemented in ```Hard``` mode and ```Infinite``` mode;
         * The head of ```Crocodile``` is lethal when it is open.
 

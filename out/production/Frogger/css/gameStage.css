@@ -1,0 +1,8 @@
+/*Game stage*/
+@font-face{
+    src:url("../font/PressStart2P.ttf");
+}
+Text{
+     -fx-font-family: "Press Start 2P";
+     -fx-scale-x: 0.85;
+}

@@ -81,7 +81,7 @@ public class InfiniteGameController extends HardGameController{
         initTime(90);
         initScore(0);
         initLife(3);
-        initGameMode("Infinite");
+        initGameMode("Infi");
 
         initLevel(1);
 
@@ -105,7 +105,7 @@ public class InfiniteGameController extends HardGameController{
      * @param presentLevel Present difficulty level player has reached
      */
     public static void updateDifficulty(int presentLevel){
-        playerDifficultyLevelBoard.setText("Difficulty" + presentLevel);
+        playerDifficultyLevelBoard.setText("Difficulty " + presentLevel);
     }
 
     /**
@@ -114,8 +114,8 @@ public class InfiniteGameController extends HardGameController{
      * @param presentLevel Present difficulty level player has reached
      */
     public void initLevel(int presentLevel){
-        playerDifficultyLevelBoard = new Text(240, 70, "Difficulty" + presentLevel);
-        playerDifficultyLevelBoard.setFont(Font.font ("Verdana", 25));
+        playerDifficultyLevelBoard = new Text(180, 70, "Difficulty " + presentLevel);
+        playerDifficultyLevelBoard.setFont(Font.font ("Press Start 2P", 20));
         playerDifficultyLevelBoard.setFill(Color.RED);
         this.gameStage.getChildren().add(playerDifficultyLevelBoard);
     }

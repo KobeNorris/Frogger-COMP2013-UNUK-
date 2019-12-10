@@ -8,10 +8,15 @@
 
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+<?import java.net.URL?>
 <Pane fx:id="gameStage" xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="controller.gameController.HardGameController"
       prefHeight="800.0" prefWidth="600.0">
+    <stylesheets>
+        <URL value="@/css/gameStage.css" />
+    </stylesheets>
+
     <children>
         <ImageView fitHeight="800" fitWidth="600" layoutX="0" layoutY="0" pickOnBounds="true" preserveRatio="true">
             <image>
