@@ -21,17 +21,16 @@ public class DryTurtleView extends PlatformView {
      *
      * @param positionX DryTurtleView's X position
      * @param positionY DryTurtleView's Y position
-     * @param width  DryTurtleView's width
-     * @param height DryTurtleView's height
-     * @param speed  DryTurtleView's speed
+     * @param size DryTurtleView's size
+     * @param speed DryTurtleView's speed
      */
-    public DryTurtleView(double positionX, double positionY, double width, double height, double speed) {
+    public DryTurtleView(double positionX, double positionY, double size, double speed) {
         createModel(speed);
         createController();
 
-        this.firstFrame = new Image(this.filePath + "turtleAnimation1.png", width, height, true, true);
-        this.secondFrame = new Image(this.filePath + "turtleAnimation2.png", width, height, true, true);
-        this.thirdFrame = new Image(this.filePath + "turtleAnimation3.png", width, height, true, true);
+        this.firstFrame = new Image(this.filePath + "turtleAnimation1.png", size, size, true, true);
+        this.secondFrame = new Image(this.filePath + "turtleAnimation2.png", size, size, true, true);
+        this.thirdFrame = new Image(this.filePath + "turtleAnimation3.png", size, size, true, true);
 
         setX(positionX);
         setY(positionY);
