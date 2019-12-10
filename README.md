@@ -36,6 +36,7 @@
 
     2. Refactored ```Actor``` and all of its child classes <26/Nov/2019>:
         * ```Actor``` is refactored into ```View```, ```Controller``` and ```Model```;
+        * Elements will large classes e.g.```Animal```, are broken down into three classes;
         * Other game elements have their own ```View``` class.
 
     3. New pages all applied MVC design pattern <01/Dec/2019>
@@ -46,7 +47,7 @@
     2. ```MusicPlayer``` <29/Nov/2019>: Only contains ```static``` methods.
 
 * **Factory design pattern**
-    1. ```ElementFactory``` for ```View``` and all of its child classes.
+    1. ```ElementFactory```<10/Dec/2019>: A factory for ```View``` and all of its child classes.
 ----
 ## For extension
 
@@ -93,3 +94,5 @@
     4. ```InfiniteGameController``` <02/Dec/2019>:
         * Implemented in ```Infinite``` mode;
         * Player could play infinite terms of game with increasing difficulty.
+    5. Background music:
+        * Different music for different groups of pages.
