@@ -85,7 +85,7 @@ public class FroggerController implements Controller{
                 return true;
             }else{
                 PlatformView inspectObject = view.getIntersectingObjects(PlatformView.class).get(0);
-                view.move(inspectObject.getSpeed() * Main.diffficulty , 0);
+                view.move(inspectObject.getSpeed(), 0);
                 if(view.getIntersectingObjects(PlatformView.class).get(0).isSunk()){
                     this.model.setStatus(FroggerModel.Status.WATERDEATH);
                     blockMove();

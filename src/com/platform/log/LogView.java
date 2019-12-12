@@ -14,8 +14,6 @@ import gameApp.Main;
  *      3. Short.
  */
 public class LogView extends PlatformView {
-    private PlatformModel model;
-    private PlatformController controller;
     private String filePath = "file:resources/img/Platform/Log/";
 
     /**
@@ -51,27 +49,5 @@ public class LogView extends PlatformView {
     }
 
     @Override
-    public void createModel(double speed){
-        this.model = new PlatformModel(speed);
-    }
-
-    @Override
-    public void createController(){
-        this.controller = new PlatformController(this.model);
-    }
-
-    @Override
-    public boolean isSunk(){return this.model.isSunk;}
-
-    @Override
-    public double getSpeed(){return this.model.speed;}
-
-    @Override
-    public void act(long timer) {
-        move(this.model.speed  * Main.diffficulty, 0);
-        if (getX() > 700 && this.model.speed > 0)
-            setX(-300);
-        if (getX() < -300 && this.model.speed < 0)
-            setX(700);
-    }
+    protected void swimAction(long timer){}
 }

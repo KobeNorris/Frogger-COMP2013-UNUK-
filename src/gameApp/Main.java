@@ -21,7 +21,7 @@ public class Main extends Application{
 
     private static Stage presentStage;
     private static GameController controller;
-    public static int points = 0, diffficulty = 1;
+    public static int points = 0, difficulty;
     public static Stage getPresentStage(){return presentStage;}
 
     /**

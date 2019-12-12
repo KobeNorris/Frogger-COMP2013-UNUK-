@@ -12,8 +12,6 @@ import gameApp.Main;
  */
 public class WetTurtleView extends PlatformView {
     private Image firstFrame, secondFrame, thirdFrame, fourthFrame;
-    private PlatformController controller;
-    private PlatformModel model;
     private String filePath = "file:resources/img/Platform/Turtle/";
 
     /**
@@ -37,59 +35,34 @@ public class WetTurtleView extends PlatformView {
         setY(positionY);
     }
 
-    @Override
-    public void createModel(double speed){
-        this.model = new PlatformModel(speed);
-    }
-
-    @Override
-    public void createController(){
-        this.controller = new PlatformController(this.model);
-    }
-
     /**
      * The change frequency of wet turtle animation frames and isSunk status
      *
      * @param timer The value of current time counter
      */
-    public void turtleSwim(long timer){
+    @Override
+    public void swimAction(long timer){
         switch ((int)(timer/600000000 % 4)){
             case 0:
                 setImage(this.firstFrame);
-                this.model.isSunk = false;
+                this.model.setStatus(false);
                 break;
 
             case 1:
                 setImage(this.secondFrame);
-                this.model.isSunk = false;
+                this.model.setStatus(false);
                 break;
 
             case 2:
                 setImage(this.thirdFrame);
-                this.model.isSunk = false;
+                this.model.setStatus(false);
                 break;
 
             case 3:
                 setImage(this.fourthFrame);
-                this.model.isSunk = true;
+                this.model.setStatus(true);
 
             default:
         }
-    }
-
-    @Override
-    public boolean isSunk(){return this.model.isSunk;}
-
-    @Override
-    public double getSpeed(){return this.model.speed;}
-
-    @Override
-    public void act(long timer) {
-        move(this.model.speed  * Main.diffficulty, 0);
-        if (getX() > 700 && this.model.speed > 0)
-            setX(-300);
-        if (getX() < -300 && this.model.speed < 0)
-            setX(700);
-        turtleSwim(timer);
     }
 }

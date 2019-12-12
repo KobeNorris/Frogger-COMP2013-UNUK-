@@ -13,8 +13,6 @@ import gameApp.Main;
 public class SnakeView extends ObstacleView {
     private Image snake[];
     private int imageIndex = 0, timerInterval = 500;
-    private ObstacleModel model;
-    private ObstacleController controller;
     private String filePath = "file:resources/img/Obstacle/snake/";
 
     /**
@@ -39,22 +37,13 @@ public class SnakeView extends ObstacleView {
     }
 
     @Override
-    public void createModel(double speed){
-        this.model = new ObstacleModel(speed);
-    }
-
-    @Override
-    public void createController(){
-        this.controller = new ObstacleController(this.model);
-    }
-
-    @Override
     public void act(long timer) {
-        move(this.model.speed  * Main.diffficulty, 0);
-        if (getX() > 700 && this.model.speed > 0)
+        move(this.model.getSpeed(), 0);
+        if (getX() > 700 && this.model.getSpeed() > 0)
             setX(-300);
-        if (getX() < -300 && this.model.speed < 0)
+        else if (getX() < -300 && this.model.getSpeed() < 0)
             setX(700);
+
         if(timer % timerInterval == 0){
             if(imageIndex >= 6)
                 imageIndex = 0;

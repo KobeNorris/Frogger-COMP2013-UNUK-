@@ -8,6 +8,9 @@ import com.View;
  * when it touches them
  */
 public abstract class ObstacleView extends View {
+    protected ObstacleModel model;
+    protected ObstacleController controller;
+
     protected ObstacleView(){}
 
     /**
@@ -15,19 +18,23 @@ public abstract class ObstacleView extends View {
      *
      * @param speed The speed of the element
      */
-    protected abstract void createModel(double speed);
+    protected void createModel(double speed){
+        this.model = new ObstacleModel(speed);
+    }
 
     /**
      * This method initialise the Controller of ObstacleView=
      */
-    protected abstract void createController();
+    protected void createController(){
+        this.controller = new ObstacleController(this.model);
+    }
 
     @Override
-    public void act(long timer){};
-
-    public ObstacleView(String imageLink, int positionX, int positionY, double width, double height) {
-        setImage(new Image(imageLink, width, height, true, true));
-        setX(positionX);
-        setY(positionY);
-    }
+    public void act(long timer){{
+        move(this.model.getSpeed(), 0);
+        if (getX() > 700 && this.model.getSpeed() > 0)
+            setX(-300);
+        else if (getX() < -300 && this.model.getSpeed() < 0)
+            setX(700);
+    }};
 }

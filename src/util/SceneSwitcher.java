@@ -115,7 +115,7 @@ public class SceneSwitcher {
      * @throws IOException  Exceptions happen in the process of load FXML file
      */
     public static void jumpToEasyGame() throws IOException {
-        Main.diffficulty = 1;
+        Main.difficulty = 1;
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/gameView/EasyGameView.fxml"));
         Scene game  = new Scene(loader.load(),600,800);
         controller = loader.<GameController>getController();
@@ -134,7 +134,7 @@ public class SceneSwitcher {
      * @throws IOException  Exceptions happen in the process of load FXML file
      */
     public static void jumpToHardGame() throws IOException {
-        Main.diffficulty = 1;
+        Main.difficulty = 1;
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/gameView/HardGameView.fxml"));
         Scene game  = new Scene(loader.load(),600,800);
         controller = loader.<GameController>getController();
@@ -153,7 +153,7 @@ public class SceneSwitcher {
      * @throws IOException  Exceptions happen in the process of load FXML file
      */
     public static void jumpToInfiniteGame() throws IOException {
-        Main.diffficulty = 1;
+        Main.difficulty = 1;
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/gameView/InfiniteGameView.fxml"));
         Scene game  = new Scene(loader.load(),600,800);
         controller = loader.<GameController>getController();

@@ -92,7 +92,7 @@ public class InfiniteGameController extends HardGameController{
      * Reset the frogger and ends back to the start status and position
      */
     public static void resetGame(){
-        updateDifficulty(++Main.diffficulty);
+        updateDifficulty(++Main.difficulty);
         for(int iTemp = 0; iTemp < 5; iTemp++){
             endList[iTemp].occupyEnd("empty");
         }
