@@ -8,7 +8,7 @@ import java.io.*;
  * could check whether a pair of name and score could be able to
  * store in the file.
  */
-public class FileProcesscer {
+public class FileProcessor {
     private String[] nameList;
     private int[] scoreList;
     private int numOfElement;
@@ -16,13 +16,13 @@ public class FileProcesscer {
     /**
      * Default constructor which could handle a list of 5 element
      */
-    public FileProcesscer(){
+    public FileProcessor(){
         this.numOfElement = 10;
         this.nameList = new String[numOfElement];
         this.scoreList = new int[numOfElement];
     }
 
-    public FileProcesscer(int numOfElement){
+    public FileProcessor(int numOfElement){
         this.numOfElement = numOfElement;
         this.nameList = new String[numOfElement];
         this.scoreList = new int[numOfElement];

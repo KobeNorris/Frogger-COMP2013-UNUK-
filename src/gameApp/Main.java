@@ -1,7 +1,7 @@
 package gameApp;
 
 import controller.gameController.GameController;
-import util.FileProcesscer;
+import util.FileProcessor;
 import util.SceneSwitcher;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -61,7 +61,7 @@ public class Main extends Application{
      */
     private static void switchPreparation(String filePath){
         try{
-            FileProcesscer i = new FileProcesscer();
+            FileProcessor i = new FileProcessor();
             i.readFile(filePath);
             points = controller.frogger.getPoints();
             if(i.checkInsertable(controller.frogger.getPoints())){

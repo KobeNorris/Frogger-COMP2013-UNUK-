@@ -2,7 +2,7 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import util.FileProcesscer;
+import util.FileProcessor;
 import util.SceneSwitcher;
 
 
@@ -33,7 +33,7 @@ public class HighScoreController {
         int[] scoreList;
 
         try {
-            FileProcesscer i = new FileProcesscer(10);
+            FileProcessor i = new FileProcessor(10);
             i.readFile("resources/highScoreFile/rank.txt");
             nameList = i.getName();
             scoreList = i.getScore();

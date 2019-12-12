@@ -5,7 +5,6 @@ import javafx.scene.input.KeyEvent;
 import controller.gameController.GameController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-//import main.GameApp;
 import javafx.scene.layout.Pane;
 import gameApp.Main;
 

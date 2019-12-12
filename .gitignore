@@ -1,0 +1,8 @@
+#Ignore insignificant files
+
+#The complied output of IntelliJ
+out/
+
+# The file-based project format should be ignored
+*.iws
+
