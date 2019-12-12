@@ -4,6 +4,15 @@ import com.Model;
 
 /**
  * This is the model class for view which stores End's present status
+ *
+ * <p>
+ *     <p>Refactor:
+ *      <p>1. Handle the change of end's status;
+ *      <p>2. Store the access to the image resource.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.3
  */
 public class EndModel implements Model {
     private Status status;
@@ -46,7 +55,11 @@ public class EndModel implements Model {
     public void setToEmpty(){this.status = Status.EMPTY;}
 
     /**
-     * The status of Ends
+     * The status of Ends, include:
+     *      <p>1. Empty end;
+     *      <p>2. End been occupied by frogger;
+     *      <p>3. End been occupied by crocodile;
+     *      <p>4. End been occupied by bug.
      */
     enum Status{
         EMPTY(0),

@@ -8,13 +8,20 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 /**
- * GameApp class extends from Application, launch different stages of game and store the present points
+ * <p>
+ *      GameApp class extends from Application, launch different stages of game and store the present points
  * player gains and the difficulty player reached. During the execution of the program, Main will keep
  * supervise whether game status has been changed.
  *
- * Refactor:
- *      1. Removed the game scene initialisation code to improve code extendability & reusability;
- *      2. Removed the digit display function and transform it into part of the scene initialisation
+ * <p>
+ *      <p>Refactor:
+ *          <p>1. Removed the game scene initialisation code to improve code extendability & reusability;
+ *          <p>2. Removed the digit display function and transform it into part of the scene initialisation;
+ *          <p>3. The program will jump to start menu first {@link SceneSwitcher#jumpToMenu()}
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.3
  */
 public class Main extends Application{
     private static AnimationTimer timer;
@@ -36,8 +43,10 @@ public class Main extends Application{
     }
 
     /**
-     * Store the present stage of the game and jump to the start menu and launch the game menu
-     * scene as the initial game stage.
+     * Store the present stage of the game and jump to the start menu {@link SceneSwitcher#jumpToMenu()}
+     * and launch the game menu scene as the initial game stage.
+     *
+     * @see SceneSwitcher#jumpToMenu()
      *
      * @param primaryStage: Solid parameter, change it to switch between different stages
      */
@@ -79,6 +88,8 @@ public class Main extends Application{
      * switch to other pages if game is ended. Here a scene switcher is
      * applied to professionally taking charge of the process of changing
      * scenes.
+     *
+     * @see GameController
      */
     private static void createTimer() {
         timer = new AnimationTimer() {

@@ -4,6 +4,14 @@ import com.Controller;
 
 /**
  * This is the controller class for view which stores End's present status
+ *
+ * <p>
+ *     <p>Refactor:
+ *          <p>1. Pass the instruction from view to model.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.2
  */
 public class EndController implements Controller {
     public EndModel model;

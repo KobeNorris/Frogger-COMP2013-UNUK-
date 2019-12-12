@@ -12,6 +12,9 @@ import com.View;
 /**
  * This is the View class for frogger, which displays the moving frames, death animation and
  * defines the key board listener
+ *
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public class FroggerView extends View {
     private Image imgUp, imgLeft, imgRight, imgDown, imgUpJump, imgLeftJump, imgRightJump, imgDownJump;

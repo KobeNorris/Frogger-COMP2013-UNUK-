@@ -1,10 +1,21 @@
 package com.end;
 
+import controller.gameController.HardGameController;
+import controller.gameController.InfiniteGameController;
 import javafx.scene.image.Image;
 import com.View;
 
 /**
  * This End class is refactored from original End class, has 4 status in total.
+ *
+ * <p>
+ *     <p>Refactor:
+ *          <p>1. This class is purely used for demonstration
+ *          <p>2. Move the methods related to End status to EndModel and EndController
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.3
  */
 public class EndView extends View {
     private Image emptyEnd, frogOccupiedEnd, crocOccupiedEnd, bugOccupiedEnd;
@@ -34,6 +45,7 @@ public class EndView extends View {
         setY(positionY);
     }
 
+    @Override
     public void createModel(){
         this.model = new EndModel();
     }
@@ -103,6 +115,12 @@ public class EndView extends View {
         }
     }
 
+    /**
+     * EndView will not change itself during the execution, it could only be manipulated by
+     * gameControllers {@link HardGameController#changeEnd()} and {@link InfiniteGameController#changeEnd()}
+     *
+     * @param timer Value of present timer counter
+     */
     @Override
     public void act(long timer){}
 }

@@ -16,7 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 
-import javax.swing.text.html.ImageView;
+//import javax.swing.text.html.ImageView;
 import java.util.ArrayList;
 
 /**
@@ -34,7 +34,7 @@ public abstract class GameController{
     public static FroggerView frogger;
     public boolean restart = false, pause = false, running = true;
     protected Text playerScoreBoard, playerTimeBoard, playerLifeBoard, gameMode;
-    protected ImageView[] lifeIcon;
+//    protected ImageView[] lifeIcon;
     protected long lastTimer;
     protected int leftEndChangeTime = 5;
 

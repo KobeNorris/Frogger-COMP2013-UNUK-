@@ -19,7 +19,6 @@
    <children>
       <ImageView fitHeight="800" fitWidth="600" layoutX="0" layoutY="0" pickOnBounds="true" preserveRatio="true">
          <image>
-<!--            <Image url="@../../resources/img/StageImg/openCG.gif" />-->
              <Image url="@/img/StageImg/openCG.gif" />
          </image>
       </ImageView>
