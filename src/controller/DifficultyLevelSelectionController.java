@@ -8,12 +8,16 @@ import java.io.IOException;
 /**
  * This class is the controller for game difficulty selection page, it could jump to
  * games with different difficulty according to player's choice:
- *          1. Easy game: Game with little traffic and lots of logs, and turtles. There is no snake in the middle
+ *          <p>1. Easy game: Game with little traffic and lots of logs, and turtles. There is no snake in the middle
  *          lane and the crocodiles and bugs will not appear in the ends;
- *          2. Hard game: Game with more traffic and fewer logs, and turtles. There will be snake appears in the middle
+ *          <p>2. Hard game: Game with more traffic and fewer logs, and turtles. There will be snake appears in the middle
  *          lane and the crocodiles and bugs will appear in the ends;
- *          3. Infinite game: Game with same mode as hard game, but in this mode, each time player passed the game, the
+ *          <p>3. Infinite game: Game with same mode as hard game, but in this mode, each time player passed the game, the
  *          difficulty will increase and so on and so forth till user has used up his 3 chances.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.2
  */
 public class DifficultyLevelSelectionController {
     /**

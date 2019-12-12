@@ -9,6 +9,10 @@ import gameApp.Main;
 /**
  * This is the view of wet turtle elements in game, extends from Obstacle class,
  * it includes four frames in total.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public class WetTurtleView extends PlatformView {
     private Image firstFrame, secondFrame, thirdFrame, fourthFrame;

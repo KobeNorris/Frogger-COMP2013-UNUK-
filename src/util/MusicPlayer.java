@@ -10,6 +10,10 @@ import java.io.File;
  * being used as a professional media player. It is developed to handle
  * background music switching process, is the background music is not
  * changed, music will not be switched.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.2
  */
 public class MusicPlayer {
     private static MediaPlayer mediaPlayer;
@@ -19,7 +23,7 @@ public class MusicPlayer {
      * This method will identify whether same music has been loaded and if not
      * it will stop present music and start playing the new background music
      *
-     * @param stage
+     * @param stage Present music game stage is playing
      */
     public static void loadMusic(String stage) {
         if(!onPlayMusic.equals(stage)){

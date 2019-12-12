@@ -1,4 +1,6 @@
 Kobe
+1670
+Kobe
 640
 Kobe
 570
@@ -10,11 +12,9 @@ Kobe
 550
 w
 500
+lp
+260
 Kobe
 240
 a
 180
-ja
-50
-KObe
-0

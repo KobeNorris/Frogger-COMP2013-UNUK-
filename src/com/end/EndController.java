@@ -5,11 +5,9 @@ import com.Controller;
 /**
  * This is the controller class for view which stores End's present status
  *
- * <p>
- *     <p>Refactor:
- *          <p>1. Pass the instruction from view to model.
+ *     <br>Refactor:<br>
+ *          1. Passes the instruction from view to model.<br>
  *
- * <p>
  * @author Kejia Wu, scykw1@nottingham.ac.uk
  * @version 1.2
  */

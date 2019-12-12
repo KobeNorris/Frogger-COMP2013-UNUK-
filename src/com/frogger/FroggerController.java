@@ -9,7 +9,12 @@ import com.end.EndView;
 import gameApp.Main;
 
 /**
+ * FroggerController is constructed to check and reset FroggerView's position and status,
+ * it also enhance the connection between FroggerView and FroggerModel.
  *
+ * <br>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public class FroggerController implements Controller{
     public FroggerModel model;
@@ -18,6 +23,10 @@ public class FroggerController implements Controller{
         this.model = model;
     }
 
+    /**
+     * This method resets the frogger back to start place after it is died, and
+     * check whether the game is already over.
+     */
     public void revive(){
         this.model.setStatus(FroggerModel.Status.ALIVE);
         this.model.noMove = false;
@@ -29,6 +38,10 @@ public class FroggerController implements Controller{
         }
     }
 
+    /**
+     * This method reset the Ends status and player's life back to start after the game is over,
+     * because FroggerView is an independent object applying SINGLETON design pattern.
+     */
     public void resetToStart(){
         this.model.setStatus(FroggerModel.Status.ALIVE);
         this.model.noMove = false;
@@ -37,6 +50,12 @@ public class FroggerController implements Controller{
         model.stop = false;
     }
 
+    /**
+     * This method will check current position of frogger and ensure it will not
+     * cross the boundary of the game stage
+     *
+     * @param view Present FroggerView
+     */
     public void checkBoundary(FroggerView view){
         double positionX = view.getX();
         double positionY = view.getY();
@@ -54,6 +73,12 @@ public class FroggerController implements Controller{
         }
     }
 
+    /**
+     * This method will check current height of frogger to ensure that player will
+     * get 10 points after each time he reaches present highest position.
+     *
+     * @param view Present FroggerView
+     */
     public void checkPosition(FroggerView view){
         double positionY = view.getY();
         if(model.presentHighestPosition > positionY){
@@ -63,39 +88,51 @@ public class FroggerController implements Controller{
         }
     }
 
+    /**
+     * The bonus point of 50 after player get a snack (bug in the end)
+     */
     public void bonusPoints(){
         this.model.changePoints(50);
         this.model.changeScore = true;
     }
 
+    /**
+     * Forbid player to move.
+     */
     public void blockMove(){this.model.noMove = true;}
 
-    public boolean checkStatus(FroggerView view){
+    /**
+     * This method will check frogger's present status, including:
+     *      <br>1. Die in the road (Road death);
+     *      <br>2. Die in the water (Water death);
+     *      <br>3. Reaches the end;
+     *      <br>4. Keeps alive.
+     *
+     *
+     * @param view Present FroggerView
+     */
+    public void checkStatus(FroggerView view){
         checkBoundary(view);
         if(this.model.time <= 0)
             this.model.setStatus(FroggerModel.Status.ROADDEATH);
         if (view.getIntersectingObjects(ObstacleView.class).size() >= 1) {
             this.model.setStatus(FroggerModel.Status.ROADDEATH);
             blockMove();
-            return true;
         }else if(view.getY() < 413){
             if (view.getIntersectingObjects(PlatformView.class).size() == 0){
                 this.model.setStatus(FroggerModel.Status.WATERDEATH);
                 blockMove();
-                return true;
             }else{
                 PlatformView inspectObject = view.getIntersectingObjects(PlatformView.class).get(0);
                 view.move(inspectObject.getSpeed(), 0);
                 if(view.getIntersectingObjects(PlatformView.class).get(0).isSunk()){
                     this.model.setStatus(FroggerModel.Status.WATERDEATH);
                     blockMove();
-                    return true;
                 }else if(view.getIntersectingObjects(EndView.class).size() >= 1){
                     EndView tempEndView = view.getIntersectingObjects(EndView.class).get(0);
                     if(tempEndView.checkStatusFROGOCCUPIED() || tempEndView.checkStatusCROCOCCUPIED()){
                         this.model.setStatus(FroggerModel.Status.WATERDEATH);
                         blockMove();
-                        return true;
                     }else{
                         if(tempEndView.checkStatusBUGOCCUPIED())
                             bonusPoints();
@@ -115,6 +152,5 @@ public class FroggerController implements Controller{
                 }
             }
         }
-        return false;
     }
 }

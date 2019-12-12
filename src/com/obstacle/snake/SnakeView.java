@@ -9,6 +9,10 @@ import gameApp.Main;
 
 /**
  * This is the view of snake elements in game, extends from Obstacle class
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public class SnakeView extends ObstacleView {
     private Image snake[];

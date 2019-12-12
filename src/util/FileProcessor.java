@@ -7,6 +7,10 @@ import java.io.*;
  * a file path and reads the data stores in the file. Also, it
  * could check whether a pair of name and score could be able to
  * store in the file.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.3
  */
 public class FileProcessor {
     private String[] nameList;
@@ -68,9 +72,9 @@ public class FileProcessor {
     /**
      * This method reads in the file store in the filePath parameter
      *
-     * @param filePath: The absolute directory to access the txt file storing the
+     * @param filePath The absolute directory to access the txt file storing the
      *                  data of high score.
-     * @throws IOException: The exceptions always caused by invalid file path
+     * @throws IOException The exceptions always caused by invalid file path
      */
     public void readFile(String filePath) throws IOException {
 
@@ -103,9 +107,9 @@ public class FileProcessor {
     /**
      * This method writes in the file store in the filePath parameter
      *
-     * @param filePath: The absolute directory to access the txt file storing the
+     * @param filePath The absolute directory to access the txt file storing the
      *                  data of high score.
-     * @throws IOException: The exceptions always caused by invalid file path
+     * @throws IOException The exceptions always caused by invalid file path
      */
     public void writeFile(String filePath) throws IOException{
         File file = new File(filePath);

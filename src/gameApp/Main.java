@@ -8,18 +8,15 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 /**
- * <p>
  *      GameApp class extends from Application, launch different stages of game and store the present points
  * player gains and the difficulty player reached. During the execution of the program, Main will keep
  * supervise whether game status has been changed.
  *
- * <p>
- *      <p>Refactor:
- *          <p>1. Removed the game scene initialisation code to improve code extendability & reusability;
- *          <p>2. Removed the digit display function and transform it into part of the scene initialisation;
- *          <p>3. The program will jump to start menu first {@link SceneSwitcher#jumpToMenu()}
+ *      <br>Refactor:<br>
+ *          1. Removed the game scene initialisation code to improve code extendability and reusability;<br>
+ *          2. Removed the digit display function and transform it into part of the scene initialisation;<br>
+ *          3. The program will jump to start menu first {@link SceneSwitcher#jumpToMenu()}<br>
  *
- * <p>
  * @author Kejia Wu, scykw1@nottingham.ac.uk
  * @version 1.3
  */
@@ -61,9 +58,11 @@ public class Main extends Application{
     }
 
     /**
+     * <p>
      * This function prepares for the switch of scenes after the termination of
      * game. It will judge whether player's present score is high enough to be
      * recorded into the high score list.
+     * </p>
      *
      * @param filePath: The absolute file path direct to the file storing game's
      *                  present high score.
@@ -84,10 +83,12 @@ public class Main extends Application{
     }
 
     /**
-     * Observe the update of the points & life of the frogger and then
+     * <p>
+     * Observe the update of the points and life of the frogger and then
      * switch to other pages if game is ended. Here a scene switcher is
      * applied to professionally taking charge of the process of changing
      * scenes.
+     * </p>
      *
      * @see GameController
      */

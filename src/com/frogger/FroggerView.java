@@ -11,7 +11,11 @@ import com.View;
 
 /**
  * This is the View class for frogger, which displays the moving frames, death animation and
- * defines the key board listener
+ * defines the key board listener. It is refactored from original Animal class.
+ *
+ *     <br>Refactor:<br>
+ *          1. Moved the boundary checking into FroggerController;<br>
+ *          2. Debugged the original keyboard listener and maintained the pressing move.<br>
  *
  * @author Kejia Wu, scykw1@nottingham.ac.uk
  * @version 1.4
@@ -102,7 +106,7 @@ public class FroggerView extends View {
     }
 
     /**
-     * Pre-load the image resources
+     * Pre-load the image resources in order to improve efficiency
      */
     public void loadImage(){
         imgUp = new Image(this.model.getFilePath() + "froggerUp.png", imgSize, imgSize, true, true);
@@ -316,8 +320,14 @@ public class FroggerView extends View {
         return this.model.stop;
     }
 
+    /**
+     * Block the keyboard block and forbid player to manipulate the frogger
+     */
     public void blockMove(){this.model.noMove = true;}
 
+    /**
+     * Release the keyboard block and enable player to manipulate the frogger
+     */
     public void releaseMove(){this.model.noMove = false;}
 
     /**
@@ -337,6 +347,14 @@ public class FroggerView extends View {
         }
     }
 
+    /**
+     * This method with automatically check and update the status of frogger, and if the frogger is died
+     * already, iy will check whether frogger death animation is completed or not. If so, the frogger with
+     * be set back to start position and the remaining time, frogger image will be set back to start status
+     * simultaneously.
+     *
+     * @param timer Value of present timer counter
+     */
     @Override
     public void act(long timer){
         FroggerModel.Status status = this.model.getStatus();

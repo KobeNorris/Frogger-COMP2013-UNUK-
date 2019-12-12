@@ -15,6 +15,10 @@ import java.io.IOException;
  * switch the background music simultaneously to provide better user experience.
  * During the process of switching to game scenes, a key board listener will be
  * added to the scene to enable players to pause and restart the game.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.6
  */
 public class SceneSwitcher {
     private static GameController controller;

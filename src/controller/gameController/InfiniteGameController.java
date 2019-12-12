@@ -10,6 +10,11 @@ import util.ElementFactory;
 /**
  * This function initialise the information demonstration and load the map for infinite game mode.
  * It enable the change of Ends status and the infinite playing terms.
+ * It applied {@link ElementFactory} to add elements to the scene in order to im[rove the extendability.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public class InfiniteGameController extends HardGameController{
     private static Text playerDifficultyLevelBoard;

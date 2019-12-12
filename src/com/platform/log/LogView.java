@@ -9,9 +9,13 @@ import gameApp.Main;
 /**
  * This is the view of log elements in game, extends from Platform class,
  * it includes three types in total:
- *      1. Long;
- *      2. Middle;
- *      3. Short.
+ *      <p>1. Long;
+ *      <p>2. Middle;
+ *      <p>3. Short.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.1
  */
 public class LogView extends PlatformView {
     private String filePath = "file:resources/img/Platform/Log/";
@@ -48,6 +52,11 @@ public class LogView extends PlatformView {
         setY(positionY);
     }
 
+    /**
+     * Log should have no moving animation
+     *
+     * @param timer The value of present time counter
+     */
     @Override
     protected void swimAction(long timer){}
 }

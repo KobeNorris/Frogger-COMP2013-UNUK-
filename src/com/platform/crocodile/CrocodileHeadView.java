@@ -9,8 +9,12 @@ import gameApp.Main;
 /**
  * This is the view of car elements in game, extends from Obstacle class,
  * it includes two frames in total:
- *      1. Crocodile mouth opened (isSunk == True);
- *      2. Crocodile mouth closed (isSunk == false).
+ *      <p>1. Crocodile mouth opened (isSunk == True);
+ *      <p>2. Crocodile mouth closed (isSunk == false).
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.2
  */
 public class CrocodileHeadView extends PlatformView {
     private Image mouthCloseFrame, mouthOpenFrame;

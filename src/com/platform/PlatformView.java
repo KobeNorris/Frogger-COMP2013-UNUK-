@@ -3,7 +3,11 @@ package com.platform;
 import com.View;
 
 /**
- * This is the parent class for all platforms felps player to cross river
+ * This is the parent class for all platforms helps player to cross river
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.2
  */
 public abstract class PlatformView extends View {
     protected PlatformController controller;
@@ -20,14 +24,14 @@ public abstract class PlatformView extends View {
      *
      * @param speed The speed of the element
      */
-    public void createModel(double speed){
+    protected void createModel(double speed){
         this.model = new PlatformModel(speed);
     }
 
     /**
-     * This method initialise the Controller of PlatformView=
+     * This method initialise the Controller of PlatformView
      */
-    public void createController(){
+    protected void createController(){
         this.controller = new PlatformController(this.model);
     }
 
@@ -40,8 +44,18 @@ public abstract class PlatformView extends View {
         return this.model.isSunk();
     }
 
+    /**
+     * The moving action that a platform might have
+     *
+     * @param timer Value of present timer counter
+     */
     protected abstract void swimAction(long timer);
 
+    /**
+     * The default act method of PlatformView
+     *
+     * @param timer Value of present timer counter
+     */
     @Override
     public void act(long timer){
         move(this.model.getSpeed(), 0);

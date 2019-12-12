@@ -11,13 +11,11 @@ import java.util.ArrayList;
  * This class is refactored from original Actor class and is used as the parent class for all
  * game elements.
  *
- * <p>
- *     <p>Refactor:
- *          <p>1. Rename it from Actor to View;
- *          <p>2. Use ArrayList instead of Array to store objects to improve efficiency;
- *          <p>3. Remove methods with little utility.
+ *     Refactor:<br>
+ *          1. Rename it from Actor to View;<br>
+ *          2. Use ArrayList instead of Array to store objects to improve efficiency;<br>
+ *          3. Remove methods with little utility.<br>
  *
- * <p>
  * @author Kejia Wu, scykw1@nottingham.ac.uk
  * @version 1.4
  */
@@ -94,8 +92,6 @@ public abstract class View extends ImageView{
         }
         return someArray.get(0);
     }
-
-    protected abstract void createModel();
 
     /**
      * The action of the View element during the execution of game

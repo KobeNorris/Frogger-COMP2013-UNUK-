@@ -25,9 +25,15 @@ import java.util.ArrayList;
  * remaining time. It keeps the frogger entity simultaneously, and it will
  * change the status od each end in every 5 seconds.
  *
+ * <p>
  * Each of those data has 2 methods:
- *      1. Initialise;
- *      2. Update.
+ *      <p>1. Initialise;
+ *      <p>2. Update.
+ *
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.5
  */
 public abstract class GameController{
     public AnimationTimer timer;
@@ -136,7 +142,7 @@ public abstract class GameController{
      * This method initialise player's present score and display it to
      * the player.
      *
-     * @param presentScore
+     * @param presentScore Player's present score
      */
     public void initScore(int presentScore) {
         playerScoreBoard = new Text(20, 70, "Score: " + presentScore);
@@ -149,7 +155,7 @@ public abstract class GameController{
      * This method initialise player's present remaining time and display it to
      * the player.
      *
-     * @param presentTime
+     * @param presentTime Player's present remaining time
      */
     public void initTime(int presentTime) {
         playerTimeBoard = new Text(430, 40, "Time: " + presentTime);
@@ -162,7 +168,7 @@ public abstract class GameController{
      * This method initialise player's present life and display it to
      * the player.
      *
-     * @param presentLife
+     * @param presentLife Player's present life
      */
     protected void initLife(int presentLife) {
         playerLifeBoard = new Text(30, 40, presentLife + "-UP");
@@ -176,7 +182,9 @@ public abstract class GameController{
     }
 
     /**
+     * Initialize the game mode demonstration
      *
+     * @param gameMode The mode of the present mode
      */
     public void initGameMode(String gameMode){
         this.gameMode = new Text(170, 40, gameMode + " Mode");
@@ -195,6 +203,8 @@ public abstract class GameController{
 
     /**
      * Add View type elements
+     *
+     * @param view Present frogger view
      */
     protected void add(View view) {
         gameStage.getChildren().add(view);
@@ -202,6 +212,8 @@ public abstract class GameController{
 
     /**
      * Remove View type elements.
+     *
+     * @param view Present frogger view
      */
     public void remove(View view) {
         gameStage.getChildren().remove(view);

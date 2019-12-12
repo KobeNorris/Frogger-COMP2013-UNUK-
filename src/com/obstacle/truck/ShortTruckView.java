@@ -9,8 +9,11 @@ import gameApp.Main;
 /**
  * This is the view of short truck elements in game, extends from Obstacle class,
  * it includes two types in total:
- *      1. Left direction short truck;
- *      2. Right direction short truck.
+ *      <P>1. Left direction short truck;
+ *      <p>2. Right direction short truck.
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public class ShortTruckView extends ObstacleView {
     private Image ShortTruckLeft, ShortTruckRight;

@@ -3,7 +3,11 @@ package com.obstacle;
 import com.Controller;
 
 /**
- * The controller of Obstacle
+ * The controller of Obstacles, containing a default constructor to initialise internal model
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public class ObstacleController implements Controller {
     protected ObstacleModel model;

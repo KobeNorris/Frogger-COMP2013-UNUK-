@@ -8,6 +8,10 @@ import java.io.IOException;
 /**
  * This class is the controller for start menu, it could jump to the next and
  * previous page to present page if they exists.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.2
  */
 public class FourthPageController {
     /**

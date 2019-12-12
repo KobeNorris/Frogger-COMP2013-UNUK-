@@ -10,6 +10,11 @@ import java.util.Random;
 /**
  * This function initialise the information demonstration and load the map for Hard game mode.
  * It enable the change of Ends status.
+ * It applied {@link ElementFactory} to add elements to the scene in order to im[rove the extendability.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public class HardGameController extends GameController{
     protected static EndView[] endList;

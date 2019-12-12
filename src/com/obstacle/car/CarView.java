@@ -9,8 +9,11 @@ import gameApp.Main;
 /**
  * This is the view of car elements in game, extends from Obstacle class,
  * it includes two types in total:
- *      1. Car left direction;
- *      2. Car right direction.
+ *      <p>1. Car left direction;
+ *      <p>2. Car right direction.
+ * <br>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public class CarView extends ObstacleView {
     private Image carLeft, carRight;
@@ -19,6 +22,7 @@ public class CarView extends ObstacleView {
     /**
      * This constructor initialise the position, size and speed of CarView
      *
+     * @param carType Car's direction
      * @param positionX CarView's X position
      * @param positionY CarView's Y position
      * @param size  CarView's size

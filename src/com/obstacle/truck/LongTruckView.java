@@ -9,8 +9,12 @@ import gameApp.Main;
 /**
  * This is the view of long truck elements in game, extends from Obstacle class,
  * it includes two types in total:
- *      1. Left direction long truck;
- *      2. Right direction long truck.
+ *      <p>1. Left direction long truck;
+ *      <p>2. Right direction long truck.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public class LongTruckView extends ObstacleView {
     private Image LongTruckLeft, LongTruckRight;

@@ -5,6 +5,11 @@ import util.ElementFactory;
 
 /**
  * This function initialise the information demonstration and load the map for easy game mode.
+ * It applied {@link ElementFactory} to add elements to the scene in order to im[rove the extendability.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public class EasyGameController extends GameController{
     /**

@@ -8,9 +8,13 @@ import java.io.IOException;
 /**
  * This class is the controller for start menu, it could jump to different
  * pages according to player's choice:
- *          1. Game difficulty selection page;
- *          2. First page of game introduction;
- *          3. High score page.
+ *          <p>1. Game difficulty selection page;
+ *          <p>2. First page of game introduction;
+ *          <p>3. High score page.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.2
  */
 public class MenuController {
     /**

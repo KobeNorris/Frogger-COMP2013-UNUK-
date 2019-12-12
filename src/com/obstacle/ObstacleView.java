@@ -6,6 +6,10 @@ import com.View;
 /**
  * This is the parent class of all obstacle class which could kill the frogger
  * when it touches them
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public abstract class ObstacleView extends View {
     protected ObstacleModel model;

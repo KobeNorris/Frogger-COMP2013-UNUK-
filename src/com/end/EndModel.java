@@ -5,12 +5,10 @@ import com.Model;
 /**
  * This is the model class for view which stores End's present status
  *
- * <p>
- *     <p>Refactor:
- *      <p>1. Handle the change of end's status;
- *      <p>2. Store the access to the image resource.
+ *     <br>Refactor:<br>
+ *      1. Handles the change of end's status;<br>
+ *      2. Stores the access to the image resource.<br>
  *
- * <p>
  * @author Kejia Wu, scykw1@nottingham.ac.uk
  * @version 1.3
  */

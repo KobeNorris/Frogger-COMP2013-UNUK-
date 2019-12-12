@@ -14,6 +14,10 @@ import util.SceneSwitcher;
 /**
  * This class is the controller of input name field page controller, it will insert present player's name and score into
  * the high score file.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.2
  */
 public class InputNameController {
     @FXML private TextField nameInputField;
@@ -21,7 +25,7 @@ public class InputNameController {
     /**
      * Insert name into the high score file
      *
-     * @throws IOException
+     * @throws IOException Invalid file path
      */
     @FXML
     public void insertRank() throws IOException {

@@ -8,6 +8,10 @@ import gameApp.Main;
 
 /**
  * This is the view of  Crocodile Body elements in game, extends from Obstacle class
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.2
  */
 public class CrocodileBodyView extends PlatformView {
     private String filePath = "file:resources/img/Platform/Crocodile/cro_body.png";
@@ -28,6 +32,11 @@ public class CrocodileBodyView extends PlatformView {
         setY(positionY);
     }
 
+    /**
+     * Crocodile body should have no moving animation
+     *
+     * @param timer The value of present time counter
+     */
     @Override
     protected void swimAction(long timer){}
 }

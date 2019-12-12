@@ -4,7 +4,14 @@ import com.Model;
 
 /**
  * This class is the Model for frogger, stores frogger's status, player's present score, remaining time
- * and life number.+
+ * and life number. FroggerController could manipulate FroggerModel directly.
+ *
+ *     <br>Refactor:<br>
+ *          1. Add internal enum class to represent frogger status;<br>
+ *          2. Stores player's present score, life and block status.<br>
+ *
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public class FroggerModel implements Model {
     private Status status;
@@ -24,14 +31,36 @@ public class FroggerModel implements Model {
         this.presentHighestPosition = 800;
     }
 
-    public void setStatus(Status status){
-        this.status = status;
+    /**
+     * Set frogger status to target status
+     *
+     * @param targetStatus Target status
+     */
+    public void setStatus(Status targetStatus){
+        this.status = targetStatus;
     }
+
+    /**
+     * et player's present status
+     *
+     * @return Player's present status
+     */
     public Status getStatus(){return this.status; }
 
+    /**
+     * Get player's present points
+     *
+     * @return Player's present points
+     */
     public int getPoints(){
         return points;
     }
+
+    /**
+     * Set player's present points to target points
+     *
+     * @param targetPoints Target points
+     */
     public void setPoints(int targetPoints){
         points = targetPoints;
     }

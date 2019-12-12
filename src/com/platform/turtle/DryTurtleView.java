@@ -9,6 +9,10 @@ import gameApp.Main;
 /**
  * This is the view of dry turtle elements in game, extends from Obstacle class,
  * it includes three frames in total.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
  */
 public class DryTurtleView extends PlatformView {
     private Image firstFrame, secondFrame, thirdFrame;

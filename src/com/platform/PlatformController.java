@@ -3,7 +3,12 @@ package com.platform;
 import com.Controller;
 
 /**
- * The controller of Platform
+ * The controller of PlatformView, enhancing the connection between PlatformView
+ * and PlatformModel
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.2
  */
 public class PlatformController implements Controller {
     protected PlatformModel model;

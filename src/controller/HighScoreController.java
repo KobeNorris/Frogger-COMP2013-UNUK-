@@ -10,6 +10,10 @@ import java.io.IOException;
 
 /**
  * This file is a controller for the high score page, it will display the 5 most highest score to the player.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.2
  */
 public class HighScoreController {
     @FXML
