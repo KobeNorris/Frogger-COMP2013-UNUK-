@@ -19,6 +19,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.TextAlignment;
 import util.FileProcessor;
 
 import java.util.ArrayList;
@@ -175,9 +176,10 @@ public abstract class GameController{
      * @param presentScore Player's present score
      */
     public void initScore(int presentScore) {
-        playerScoreBoard = new Text(40, 40, "SCORE\n" + presentScore);
-        playerScoreBoard.setFont(Font.font ("Press Start 2P", 20));
-        playerScoreBoard.setFill(Color.SLATEBLUE);
+        this.playerScoreBoard = new Text(40, 40, "SCORE\n" + presentScore);
+        this.playerScoreBoard.setFont(Font.font ("Press Start 2P", 20));
+        this.playerScoreBoard.setFill(Color.rgb(90,180,255));
+        this.playerScoreBoard.setTextAlignment(TextAlignment.CENTER);
         this.gameStage.getChildren().add(playerScoreBoard);
     }
 
@@ -188,13 +190,13 @@ public abstract class GameController{
      * @param presentTime Player's present remaining time
      */
     public void initTime(int presentTime) {
-        playerTimeBoard = new Text(430, 825, "Time: " + presentTime);
-        playerTimeBoard.setFont(Font.font ("Press Start 2P", 20));
+        this.playerTimeBoard = new Text(430, 825, "Time: " + presentTime);
+        this.playerTimeBoard.setFont(Font.font ("Press Start 2P", 20));
         this.gameStage.getChildren().add(playerTimeBoard);
-        timeBar = new Rectangle( this.gameStage.getPrefWidth() - 20 * presentTime/60, 25);
+        this.timeBar = new Rectangle( this.gameStage.getPrefWidth() - 20 * presentTime/60, 25);
         this.gameStage.getChildren().add(timeBar);
-        timeBar.setX(10);
-        timeBar.setY(830);
+        this.timeBar.setX(10);
+        this.timeBar.setY(830);
     }
 
     /**
@@ -205,10 +207,10 @@ public abstract class GameController{
      */
     public void initLife(int presentLife){
         double positionX = 5;
-        lifeIcon = new ImageView[presentLife];
+        this.lifeIcon = new ImageView[presentLife];
         for(int iTemp = 0; iTemp < presentLife; iTemp++){
-            lifeIcon[iTemp] = new LifeIconView(positionX,800,30);
-            this.gameStage.getChildren().add(lifeIcon[iTemp]);
+            this.lifeIcon[iTemp] = new LifeIconView(positionX,800,30);
+            this.gameStage.getChildren().add(this.lifeIcon[iTemp]);
             positionX += 35;
         }
     }
@@ -227,11 +229,12 @@ public abstract class GameController{
 
     public void initHighScore(int highScore){
         if(highScore < 0)
-            this.highScore = new Text(420, 40, "HIGH-SCORE\n  EMPTY");
+            this.highScore = new Text(420, 40, "HIGH-SCORE\nEMPTY");
         else
-            this.highScore = new Text(420, 40, "HIGH-SCORE\n   " + highScore);
+            this.highScore = new Text(420, 40, "HIGH-SCORE\n" + highScore);
         this.highScore.setFont(Font.font ("Press Start 2P", 20));
-        this.highScore.setFill(Color.SLATEBLUE);
+        this.highScore.setFill(Color.rgb(90,180,255));
+        this.highScore.setTextAlignment(TextAlignment.CENTER);
         this.gameStage.getChildren().add(this.highScore);
     }
 
@@ -239,7 +242,7 @@ public abstract class GameController{
      * Stop current game stage.
      */
     public void stopGame() {
-        frogger.resetPresentHighestPosition();
+        this.frogger.resetPresentHighestPosition();
         stop();
     }
 
@@ -249,7 +252,7 @@ public abstract class GameController{
      * @param view Present frogger view
      */
     protected void add(View view) {
-        gameStage.getChildren().add(view);
+        this.gameStage.getChildren().add(view);
     }
 
     /**
@@ -258,7 +261,7 @@ public abstract class GameController{
      * @param view Present frogger view
      */
     public void remove(View view) {
-        gameStage.getChildren().remove(view);
+        this.gameStage.getChildren().remove(view);
     }
 
     /**
@@ -273,7 +276,7 @@ public abstract class GameController{
      * Stop the timer
      */
     public void stop() {
-        timer.stop();
+        this.timer.stop();
     }
 
     /**
