@@ -83,10 +83,7 @@ public class InfiniteGameController extends HardGameController{
         frogger.changeEnd();
         this.add(frogger);
 
-        initTime(90);
-        initScore(0);
-        initLife(3);
-        initGameMode("Infi");
+        initInfo("Infi");
 
         initLevel(1);
 

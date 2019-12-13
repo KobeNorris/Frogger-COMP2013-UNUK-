@@ -147,11 +147,11 @@ public abstract class GameController{
         }
     }
 
-    public void initInfo(){
-        initLife(5);
-        initScore(0);
-        initTime(60);
-        initGameMode("Easy");
+    public void initInfo(String gameMode){
+        initLife(frogger.getLife());
+        initScore(frogger.getPoints());
+        initTime(frogger.getRemainingTime());
+        initGameMode(gameMode);
         pauseIcon = new PauseIconView(190, 425, 230);
         this.gameStage.getChildren().add(pauseIcon);
     }
