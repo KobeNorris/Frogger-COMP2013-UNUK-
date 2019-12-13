@@ -28,6 +28,6 @@
        </Button>
       <Button id="highScoreButton" layoutY="640.0" mnemonicParsing="false" onMouseClicked="#jumpToHighScore" prefHeight="90.0" prefWidth="600.0" text="High Score">
       </Button>
-      <Button id="highScoreButton" layoutY="760.0" mnemonicParsing="false" onMouseClicked="#jumpToHighScore" prefHeight="90.0" prefWidth="600.0" text="Exit" />
+      <Button id="exitButton" layoutY="760.0" mnemonicParsing="false" onMouseClicked="#exitGame" prefHeight="90.0" prefWidth="600.0" text="Exit" />
    </children>
 </AnchorPane>

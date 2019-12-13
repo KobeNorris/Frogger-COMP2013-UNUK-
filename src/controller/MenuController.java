@@ -1,5 +1,6 @@
 package controller;
 
+import gameApp.Main;
 import javafx.fxml.*;
 import util.SceneSwitcher;
 
@@ -47,5 +48,11 @@ public class MenuController {
         SceneSwitcher.jumpToHighScore();
     }
 
-
+    /**
+     * This method allow player to exit the game smoothly.
+     */
+    @FXML
+    private void exitGame(){
+        Main.getPresentStage().close();
+    }
 }
