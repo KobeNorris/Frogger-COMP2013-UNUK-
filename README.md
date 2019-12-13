@@ -1,4 +1,13 @@
 # SM_Coursework_02
+
+----
+
+Tested on: **Lab Machine**
+
+Build script: **Ant**
+
+----
+
 ## For maintenance
 
 * **Package rearrangement**
