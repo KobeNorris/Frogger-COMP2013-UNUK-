@@ -14,8 +14,8 @@
         <URL value="@/css/helpPages.css" />
     </stylesheets>
     <children>
-        <Label alignment="CENTER" prefHeight="100.0" prefWidth="600.0" text="Platforms" />
-        <ImageView fitHeight="520.0" fitWidth="560.0" layoutX="51.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+        <Label alignment="CENTER" prefHeight="200.0" prefWidth="600.0" text="Platforms" />
+        <ImageView fitHeight="450.0" fitWidth="450.0" layoutX="80" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@/img/helpPageCom/FourthPage.png" />
             </image>
