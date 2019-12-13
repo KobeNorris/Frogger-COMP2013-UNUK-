@@ -87,7 +87,7 @@ public class FroggerView extends View {
         setX(originPositionX);
         setY(originPositionY);
         previousKey = null;
-        setTime(90);
+        setTime(this.model.roundTime);
         moveComplete = false;
         jumpComplete = false;
         deathFrame = 0;
@@ -307,14 +307,14 @@ public class FroggerView extends View {
         return this.model.life;
     }
 
-    public int getRemainingTime() {return this.model.time;}
+    public int getRemainingTime() {return this.model.remainingTime;}
 
     public void deductTime() {
-        if(this.model.time > 0)
-            this.model.time--;
+        if(this.model.remainingTime > 0)
+            this.model.remainingTime--;
     }
 
-    public void setTime(int targetTime){this.model.time = targetTime;}
+    public void setTime(int targetTime){this.model.remainingTime = targetTime;}
 
     public boolean getStop(){
         return this.model.stop;

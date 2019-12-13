@@ -113,7 +113,7 @@ public class FroggerController implements Controller{
      */
     public void checkStatus(FroggerView view){
         checkBoundary(view);
-        if(this.model.time <= 0)
+        if(this.model.remainingTime <= 0)
             this.model.setStatus(FroggerModel.Status.ROADDEATH);
         if (view.getIntersectingObjects(ObstacleView.class).size() >= 1) {
             this.model.setStatus(FroggerModel.Status.ROADDEATH);

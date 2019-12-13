@@ -19,7 +19,7 @@ public class FroggerModel implements Model {
     private String filePath = "file:resources/img/FroggerAction/";
 
     String gameMode;
-    int reachedEnd = 0, life = 3, time = 90;
+    int reachedEnd = 0, life = 3, roundTime = 60, remainingTime;
     boolean noMove = false;
     boolean changeScore = false, changeLife = false;
     boolean stop = false;

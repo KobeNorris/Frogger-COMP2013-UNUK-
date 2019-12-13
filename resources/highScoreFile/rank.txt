@@ -12,9 +12,9 @@ Kobe
 550
 w
 500
+Kobe
+430
 lp
 260
 Kobe
 240
-a
-180
