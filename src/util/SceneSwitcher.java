@@ -31,7 +31,7 @@ public class SceneSwitcher {
     public static void jumpToMenu() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Pane root = loader.load(Main.class.getResource("/view/MenuView.fxml"));
-        Scene gameMenu = new Scene(root, 600, 800);
+        Scene gameMenu = new Scene(root, 600, 860);
         Main.getPresentStage().setScene(gameMenu);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
@@ -46,7 +46,7 @@ public class SceneSwitcher {
     public static void jumpToDifficultyLevelSelection() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Pane root = loader.load(Main.class.getResource("/view/DifficultyLevelSelectionView.fxml"));
-        Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
+        Scene gameDifficultyLevelSelection = new Scene(root, 600, 860);
         Main.getPresentStage().setScene(gameDifficultyLevelSelection);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
@@ -61,7 +61,7 @@ public class SceneSwitcher {
     public static void jumpToFirstHelpPage() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Pane root = loader.load(Main.class.getResource("/view/helpPagesView/FirstHelpPageView.fxml"));
-        Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
+        Scene gameDifficultyLevelSelection = new Scene(root, 600, 860);
         Main.getPresentStage().setScene(gameDifficultyLevelSelection);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
@@ -76,7 +76,7 @@ public class SceneSwitcher {
     public static void jumpToSecondHelpPage() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Pane root = loader.load(Main.class.getResource("/view/helpPagesView/SecondHelpPageView.fxml"));
-        Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
+        Scene gameDifficultyLevelSelection = new Scene(root, 600, 860);
         Main.getPresentStage().setScene(gameDifficultyLevelSelection);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
@@ -91,7 +91,7 @@ public class SceneSwitcher {
     public static void jumpToThirdHelpPage() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Pane root = loader.load(Main.class.getResource("/view/helpPagesView/ThirdHelpPageView.fxml"));
-        Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
+        Scene gameDifficultyLevelSelection = new Scene(root, 600, 860);
         Main.getPresentStage().setScene(gameDifficultyLevelSelection);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
@@ -106,7 +106,7 @@ public class SceneSwitcher {
     public static void jumpToFourthHelpPage() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Pane root = loader.load(Main.class.getResource("/view/helpPagesView/FourthHelpPageView.fxml"));
-        Scene gameDifficultyLevelSelection = new Scene(root, 600, 800);
+        Scene gameDifficultyLevelSelection = new Scene(root, 600, 860);
         Main.getPresentStage().setScene(gameDifficultyLevelSelection);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
@@ -121,7 +121,7 @@ public class SceneSwitcher {
     public static void jumpToEasyGame() throws IOException {
         Main.difficulty = 1;
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/gameView/EasyGameView.fxml"));
-        Scene game  = new Scene(loader.load(),600,800);
+        Scene game  = new Scene(loader.load(),600,860);
         controller = loader.<GameController>getController();
         game.addEventHandler(KeyEvent.KEY_PRESSED, new KeyBoardListener());
         Main.setController(controller);
@@ -140,7 +140,7 @@ public class SceneSwitcher {
     public static void jumpToHardGame() throws IOException {
         Main.difficulty = 1;
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/gameView/HardGameView.fxml"));
-        Scene game  = new Scene(loader.load(),600,800);
+        Scene game  = new Scene(loader.load(),600,860);
         controller = loader.<GameController>getController();
         game.addEventHandler(KeyEvent.KEY_PRESSED, new KeyBoardListener());
         Main.setController(controller);
@@ -159,7 +159,7 @@ public class SceneSwitcher {
     public static void jumpToInfiniteGame() throws IOException {
         Main.difficulty = 1;
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/gameView/InfiniteGameView.fxml"));
-        Scene game  = new Scene(loader.load(),600,800);
+        Scene game  = new Scene(loader.load(),600,860);
         controller = loader.<GameController>getController();
         game.addEventHandler(KeyEvent.KEY_PRESSED, new KeyBoardListener());
         Main.setController(controller);
@@ -178,7 +178,7 @@ public class SceneSwitcher {
     public static void jumpToHighScore() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Pane root = loader.load(Main.class.getResource("/view/HighScoreView.fxml"));
-        Scene gameHighScore = new Scene(root, 600, 800);
+        Scene gameHighScore = new Scene(root, 600, 860);
         Main.getPresentStage().setScene(gameHighScore);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();
@@ -193,7 +193,7 @@ public class SceneSwitcher {
     public static void jumpToInputName() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Pane root = loader.load(Main.class.getResource("/view/InputNameView.fxml"));
-        Scene inputNameField = new Scene(root, 600, 800);
+        Scene inputNameField = new Scene(root, 600, 860);
         Main.getPresentStage().setScene(inputNameField);
         Main.getPresentStage().setResizable(false);
         Main.getPresentStage().show();

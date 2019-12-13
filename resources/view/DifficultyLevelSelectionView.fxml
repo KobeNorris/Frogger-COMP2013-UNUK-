@@ -8,17 +8,17 @@
 <?import javafx.scene.layout.*?>
 <?import java.net.URL?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: rgb(0,0,0);" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DifficultyLevelSelectionController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="860.0" prefWidth="600.0" style="-fx-background-color: rgb(0,0,0);" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DifficultyLevelSelectionController">
     <stylesheets>
         <URL value="@/css/difficultyLevelSelection.css" />
     </stylesheets>
 
    <children>
-      <Button alignment="CENTER" layoutY="278.0" mnemonicParsing="false" onMouseClicked="#jumpToEasyGame" prefHeight="90.0" prefWidth="600.0" text="Easy" />
-      <Button alignment="CENTER" layoutY="538.0" mnemonicParsing="false" onMouseClicked="#jumpToInfiniteGame" prefHeight="90.0" prefWidth="600.0" text="Infinite" />
-      <Button alignment="CENTER" layoutY="408.0" mnemonicParsing="false" onMouseClicked="#jumpToHardGame" prefHeight="90.0" prefWidth="600.0" text="Hard" />
-      <Button alignment="CENTER" layoutY="668.0" mnemonicParsing="false" onMouseClicked="#jumpToMenu" prefHeight="90.0" prefWidth="600.0" text="Back To Main" />
-      <Label alignment="CENTER" layoutY="23.0" prefHeight="122.0" prefWidth="600.0" text="Please choose" />
-      <Label alignment="CENTER" layoutY="116.0" prefHeight="122.0" prefWidth="600.0" text="the Game Mode" />
+       <Label fx:id="title1" alignment="CENTER" layoutY="40.0" prefHeight="122.0" prefWidth="600.0" text="Please choose" />
+       <Label fx:id="title2" alignment="CENTER" layoutY="150.0" prefHeight="122.0" prefWidth="600.0" text="the Game Mode" />
+       <Button alignment="CENTER" layoutY="360.0" mnemonicParsing="false" onMouseClicked="#jumpToEasyGame" prefHeight="90.0" prefWidth="600.0" text="Easy" />
+       <Button alignment="CENTER" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#jumpToHardGame" prefHeight="90.0" prefWidth="600.0" text="Hard" />
+       <Button alignment="CENTER" layoutY="560.0" mnemonicParsing="false" onMouseClicked="#jumpToInfiniteGame" prefHeight="90.0" prefWidth="600.0" text="Infinite" />
+       <Button alignment="CENTER" layoutY="730.0" mnemonicParsing="false" onMouseClicked="#jumpToMenu" prefHeight="90.0" prefWidth="600.0" text="Back To Main" />
    </children>
 </Pane>

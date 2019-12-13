@@ -8,12 +8,12 @@ Build script: **Ant**
 
 ----
 
-## For maintenance
+## **For maintenance**
 
 * **Package rearrangement**
     1. ```src``` directory:
 
-        ![avatar](resources/img/com/src.jpg)
+        ![avatar](resources/img/readmeCom/src.png)
         * ```com``` <19/Nov/2019>: Contains game elements;
         * ```controller``` <28/Nov/2019>: Contains FXML controllers;
         * ```gameApp``` <19/Nov/2019>: Contains Main class;
@@ -21,11 +21,11 @@ Build script: **Ant**
 
     2. ```resources``` directory <20/Nov/2019>
 
-        ![avatar](resources/img/com/resources.jpg)
+        ![avatar](resources/img/readmeCom/resources.png)
 
     3. ```test``` directory:
 
-        ![avatar](resources/img/com/test.jpg)
+        ![avatar](resources/img/readmeCom/test.png)
         * ```com``` <21/Nov/2019>
 
 * **Bugs refactor**
@@ -34,6 +34,8 @@ Build script: **Ant**
         * Fixed by checking position after ```keyboardRelease```.
 
     2. Points display <21/Nov/2019>:
+    
+         ![avatar](resources/img/readmeCom/scoreDisplayExample.png)
         * Generates from points deduction;
         * Fixed by applying ```Text``` ```playerScoreBoard```;
 
@@ -47,7 +49,8 @@ Build script: **Ant**
         * ```Actor``` is refactored into ```View```, ```Controller``` and ```Model```;
         * Elements will large classes e.g.```Animal```, are broken down into three classes;
         * Other game elements have their own ```View``` class;
-        * Better testability, extendability (```Controller``` and ```Model``` provide extra interfaces).
+        * Better testability (```Model``` and ```Controller``` could be tested without launching);
+        * Better extendability (```Controller``` and ```Model``` provide extra interfaces).
 
     3. New pages all applied MVC design pattern <01/Dec/2019>:
         * Easy for future maintenance and extension.
@@ -64,7 +67,7 @@ Build script: **Ant**
     1. ```ElementFactory```<10/Dec/2019>: 
         * A factory for ```View``` and all of its child classes.
 ----
-## For extension
+## **For extension**
 
 * **Additional pages**
     1. ```MenuView``` <29/Nov/2019>;
@@ -76,6 +79,8 @@ Build script: **Ant**
     
 * **Game termination**
     1. Lost all lifes <27/Nov/2019>:
+    
+        ![avatar](resources/img/readmeCom/lifeIconExample.png)
         * Player used up his all chances of life;
         * Player gets a deduction of 50 points each time.
     2. Used all time <08/Dec/2019>:
@@ -100,24 +105,30 @@ Build script: **Ant**
         * A lethal ```Snake``` appears in the middle lane of the game stage.
     3. ```Crocodile``` <07/Dec/2019>:
     
-        ![avatar](resources/img/Platform/Crocodile/cro_body.png)
-        ![avatar](resources/img/Platform/Crocodile/cro_open.png)
+        ![avatar](resources/img/readmeCom/crocodile.png)
         * Implemented in ```Hard``` mode and ```Infinite``` mode;
         * The head of ```Crocodile``` is lethal when it is open.
 
 * **Extra game feature**
     1. Pause <05/Dec/2019>:
+    
+        ![avatar](resources/img/readmeCom/pauseExample.png)
         * Press SPACE on the keyboard to pause;
         * Press SPACE to restart the game.
     2. Animation <05/Dec/2019>:
         * Remade the original one in ```MenuView```;
         * Another in ````InputNameView````.
     3. Time counter <08/Dec/2019>:
+    
+        ![avatar](resources/img/readmeCom/timeCounterExample.png)
         * Player only have 90 seconds in each term of the game;
         * Time counter will be refreshed after each time player die or reach the end;
         * When time is counted down to 0, ```Frogger``` will die immediately. 
     4. ```InfiniteGameController``` <02/Dec/2019>:
+    
+        ![avatar](resources/img/readmeCom/infiniteModeExample.png)
         * Implemented in ```Infinite``` mode;
-        * Player could play infinite terms of game with increasing difficulty.
+        * Player could play infinite terms with increasing difficulty;
+        * The difficulty is calculated according to **Curve growth algorithm**.
     5. Background music:
         * Different music for different groups of pages.

@@ -1,7 +1,10 @@
 package controller.gameController;
 
-import javafx.scene.image.Image;
+import com.icon.LifeIconView;
+import com.icon.PauseIconView;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import com.View;
@@ -15,8 +18,9 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.TextAlignment;
+import util.FileProcessor;
 
-//import javax.swing.text.html.ImageView;
 import java.util.ArrayList;
 
 /**
@@ -25,13 +29,13 @@ import java.util.ArrayList;
  * remaining time. It keeps the frogger entity simultaneously, and it will
  * change the status od each end in every 5 seconds.
  *
- * <p>
+ * <br>
  * Each of those data has 2 methods:
- *      <p>1. Initialise;
- *      <p>2. Update.
+ *      <br>1. Initialise;
+ *      <br>2. Update.
  *
  *
- * <p>
+ * <br>
  * @author Kejia Wu, scykw1@nottingham.ac.uk
  * @version 1.5
  */
@@ -39,10 +43,13 @@ public abstract class GameController{
     public AnimationTimer timer;
     public static FroggerView frogger;
     public boolean restart = false, pause = false, running = true;
-    protected Text playerScoreBoard, playerTimeBoard, playerLifeBoard, gameMode;
-//    protected ImageView[] lifeIcon;
+    protected Text playerScoreBoard, playerTimeBoard, highScore, gameMode;
+    protected Rectangle timeBar;
     protected long lastTimer;
     protected int leftEndChangeTime = 5;
+
+    protected ImageView[] lifeIcon;
+    protected ImageView pauseIcon;
 
     @FXML
     protected Pane gameStage;
@@ -99,7 +106,7 @@ public abstract class GameController{
      * @param presentScore Present score player gaines
      */
     public void updateScore(int presentScore) {
-        playerScoreBoard.setText("Score: " + presentScore);
+        playerScoreBoard.setText("SCORE\n" + presentScore);
     }
 
     /**
@@ -112,12 +119,20 @@ public abstract class GameController{
      */
     public void updateTime(int presentTime){
         playerTimeBoard.setText("Time: " + presentTime);
-        if(presentTime > 60)
-            playerTimeBoard.setFill(Color.GREEN);
-        else if(presentTime > 30)
+        timeBar.setWidth((this.gameStage.getPrefWidth() - 20) * presentTime/60);
+        timeBar.setX((this.gameStage.getPrefWidth() - 20) * (1 - (double)presentTime/60) + 10);
+        if(presentTime > 40){
+            playerTimeBoard.setFill(Color.rgb(10,225,10));
+            timeBar.setFill(Color.rgb(10,225,10));
+        }
+        else if(presentTime > 20){
             playerTimeBoard.setFill(Color.ORANGE);
-        else if(presentTime > 0)
+            timeBar.setFill(Color.ORANGE);
+        }
+        else if(presentTime > 0){
             playerTimeBoard.setFill(Color.RED);
+            timeBar.setFill(Color.RED);
+        }
     }
 
     /**
@@ -129,13 +144,40 @@ public abstract class GameController{
      * @param presentLife Present life player has
      */
     public void updateLife(int presentLife) {
-        playerLifeBoard.setText(presentLife + "-UP");
-        if(presentLife > 2)
-            playerLifeBoard.setFill(Color.GREEN);
-        else if(presentLife == 2)
-            playerLifeBoard.setFill(Color.ORANGE);
-        else if(presentLife == 1)
-            playerLifeBoard.setFill(Color.RED);
+        for(int iTemp = presentLife; iTemp < lifeIcon.length; iTemp++){
+            this.gameStage.getChildren().remove(lifeIcon[iTemp]);
+        }
+    }
+
+    /**
+     * This method will initialize the game information demonstration according to
+     * the mode of game stage. It will use {@link FileProcessor} to read the high
+     * score file and get present high score. The initialised components include:
+     *     <br>1. Life;
+     *     <br>2. Score;
+     *     <br>3. Remaining time;
+     *     <br>4. Game mode;
+     *     <br>5. Present high score.
+     *
+     * @param gameMode Present game's mode
+     */
+    public void initInfo(String gameMode){
+        int highScore = -1;
+        FileProcessor i = new FileProcessor(10);
+        try{
+            i.readFile("resources/highScoreFile/rank.txt");
+            highScore = i.getHighScore();
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+        initLife(frogger.getLife());
+        initScore(frogger.getPoints());
+        initTime(frogger.getRemainingTime());
+        initGameMode(gameMode);
+        initHighScore(highScore);
+        pauseIcon = new PauseIconView(190, 425, 230);
+        this.gameStage.getChildren().add(pauseIcon);
     }
 
     /**
@@ -145,9 +187,10 @@ public abstract class GameController{
      * @param presentScore Player's present score
      */
     public void initScore(int presentScore) {
-        playerScoreBoard = new Text(20, 70, "Score: " + presentScore);
-        playerScoreBoard.setFont(Font.font ("Press Start 2P", 18));
-        playerScoreBoard.setFill(Color.rgb(255,255,255));
+        this.playerScoreBoard = new Text(40, 40, "SCORE\n" + presentScore);
+        this.playerScoreBoard.setFont(Font.font ("Press Start 2P", 20));
+        this.playerScoreBoard.setFill(Color.rgb(90,180,255));
+        this.playerScoreBoard.setTextAlignment(TextAlignment.CENTER);
         this.gameStage.getChildren().add(playerScoreBoard);
     }
 
@@ -158,10 +201,13 @@ public abstract class GameController{
      * @param presentTime Player's present remaining time
      */
     public void initTime(int presentTime) {
-        playerTimeBoard = new Text(430, 40, "Time: " + presentTime);
-        playerTimeBoard.setFont(Font.font ("Press Start 2P", 20));
-        playerTimeBoard.setFill(Color.GREEN);
+        this.playerTimeBoard = new Text(430, 825, "Time: " + presentTime);
+        this.playerTimeBoard.setFont(Font.font ("Press Start 2P", 20));
         this.gameStage.getChildren().add(playerTimeBoard);
+        this.timeBar = new Rectangle( this.gameStage.getPrefWidth() - 20 * presentTime/60, 25);
+        this.gameStage.getChildren().add(timeBar);
+        this.timeBar.setX(10);
+        this.timeBar.setY(830);
     }
 
     /**
@@ -170,15 +216,14 @@ public abstract class GameController{
      *
      * @param presentLife Player's present life
      */
-    protected void initLife(int presentLife) {
-        playerLifeBoard = new Text(30, 40, presentLife + "-UP");
-        playerLifeBoard.setFont(Font.font ("Press Start 2P", 25));
-        playerLifeBoard.setFill(Color.GREEN);
-        this.gameStage.getChildren().add(playerLifeBoard);
-//        lifeIcon = new ImageView[3];
-//        for(int iTemp = 0; iTemp < 3; iTemp++){
-//            lifeIcon[iTemp] = new ImageView(new Image(getClass().class.getResourceAsStream("@/img/StageImg/openCG.gif"));
-//        }
+    public void initLife(int presentLife){
+        double positionX = 5;
+        this.lifeIcon = new ImageView[presentLife];
+        for(int iTemp = 0; iTemp < presentLife; iTemp++){
+            this.lifeIcon[iTemp] = new LifeIconView(positionX,800,30);
+            this.gameStage.getChildren().add(this.lifeIcon[iTemp]);
+            positionX += 35;
+        }
     }
 
     /**
@@ -187,17 +232,34 @@ public abstract class GameController{
      * @param gameMode The mode of the present mode
      */
     public void initGameMode(String gameMode){
-        this.gameMode = new Text(170, 40, gameMode + " Mode");
+        this.gameMode = new Text(160, 40, gameMode + " Mode");
         this.gameMode.setFont(Font.font ("Press Start 2P", 30));
         this.gameMode.setFill(Color.WHITE);
         this.gameStage.getChildren().add(this.gameMode);
     }
 
     /**
+     * Initialize the demonstration of the highest score player has achieved
+     * presently. And it could demonstrate it to the player.
+     *
+     * @param highScore Present highest score player has achieved.
+     */
+    public void initHighScore(int highScore){
+        if(highScore < 0)
+            this.highScore = new Text(420, 40, "HIGH-SCORE\nEMPTY");
+        else
+            this.highScore = new Text(420, 40, "HIGH-SCORE\n" + highScore);
+        this.highScore.setFont(Font.font ("Press Start 2P", 20));
+        this.highScore.setFill(Color.rgb(90,180,255));
+        this.highScore.setTextAlignment(TextAlignment.CENTER);
+        this.gameStage.getChildren().add(this.highScore);
+    }
+
+    /**
      * Stop current game stage.
      */
     public void stopGame() {
-        frogger.resetPresentHighestPosition();
+        this.frogger.resetPresentHighestPosition();
         stop();
     }
 
@@ -207,7 +269,7 @@ public abstract class GameController{
      * @param view Present frogger view
      */
     protected void add(View view) {
-        gameStage.getChildren().add(view);
+        this.gameStage.getChildren().add(view);
     }
 
     /**
@@ -216,7 +278,7 @@ public abstract class GameController{
      * @param view Present frogger view
      */
     public void remove(View view) {
-        gameStage.getChildren().remove(view);
+        this.gameStage.getChildren().remove(view);
     }
 
     /**
@@ -231,7 +293,7 @@ public abstract class GameController{
      * Stop the timer
      */
     public void stop() {
-        timer.stop();
+        this.timer.stop();
     }
 
     /**
@@ -276,6 +338,7 @@ public abstract class GameController{
     public boolean checkPause(){
         if(pause){
             pause = false;
+            pauseIcon.setVisible(true);
             return true;
         }else
             return false;
@@ -289,6 +352,7 @@ public abstract class GameController{
     public boolean checkRestart(){
         if(restart){
             restart = false;
+            pauseIcon.setVisible(false);
             return true;
         }else
             return false;

@@ -2,26 +2,34 @@
 @font-face{
     src:url("../font/m12.TTF");
 }
+@font-face{
+    src:url("../font/PressStart2P.ttf");
+}
 .label {
     -fx-background-color: rgb(0,0,0);
-    -fx-font-family: "M12_MACH BIKER";
+    -fx-font-family: "Press Start 2P";
     -fx-font-weight: Bold;
-    -fx-font-size: 18px;
+    -fx-font-size: 25px;
+    -fx-scale-x: 0.85;
     -fx-text-fill: rgb(255,255,255);
 }
 #highScoreTitle{
-    -fx-font-size: 35px;
+    -fx-font-family: "M12_MACH BIKER";
+    -fx-font-size: 45px;
     -fx-text-fill: rgb(255,25,25);
 }
 #rankTitle{
+    -fx-font-family: "M12_MACH BIKER";
     -fx-font-size: 25px;
     -fx-text-fill: rgb(180,180,255);
 }
 #nameTitle{
+    -fx-font-family: "M12_MACH BIKER";
     -fx-font-size: 25px;
     -fx-text-fill: rgb(180,180,255);
 }
 #scoreTitle{
+    -fx-font-family: "M12_MACH BIKER";
     -fx-font-size: 25px;
     -fx-text-fill: rgb(180,180,255);
 }

@@ -122,6 +122,8 @@ public class FileProcessor {
         }
     }
 
+    public int getHighScore(){return this.scoreList[0];}
+
     public int[] getScore(){return this.scoreList;}
 
     public String[] getName(){return this.nameList;}

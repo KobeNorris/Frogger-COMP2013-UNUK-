@@ -83,10 +83,8 @@ public class HardGameController extends GameController{
         frogger.changeEnd();
         this.add(frogger);
 
-        initTime(90);
-        initScore(0);
-        initLife(3);
-        initGameMode("Hard");
+        initInfo("Hard");
+
         start();
     }
 
