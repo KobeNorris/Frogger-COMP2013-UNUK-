@@ -41,7 +41,7 @@ public class FroggerModelTest {
         if(instance == null)
             instance = new FroggerModel();
 
-        assertEquals(instance.getStatus(), 0);
+        assertEquals(instance.getPoints(), 0);
     }
 
     @Test
@@ -50,9 +50,9 @@ public class FroggerModelTest {
             instance = new FroggerModel();
 
         instance.setPoints(300);
-        assertEquals(instance.getStatus(), 300);
+        assertEquals(instance.getPoints(), 300);
         instance.setPoints(0);
-        assertEquals(instance.getStatus(), 0);
+        assertEquals(instance.getPoints(), 0);
     }
 
     @Test
@@ -62,9 +62,9 @@ public class FroggerModelTest {
 
         instance.setPoints(0);
         instance.changePoints(300);
-        assertEquals(instance.getStatus(), 300);
+        assertEquals(instance.getPoints(), 300);
         instance.changePoints(-300);
-        assertEquals(instance.getStatus(), 0);
+        assertEquals(instance.getPoints(), 0);
     }
 
     @Test

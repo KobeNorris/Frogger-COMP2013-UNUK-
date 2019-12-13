@@ -1,8 +1,7 @@
 package controller.gameController;
 
-import com.icon.lifeIcon.LifeIconView;
-import com.icon.pauseIcon.PauseIconView;
-import javafx.scene.image.Image;
+import com.icon.LifeIconView;
+import com.icon.PauseIconView;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -150,6 +149,18 @@ public abstract class GameController{
         }
     }
 
+    /**
+     * This method will initialize the game information demonstration according to
+     * the mode of game stage. It will use {@link FileProcessor} to read the high
+     * score file and get present high score. The initialised components include:
+     *     <br>1. Life;
+     *     <br>2. Score;
+     *     <br>3. Remaining time;
+     *     <br>4. Game mode;
+     *     <br>5. Present high score.
+     *
+     * @param gameMode Present game's mode
+     */
     public void initInfo(String gameMode){
         int highScore = -1;
         FileProcessor i = new FileProcessor(10);
@@ -227,6 +238,12 @@ public abstract class GameController{
         this.gameStage.getChildren().add(this.gameMode);
     }
 
+    /**
+     * Initialize the demonstration of the highest score player has achieved
+     * presently. And it could demonstrate it to the player.
+     *
+     * @param highScore Present highest score player has achieved.
+     */
     public void initHighScore(int highScore){
         if(highScore < 0)
             this.highScore = new Text(420, 40, "HIGH-SCORE\nEMPTY");

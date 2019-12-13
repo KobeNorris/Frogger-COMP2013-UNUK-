@@ -1,4 +1,4 @@
-package com.icon.pauseIcon;
+package com.icon;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
