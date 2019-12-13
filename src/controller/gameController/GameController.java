@@ -1,6 +1,7 @@
 package controller.gameController;
 
-import com.lifeIcon.LifeIconView;
+import com.icon.lifeIcon.LifeIconView;
+import com.icon.pauseIcon.PauseIconView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -26,13 +27,13 @@ import java.util.ArrayList;
  * remaining time. It keeps the frogger entity simultaneously, and it will
  * change the status od each end in every 5 seconds.
  *
- * <p>
+ * <br>
  * Each of those data has 2 methods:
- *      <p>1. Initialise;
- *      <p>2. Update.
+ *      <br>1. Initialise;
+ *      <br>2. Update.
  *
  *
- * <p>
+ * <br>
  * @author Kejia Wu, scykw1@nottingham.ac.uk
  * @version 1.5
  */
@@ -40,12 +41,13 @@ public abstract class GameController{
     public AnimationTimer timer;
     public static FroggerView frogger;
     public boolean restart = false, pause = false, running = true;
-    protected Text playerScoreBoard, playerTimeBoard, playerLifeBoard, gameMode;
+    protected Text playerScoreBoard, playerTimeBoard, gameMode;
     protected Rectangle timeBar;
     protected long lastTimer;
     protected int leftEndChangeTime = 5;
 
     protected ImageView[] lifeIcon;
+    protected ImageView pauseIcon;
 
     @FXML
     protected Pane gameStage;
@@ -139,19 +141,19 @@ public abstract class GameController{
      *
      * @param presentLife Present life player has
      */
-//    public void updateLife(int presentLife) {
-//        playerLifeBoard.setText(presentLife + "-UP");
-//        if(presentLife > 2)
-//            playerLifeBoard.setFill(Color.GREEN);
-//        else if(presentLife == 2)
-//            playerLifeBoard.setFill(Color.ORANGE);
-//        else if(presentLife == 1)
-//            playerLifeBoard.setFill(Color.RED);
-//    }
     public void updateLife(int presentLife) {
         for(int iTemp = presentLife; iTemp < lifeIcon.length; iTemp++){
             this.gameStage.getChildren().remove(lifeIcon[iTemp]);
         }
+    }
+
+    public void initInfo(){
+        initLife(5);
+        initScore(0);
+        initTime(60);
+        initGameMode("Easy");
+        pauseIcon = new PauseIconView(190, 425, 230);
+        this.gameStage.getChildren().add(pauseIcon);
     }
 
     /**
@@ -295,6 +297,7 @@ public abstract class GameController{
     public boolean checkPause(){
         if(pause){
             pause = false;
+            pauseIcon.setVisible(true);
             return true;
         }else
             return false;
@@ -308,6 +311,7 @@ public abstract class GameController{
     public boolean checkRestart(){
         if(restart){
             restart = false;
+            pauseIcon.setVisible(false);
             return true;
         }else
             return false;

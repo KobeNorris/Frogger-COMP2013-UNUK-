@@ -1,4 +1,4 @@
-package com.lifeIcon;
+package com.icon.lifeIcon;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

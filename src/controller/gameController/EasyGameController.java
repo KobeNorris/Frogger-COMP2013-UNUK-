@@ -67,10 +67,7 @@ public class EasyGameController extends GameController{
         frogger.setGameMode("Easy");
         this.add(frogger);
 
-        initTime(60);
-        initScore(0);
-        initLife(3);
-        initGameMode("Easy");
+        initInfo();
 
         start();
     }

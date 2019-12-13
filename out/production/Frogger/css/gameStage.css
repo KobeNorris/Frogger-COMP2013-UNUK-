@@ -5,4 +5,5 @@
 Text{
      -fx-font-family: "Press Start 2P";
      -fx-scale-x: 0.85;
+     -fx-background-color: rgb(0,0,0);
 }
