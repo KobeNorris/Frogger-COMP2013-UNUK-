@@ -2,9 +2,11 @@ Kobe
 1670
 Kobe
 640
-Kobe
-570
+Jocker
+600
 w
+570
+Kobe
 570
 KK
 560
@@ -16,5 +18,3 @@ w
 500
 K
 480
-Kobe
-430
