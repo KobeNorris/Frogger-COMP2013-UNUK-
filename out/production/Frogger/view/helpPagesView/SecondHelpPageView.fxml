@@ -20,8 +20,8 @@
                 <Image url="@/img/helpPageCom/SecondPage.png" />
             </image>
         </ImageView>
-        <Button layoutY="710.0" mnemonicParsing="false" onMouseClicked="#jumpToMenu" prefHeight="90.0" prefWidth="600.0" text="Back To Main" />
-        <Button layoutX="300.0" layoutY="620.0" mnemonicParsing="false" onMouseClicked="#jumpToThirdHelpPage" prefHeight="90.0" prefWidth="300.0" text="Next" />
-      <Button layoutY="620.0" mnemonicParsing="false" onMouseClicked="#jumpToFirstHelpPage" prefHeight="90.0" prefWidth="300.0" text="Prev" />
+        <Button layoutY="730.0" mnemonicParsing="false" onMouseClicked="#jumpToMenu" prefHeight="90.0" prefWidth="600.0" text="Back To Main" />
+        <Button layoutX="300.0" layoutY="640.0" mnemonicParsing="false" onMouseClicked="#jumpToThirdHelpPage" prefHeight="90.0" prefWidth="300.0" text="Next" />
+      <Button layoutY="640.0" mnemonicParsing="false" onMouseClicked="#jumpToFirstHelpPage" prefHeight="90.0" prefWidth="300.0" text="Prev" />
     </children>
 </Pane>

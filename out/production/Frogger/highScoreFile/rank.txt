@@ -4,6 +4,8 @@ Kobe
 640
 Kobe
 570
+w
+570
 KK
 560
 Kobe
@@ -12,9 +14,7 @@ Kobe
 550
 w
 500
+K
+480
 Kobe
 430
-lp
-260
-Kobe
-240

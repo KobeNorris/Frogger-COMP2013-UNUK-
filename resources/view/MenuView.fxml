@@ -11,7 +11,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: rgb(0,0,0);" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="860.0" prefWidth="600.0" style="-fx-background-color: rgb(0,0,0);" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
    <stylesheets>
        <URL value="@/css/menu.css" />
    </stylesheets>
@@ -24,9 +24,10 @@
       </ImageView>
       <Button id="startButton" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#jumpToDifficultyLevelSelection" prefHeight="90.0" prefWidth="600.0" text="Start">
       </Button>
-       <Button id="helpButton" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#jumpToFirstHelpPage" prefHeight="90.0" prefWidth="600.0" text="Help">
+       <Button id="helpButton" layoutY="520.0" mnemonicParsing="false" onMouseClicked="#jumpToFirstHelpPage" prefHeight="90.0" prefWidth="600.0" text="Help">
        </Button>
-      <Button id="highScoreButton" layoutY="660.0" mnemonicParsing="false" onMouseClicked="#jumpToHighScore" prefHeight="90.0" prefWidth="600.0" text="High Score">
+      <Button id="highScoreButton" layoutY="640.0" mnemonicParsing="false" onMouseClicked="#jumpToHighScore" prefHeight="90.0" prefWidth="600.0" text="High Score">
       </Button>
+      <Button id="highScoreButton" layoutY="760.0" mnemonicParsing="false" onMouseClicked="#jumpToHighScore" prefHeight="90.0" prefWidth="600.0" text="Exit" />
    </children>
 </AnchorPane>
