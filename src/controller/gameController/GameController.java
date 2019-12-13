@@ -19,6 +19,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
+import util.FileProcessor;
+
 import java.util.ArrayList;
 
 /**
@@ -41,7 +43,7 @@ public abstract class GameController{
     public AnimationTimer timer;
     public static FroggerView frogger;
     public boolean restart = false, pause = false, running = true;
-    protected Text playerScoreBoard, playerTimeBoard, gameMode;
+    protected Text playerScoreBoard, playerTimeBoard, highScore, gameMode;
     protected Rectangle timeBar;
     protected long lastTimer;
     protected int leftEndChangeTime = 5;
@@ -120,8 +122,8 @@ public abstract class GameController{
         timeBar.setWidth((this.gameStage.getPrefWidth() - 20) * presentTime/60);
         timeBar.setX((this.gameStage.getPrefWidth() - 20) * (1 - (double)presentTime/60) + 10);
         if(presentTime > 40){
-            playerTimeBoard.setFill(Color.GREEN);
-            timeBar.setFill(Color.GREEN);
+            playerTimeBoard.setFill(Color.rgb(10,225,10));
+            timeBar.setFill(Color.rgb(10,225,10));
         }
         else if(presentTime > 20){
             playerTimeBoard.setFill(Color.ORANGE);
@@ -148,10 +150,20 @@ public abstract class GameController{
     }
 
     public void initInfo(String gameMode){
+        int highScore = -1;
+        FileProcessor i = new FileProcessor(10);
+        try{
+            i.readFile("resources/highScoreFile/rank.txt");
+            highScore = i.getHighScore();
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
         initLife(frogger.getLife());
         initScore(frogger.getPoints());
         initTime(frogger.getRemainingTime());
         initGameMode(gameMode);
+        initHighScore(highScore);
         pauseIcon = new PauseIconView(190, 425, 230);
         this.gameStage.getChildren().add(pauseIcon);
     }
@@ -163,9 +175,9 @@ public abstract class GameController{
      * @param presentScore Player's present score
      */
     public void initScore(int presentScore) {
-        playerScoreBoard = new Text(10, 40, "SCORE\n" + presentScore);
-        playerScoreBoard.setFont(Font.font ("Press Start 2P", 24));
-        playerScoreBoard.setFill(Color.rgb(255,255,255));
+        playerScoreBoard = new Text(40, 40, "SCORE\n" + presentScore);
+        playerScoreBoard.setFont(Font.font ("Press Start 2P", 20));
+        playerScoreBoard.setFill(Color.SLATEBLUE);
         this.gameStage.getChildren().add(playerScoreBoard);
     }
 
@@ -178,9 +190,8 @@ public abstract class GameController{
     public void initTime(int presentTime) {
         playerTimeBoard = new Text(430, 825, "Time: " + presentTime);
         playerTimeBoard.setFont(Font.font ("Press Start 2P", 20));
-        playerTimeBoard.setFill(Color.GREEN);
         this.gameStage.getChildren().add(playerTimeBoard);
-        timeBar = new Rectangle( this.gameStage.getPrefWidth() - 20 * presentTime/60, 25, Color.GREEN);
+        timeBar = new Rectangle( this.gameStage.getPrefWidth() - 20 * presentTime/60, 25);
         this.gameStage.getChildren().add(timeBar);
         timeBar.setX(10);
         timeBar.setY(830);
@@ -208,10 +219,20 @@ public abstract class GameController{
      * @param gameMode The mode of the present mode
      */
     public void initGameMode(String gameMode){
-        this.gameMode = new Text(170, 40, gameMode + " Mode");
+        this.gameMode = new Text(160, 40, gameMode + " Mode");
         this.gameMode.setFont(Font.font ("Press Start 2P", 30));
         this.gameMode.setFill(Color.WHITE);
         this.gameStage.getChildren().add(this.gameMode);
+    }
+
+    public void initHighScore(int highScore){
+        if(highScore < 0)
+            this.highScore = new Text(420, 40, "HIGH-SCORE\n  EMPTY");
+        else
+            this.highScore = new Text(420, 40, "HIGH-SCORE\n   " + highScore);
+        this.highScore.setFont(Font.font ("Press Start 2P", 20));
+        this.highScore.setFill(Color.SLATEBLUE);
+        this.gameStage.getChildren().add(this.highScore);
     }
 
     /**

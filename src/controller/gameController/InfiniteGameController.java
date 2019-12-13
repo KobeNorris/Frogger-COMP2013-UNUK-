@@ -116,7 +116,7 @@ public class InfiniteGameController extends HardGameController{
      * @param presentLevel Present difficulty level player has reached
      */
     public void initLevel(int presentLevel){
-        playerDifficultyLevelBoard = new Text(180, 70, "Difficulty " + presentLevel);
+        playerDifficultyLevelBoard = new Text(170, 70, "Difficulty " + presentLevel);
         playerDifficultyLevelBoard.setFont(Font.font ("Press Start 2P", 20));
         playerDifficultyLevelBoard.setFill(Color.RED);
         this.gameStage.getChildren().add(playerDifficultyLevelBoard);
