@@ -121,7 +121,7 @@ public class SceneSwitcher {
     public static void jumpToEasyGame() throws IOException {
         Main.difficulty = 1;
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/gameView/EasyGameView.fxml"));
-        Scene game  = new Scene(loader.load(),600,800);
+        Scene game  = new Scene(loader.load(),600,860);
         controller = loader.<GameController>getController();
         game.addEventHandler(KeyEvent.KEY_PRESSED, new KeyBoardListener());
         Main.setController(controller);

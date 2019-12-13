@@ -16,7 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 
-//import javax.swing.text.html.ImageView;
+import javax.swing.text.html.ImageView;
 import java.util.ArrayList;
 
 /**
@@ -40,9 +40,10 @@ public abstract class GameController{
     public static FroggerView frogger;
     public boolean restart = false, pause = false, running = true;
     protected Text playerScoreBoard, playerTimeBoard, playerLifeBoard, gameMode;
-//    protected ImageView[] lifeIcon;
     protected long lastTimer;
     protected int leftEndChangeTime = 5;
+
+    protected ImageView[] lifeIcon;
 
     @FXML
     protected Pane gameStage;
@@ -99,7 +100,7 @@ public abstract class GameController{
      * @param presentScore Present score player gaines
      */
     public void updateScore(int presentScore) {
-        playerScoreBoard.setText("Score: " + presentScore);
+        playerScoreBoard.setText("SCORE\n" + presentScore);
     }
 
     /**
@@ -145,7 +146,7 @@ public abstract class GameController{
      * @param presentScore Player's present score
      */
     public void initScore(int presentScore) {
-        playerScoreBoard = new Text(20, 70, "Score: " + presentScore);
+        playerScoreBoard = new Text(20, 70, "SCORE\n" + presentScore);
         playerScoreBoard.setFont(Font.font ("Press Start 2P", 18));
         playerScoreBoard.setFill(Color.rgb(255,255,255));
         this.gameStage.getChildren().add(playerScoreBoard);
@@ -164,22 +165,22 @@ public abstract class GameController{
         this.gameStage.getChildren().add(playerTimeBoard);
     }
 
-    /**
-     * This method initialise player's present life and display it to
-     * the player.
-     *
-     * @param presentLife Player's present life
-     */
-    protected void initLife(int presentLife) {
-        playerLifeBoard = new Text(30, 40, presentLife + "-UP");
-        playerLifeBoard.setFont(Font.font ("Press Start 2P", 25));
-        playerLifeBoard.setFill(Color.GREEN);
-        this.gameStage.getChildren().add(playerLifeBoard);
-//        lifeIcon = new ImageView[3];
-//        for(int iTemp = 0; iTemp < 3; iTemp++){
-//            lifeIcon[iTemp] = new ImageView(new Image(getClass().class.getResourceAsStream("@/img/StageImg/openCG.gif"));
-//        }
-    }
+//    /**
+//     * This method initialise player's present life and display it to
+//     * the player.
+//     *
+//     * @param presentLife Player's present life
+//     */
+//    protected void initLife(int presentLife) {
+//        playerLifeBoard = new Text(30, 40, presentLife + "-UP");
+//        playerLifeBoard.setFont(Font.font ("Press Start 2P", 25));
+//        playerLifeBoard.setFill(Color.GREEN);
+//        this.gameStage.getChildren().add(playerLifeBoard);
+////        lifeIcon = new ImageView[3];
+////        for(int iTemp = 0; iTemp < 3; iTemp++){
+////            lifeIcon[iTemp] = new ImageView(new Image(getClass().class.getResourceAsStream("@/img/StageImg/openCG.gif"));
+////        }
+//    }
 
     /**
      * Initialize the game mode demonstration
@@ -312,6 +313,13 @@ public abstract class GameController{
             }
             frogger.deductTime();
             updateTime(frogger.getRemainingTime());
+        }
+    }
+
+    public void initLife(int num){
+        lifeIcon = new ImageView[num];
+        for(int iTemp = 0; iTemp < num; iTemp++){
+            lifeIcon[iTemp] = new ImageView();
         }
     }
 }

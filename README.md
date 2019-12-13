@@ -8,7 +8,7 @@ Build script: **Ant**
 
 ----
 
-## For maintenance
+## **For maintenance**
 
 * **Package rearrangement**
     1. ```src``` directory:
@@ -64,7 +64,7 @@ Build script: **Ant**
     1. ```ElementFactory```<10/Dec/2019>: 
         * A factory for ```View``` and all of its child classes.
 ----
-## For extension
+## **For extension**
 
 * **Additional pages**
     1. ```MenuView``` <29/Nov/2019>;
