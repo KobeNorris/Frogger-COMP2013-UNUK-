@@ -13,7 +13,7 @@ Build script: **Ant**
 * **Package rearrangement**
     1. ```src``` directory:
 
-        ![avatar](resources/img/com/src.png)
+        ![avatar](resources/img/readmeCom/src.png)
         * ```com``` <19/Nov/2019>: Contains game elements;
         * ```controller``` <28/Nov/2019>: Contains FXML controllers;
         * ```gameApp``` <19/Nov/2019>: Contains Main class;
@@ -21,11 +21,11 @@ Build script: **Ant**
 
     2. ```resources``` directory <20/Nov/2019>
 
-        ![avatar](resources/img/com/resources.png)
+        ![avatar](resources/img/readmeCom/resources.png)
 
     3. ```test``` directory:
 
-        ![avatar](resources/img/com/test.png)
+        ![avatar](resources/img/readmeCom/test.png)
         * ```com``` <21/Nov/2019>
 
 * **Bugs refactor**
