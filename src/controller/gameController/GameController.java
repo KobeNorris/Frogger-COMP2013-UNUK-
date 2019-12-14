@@ -19,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.TextAlignment;
+import util.ElementFactory;
 import util.FileProcessor;
 
 import java.util.ArrayList;
@@ -176,7 +177,7 @@ public abstract class GameController{
         initTime(frogger.getRemainingTime());
         initGameMode(gameMode);
         initHighScore(highScore);
-        pauseIcon = new PauseIconView(190, 425, 230);
+        pauseIcon = ElementFactory.pauseIconViewProvider(190, 425, 230);
         this.gameStage.getChildren().add(pauseIcon);
     }
 
@@ -220,7 +221,7 @@ public abstract class GameController{
         double positionX = 5;
         this.lifeIcon = new ImageView[presentLife];
         for(int iTemp = 0; iTemp < presentLife; iTemp++){
-            this.lifeIcon[iTemp] = new LifeIconView(positionX,800,30);
+            this.lifeIcon[iTemp] = ElementFactory.lifeIconViewProvider(positionX,800,30);
             this.gameStage.getChildren().add(this.lifeIcon[iTemp]);
             positionX += 35;
         }

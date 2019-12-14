@@ -2,6 +2,8 @@ package util;
 
 import com.end.EndView;
 import com.frogger.FroggerView;
+import com.icon.LifeIconView;
+import com.icon.PauseIconView;
 import com.obstacle.car.CarView;
 import com.obstacle.snake.SnakeView;
 import com.obstacle.truck.LongTruckView;
@@ -165,5 +167,33 @@ public class ElementFactory {
      */
     public static WetTurtleView wetTurtleProvider(double positionX, double positionY, double size, double speed){
         return new WetTurtleView(positionX, positionY, size, speed);
+    }
+
+    /**
+     * This is the only constructor of lifeIconView, which takes the
+     * icon's x position, y position and size of the image. Then, display
+     * it to the player.
+     *
+     * @param positionX The position of life icon in X direction
+     * @param positionY The position of life icon in Y direction
+     * @param size The size of the image of life icon
+     * @retrun The life icon's image view
+     */
+    public static LifeIconView lifeIconViewProvider(double positionX, double positionY, double size){
+        return new LifeIconView(positionX, positionY, size);
+    }
+
+    /**
+     * This is the only constructor of PauseIconView, which takes the
+     * icon's x position, y position and size of the image. Then, display
+     * it to the player.
+     *
+     * @param positionX The position of pause icon in X direction
+     * @param positionY The position of pause icon in Y direction
+     * @param size The size of the image of pause icon
+     * @retrun The pause icon's image view
+     */
+    public static PauseIconView pauseIconViewProvider(double positionX, double positionY, double size){
+        return new PauseIconView(positionX, positionY, size);
     }
 }
