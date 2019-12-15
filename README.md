@@ -4,16 +4,23 @@
 
 Tested on: **Lab Machine**
 
-Build script: **Ant**
+Build script: **Gradle**
+
+Words count: **526**
 
 ----
 
+## **Screen Shots**
+
+   ![avatar](readmeImg/PageScreenShots/ScreenShots.PNG)
+
+----
 ## **For maintenance**
 
 * **Package rearrangement**
     1. ```src``` directory:
 
-        ![avatar](resources/img/readmeCom/src.png)
+        ![avatar](readmeImg/PackageStructure/src.JPG)
         * ```com``` <19/Nov/2019>: Contains game elements;
         * ```controller``` <28/Nov/2019>: Contains FXML controllers;
         * ```gameApp``` <19/Nov/2019>: Contains Main class;
@@ -21,11 +28,11 @@ Build script: **Ant**
 
     2. ```resources``` directory <20/Nov/2019>
 
-        ![avatar](resources/img/readmeCom/resources.png)
+        ![avatar](readmeImg/PackageStructure/resources.JPG)
 
     3. ```test``` directory:
 
-        ![avatar](resources/img/readmeCom/test.png)
+        ![avatar](readmeImg/PackageStructure/test.JPG)
         * ```com``` <21/Nov/2019>
 
 * **Bugs refactor**
@@ -80,7 +87,7 @@ Build script: **Ant**
 * **Game termination**
     1. Lost all lifes <27/Nov/2019>:
     
-        ![avatar](resources/img/readmeCom/lifeIconExample.png)
+        ![avatar](readmeImg/Components/lifeIconExample.png)
         * Player used up his all chances of life;
         * Player gets a deduction of 50 points each time.
     2. Used all time <08/Dec/2019>:
@@ -90,29 +97,29 @@ Build script: **Ant**
 * **Extra game elements**
     1. ```CrocEnd``` and ```BugEnd``` classes <01/Dec/2019>:
     
-        ![avatar](resources/img/End/EmptyEnd.png)
-        ![avatar](resources/img/End/FrogEnd.png)
-        ![avatar](resources/img/End/CrocEnd.png)
-        ![avatar](resources/img/End/BugEnd.png)
+        ![avatar](readmeImg/Components/EmptyEnd.png)
+        ![avatar](readmeImg/Components/FrogEnd.png)
+        ![avatar](readmeImg/Components/CrocEnd.png)
+        ![avatar](readmeImg/Components/BugEnd.png)
         * Implemented in ```Hard``` mode and ```Infinite``` mode;
         * ```End``` status could change in every 6 seconds;
         * ```CrocEnd```: A lethal ```End``` which could kill the frogger;
         * ```BugEnd```: An ```End``` with a snack which provides player extra bonus.
     2. ```Snake``` <05/Dec/2019>:
     
-        ![avatar](resources/img/Obstacle/snake/snake.gif)
+        ![avatar](readmeImg/Components/snake.gif)
         * Implemented in ```Hard``` mode and ```Infinite``` mode;
         * A lethal ```Snake``` appears in the middle lane of the game stage.
     3. ```Crocodile``` <07/Dec/2019>:
     
-        ![avatar](resources/img/readmeCom/crocodile.png)
+        ![avatar](readmeImg/Components/crocodile.png)
         * Implemented in ```Hard``` mode and ```Infinite``` mode;
         * The head of ```Crocodile``` is lethal when it is open.
 
 * **Extra game feature**
     1. Pause <05/Dec/2019>:
     
-        ![avatar](resources/img/readmeCom/pauseExample.png)
+        ![avatar](readmeImg/Components/pauseExample.png)
         * Press SPACE on the keyboard to pause;
         * Press SPACE to restart the game.
     2. Animation <05/Dec/2019>:
@@ -120,13 +127,13 @@ Build script: **Ant**
         * Another in ````InputNameView````.
     3. Time counter <08/Dec/2019>:
     
-        ![avatar](resources/img/readmeCom/timeCounterExample.png)
+        ![avatar](readmeImg/Components/timeCounterExample.png)
         * Player only have 90 seconds in each term of the game;
         * Time counter will be refreshed after each time player die or reach the end;
         * When time is counted down to 0, ```Frogger``` will die immediately. 
     4. ```InfiniteGameController``` <02/Dec/2019>:
     
-        ![avatar](resources/img/readmeCom/infiniteModeExample.png)
+        ![avatar](readmeImg/Components/infiniteModeExample.png)
         * Implemented in ```Infinite``` mode;
         * Player could play infinite terms with increasing difficulty;
         * The difficulty is calculated according to **Curve growth algorithm**.

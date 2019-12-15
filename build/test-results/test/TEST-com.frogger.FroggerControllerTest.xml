@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.frogger.FroggerControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-12-14T22:47:09" hostname="wpsitaly" time="0.003">
+<testsuite name="com.frogger.FroggerControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-12-15T18:25:22" hostname="WPSARMENIA" time="0.003">
   <properties/>
-  <testcase name="resetToStart()" classname="com.frogger.FroggerControllerTest" time="0.0"/>
-  <testcase name="revive()" classname="com.frogger.FroggerControllerTest" time="0.0"/>
-  <testcase name="blockMove()" classname="com.frogger.FroggerControllerTest" time="0.0"/>
-  <testcase name="bonusPoints()" classname="com.frogger.FroggerControllerTest" time="0.001"/>
+  <testcase name="resetToStart()" classname="com.frogger.FroggerControllerTest" time="0.001"/>
+  <testcase name="revive()" classname="com.frogger.FroggerControllerTest" time="0.001"/>
+  <testcase name="blockMove()" classname="com.frogger.FroggerControllerTest" time="0.001"/>
+  <testcase name="bonusPoints()" classname="com.frogger.FroggerControllerTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

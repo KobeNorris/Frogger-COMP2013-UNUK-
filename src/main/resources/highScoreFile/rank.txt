@@ -1,15 +1,15 @@
 Kobe
 1750
-Jerry Smith
+Jerry
 600
-w
-80
-Empty
--1
-Empty
--1
-Empty
--1
+Laim
+600
+Krixi
+500
+TimeBoom
+450
+Kobe
+130
 Empty
 -1
 Empty
