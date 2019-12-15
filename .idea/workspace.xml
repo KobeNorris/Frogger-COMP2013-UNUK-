@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="FroggerArtifact:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ddd31ef7-cc14-4f25-9e97-b30f9f9ae3b1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/FroggerArtifact-1.0-SNAPSHOT.tar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/FroggerArtifact-1.0-SNAPSHOT.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/FroggerArtifact-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.end.EndControllerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.end.EndControllerTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.end.EndModelTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.end.EndModelTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.frogger.FroggerControllerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.frogger.FroggerControllerTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.frogger.FroggerModelTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.frogger.FroggerModelTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.end.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.end.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.frogger.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.frogger.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/highScoreFile/rank.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/highScoreFile/rank.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/scripts/FroggerArtifact" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/scripts/FroggerArtifact.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.end.EndControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.end.EndControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.end.EndModelTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.end.EndModelTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.frogger.FroggerControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.frogger.FroggerControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.frogger.FroggerModelTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.frogger.FroggerModelTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/allclasses-noframe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/Controller.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/Model.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/View.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/class-use/Controller.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/class-use/Model.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/class-use/View.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/EndController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/EndControllerTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/EndModel.Status.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/EndModel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/EndModelTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/EndView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/class-use/EndController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/class-use/EndControllerTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/class-use/EndModel.Status.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/class-use/EndModel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/class-use/EndModelTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/class-use/EndView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/end/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/FroggerController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/FroggerControllerTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/FroggerModel.Status.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/FroggerModel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/FroggerModelTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/FroggerView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/class-use/FroggerController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/class-use/FroggerControllerTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/class-use/FroggerModel.Status.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/class-use/FroggerModel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/class-use/FroggerModelTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/class-use/FroggerView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/frogger/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/ObstacleController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/ObstacleModel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/ObstacleView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/car/CarView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/car/class-use/CarView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/car/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/car/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/car/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/car/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/class-use/ObstacleController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/class-use/ObstacleModel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/class-use/ObstacleView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/snake/SnakeView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/snake/class-use/SnakeView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/snake/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/snake/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/snake/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/snake/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/truck/LongTruckView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/truck/ShortTruckView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/truck/class-use/LongTruckView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/truck/class-use/ShortTruckView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/truck/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/truck/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/truck/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/obstacle/truck/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/PlatformController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/PlatformModel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/PlatformView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/class-use/PlatformController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/class-use/PlatformModel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/class-use/PlatformView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/crocodile/CrocodileBodyView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/crocodile/CrocodileHeadView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/crocodile/class-use/CrocodileBodyView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/crocodile/class-use/CrocodileHeadView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/crocodile/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/crocodile/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/crocodile/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/crocodile/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/log/LogView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/log/class-use/LogView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/log/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/log/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/log/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/log/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/turtle/DryTurtleView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/turtle/WetTurtleView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/turtle/class-use/DryTurtleView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/turtle/class-use/WetTurtleView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/turtle/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/turtle/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/turtle/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/com/platform/turtle/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/DifficultyLevelSelectionController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/HighScoreController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/InputNameController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/MenuController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/class-use/DifficultyLevelSelectionController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/class-use/HighScoreController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/class-use/InputNameController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/class-use/MenuController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/gameController/EasyGameController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/gameController/GameController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/gameController/HardGameController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/gameController/InfiniteGameController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/gameController/class-use/EasyGameController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/gameController/class-use/GameController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/gameController/class-use/HardGameController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/gameController/class-use/InfiniteGameController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/gameController/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/gameController/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/gameController/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/gameController/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/helpPagesController/FirstPageController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/helpPagesController/FourthPageController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/helpPagesController/SecondPageController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/helpPagesController/ThirdPageController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/helpPagesController/class-use/FirstPageController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/helpPagesController/class-use/FourthPageController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/helpPagesController/class-use/SecondPageController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/helpPagesController/class-use/ThirdPageController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/helpPagesController/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/helpPagesController/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/helpPagesController/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/helpPagesController/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/controller/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/deprecated-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/gameApp/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/gameApp/class-use/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/gameApp/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/gameApp/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/gameApp/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/gameApp/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-12.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-13.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-14.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-15.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-16.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-17.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-18.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-19.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-20.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-21.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-22.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index-files/index-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/images/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/jquery-1.10.2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/jszip/dist/jszip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/jquery/jszip/dist/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/member-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/overview-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/package-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/type-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/ElementFactory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/FileProcessor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/MusicPlayer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/SceneSwitcher.KeyBoardListener.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/SceneSwitcher.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/class-use/ElementFactory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/class-use/FileProcessor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/class-use/MusicPlayer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/class-use/SceneSwitcher.KeyBoardListener.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/class-use/SceneSwitcher.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDoc/util/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/end/EndController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/end/EndController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/end/EndModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/end/EndModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/end/EndView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/end/EndView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/end/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/end/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frogger/FroggerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frogger/FroggerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frogger/FroggerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frogger/FroggerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frogger/FroggerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frogger/FroggerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frogger/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frogger/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icon/LifeIconView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icon/LifeIconView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icon/PauseIconView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icon/PauseIconView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/icon/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/icon/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/ObstacleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/ObstacleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/ObstacleModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/ObstacleModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/ObstacleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/ObstacleView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/car/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/car/CarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/car/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/car/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/snake/SnakeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/snake/SnakeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/snake/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/snake/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/LongTruckView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/LongTruckView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/ShortTruckView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/ShortTruckView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/platform/PlatformController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/platform/PlatformController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/platform/PlatformModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/platform/PlatformModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/platform/PlatformView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/platform/PlatformView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/platform/crocodile/CrocodileBodyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/platform/crocodile/CrocodileBodyView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/platform/crocodile/CrocodileHeadView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/platform/crocodile/CrocodileHeadView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/platform/crocodile/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/platform/crocodile/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/platform/log/LogView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/platform/log/LogView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/platform/log/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/platform/log/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/platform/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/platform/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/platform/turtle/DryTurtleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/platform/turtle/DryTurtleView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/platform/turtle/WetTurtleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/platform/turtle/WetTurtleView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/platform/turtle/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/platform/turtle/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DifficultyLevelSelectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DifficultyLevelSelectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/HighScoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/HighScoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/InputNameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/InputNameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/EasyGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/EasyGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/HardGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/HardGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/InfiniteGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/InfiniteGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/helpPagesController/FirstPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/helpPagesController/FirstPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/helpPagesController/FourthPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/helpPagesController/FourthPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/helpPagesController/SecondPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/helpPagesController/SecondPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/helpPagesController/ThirdPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/helpPagesController/ThirdPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/helpPagesController/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/helpPagesController/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gameApp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gameApp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gameApp/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gameApp/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ElementFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ElementFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/FileProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/FileProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/MusicPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/SceneSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/SceneSwitcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/highScoreFile/rank.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/highScoreFile/rank.txt" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Frogger" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Ux7clQRqWYIOTIMXU66KZ0i7Qm" />
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="froggerartifact" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Frogger_1" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\scykw1.AD\Desktop\Frogger" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle projects" />
+      <command value="gradle test" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameApp.Main" />
+      <module name="Frogger.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Frogger [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Frogger [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="FroggerArtifact.jar (1)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/FroggerA_jar/FroggerArtifact.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FroggerArtifact.jar (2)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/FroggerArtifact_jar/FroggerArtifact.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Frogger.main.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Frogger_main_jar/Frogger.main.jar" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Gradle.Frogger [run]" />
+      <item itemvalue="Gradle.Frogger [test]" />
+      <item itemvalue="JAR Application.FroggerArtifact.jar (1)" />
+      <item itemvalue="JAR Application.Frogger.main.jar" />
+      <item itemvalue="JAR Application.FroggerArtifact.jar (2)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.FroggerArtifact.jar (2)" />
+        <item itemvalue="Gradle.Frogger [test]" />
+        <item itemvalue="Gradle.Frogger [run]" />
+        <item itemvalue="JAR Application.Frogger.main.jar" />
+        <item itemvalue="JAR Application.FroggerArtifact.jar (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ddd31ef7-cc14-4f25-9e97-b30f9f9ae3b1" name="Default Changelist" comment="" />
+      <created>1576286473180</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576286473180</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

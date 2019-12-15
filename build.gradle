@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+group 'com.siebers'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 10
+repositories {
+    mavenCentral()
+}
+test {
+    useJUnitPlatform()
+}
+dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.4.2')
+    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
+}
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'gameApp.Main'
+        )
+    }
+}
+mainClassName = 'gameApp.Main'
