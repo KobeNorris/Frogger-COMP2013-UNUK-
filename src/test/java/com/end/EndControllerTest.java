@@ -7,16 +7,29 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
- * Test the functionality of EndController
+ * <h1>EndControllerTest</h1>
+ *
+ * <p>This class will test the functionality of {@link EndController}
+ *
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
+ * @since 1.0
+ * @see EndController
  */
 public class EndControllerTest {
     static EndController instance = null;
 
+    /**
+     * The instance of End Controller should be realized first
+     */
     @BeforeAll
     public static void initialise(){
         instance = new EndController(new EndModel());
     }
 
+    /**
+     * To test the functionality of {@link EndController#setStatus(String)}
+     */
     @Test
     public void setStatus() {
         instance.setStatus("frog");

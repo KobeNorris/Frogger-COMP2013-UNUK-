@@ -126,7 +126,7 @@ public class SceneSwitcher {
      */
     public static void jumpToEasyGame() throws IOException {
         Main.difficulty = 1;
-        GameController.filePath = "src/main/resources/map/InfiniteMap.txt";
+        GameController.filePath = "src/main/resources/map/EasyMap.txt";
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/gameView/NormalGameView.fxml"));
         Scene game  = new Scene(loader.load(),600,860);
         controller = loader.<GameController>getController();

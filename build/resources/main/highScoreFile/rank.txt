@@ -2,9 +2,11 @@ Kobe
 1750
 Kobe
 810
-Laim
-600
+KobeDad
+730
 Jerry
+600
+Laim
 600
 Krixi
 500
@@ -12,9 +14,7 @@ TimeBoom
 450
 Kobe
 290
-
-130
 Kobe
 130
-sad
-0
+
+130

@@ -34,4 +34,4 @@ longTruck 0 540 1
 longTruck 500 540 1
 car 500 490 -5
 car 800 490 -5
-snake 0 430 2
+snake 0 425 2
