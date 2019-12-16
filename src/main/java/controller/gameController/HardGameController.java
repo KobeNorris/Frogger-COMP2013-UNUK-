@@ -22,7 +22,6 @@ import java.util.Random;
  * @see ElementFactory
  */
 public class HardGameController extends GameController{
-    protected static EndView[] endList;
     /**
      * Add the easy game mode's map and initialise the data demonstration.
      */
@@ -91,49 +90,5 @@ public class HardGameController extends GameController{
         initInfo("Hard");
 
         start();
-    }
-
-    /**
-     * This function changes the status of ends, there is going to be only one
-     * pair of CrocEnd and BugEnd exist simultaneously at most. And if there is
-     * only one End left, it will be set to BugEnd.
-     */
-    public static void changeEnd(){
-        int emptyEndCounter = 0;
-        Date date = new Date();
-        Random rand = new Random(date.getTime());
-        for(int iTemp = 0; iTemp < 5; iTemp++){
-            if(!endList[iTemp].checkStatusFROGOCCUPIED()){
-                emptyEndCounter++;
-                endList[iTemp].occupyEnd("empty");
-            }
-        }
-        if(emptyEndCounter > 0){
-            int tempCounter = 0;
-            int targetIndex = rand.nextInt(emptyEndCounter);
-            targetIndex++;
-            for(int iTemp = 0; iTemp < 5; iTemp++){
-                if(endList[iTemp].checkStatusEMPTY()){
-                    tempCounter++;
-                }
-                if(targetIndex == tempCounter){
-                    endList[iTemp].occupyEnd("bug");
-                    break;
-                }
-            }
-            if(emptyEndCounter > 1){
-                tempCounter = 0;
-                targetIndex = rand.nextInt(emptyEndCounter-1);
-                targetIndex++;
-                for(int iTemp = 0; iTemp < 5; iTemp++){
-                    if(endList[iTemp].checkStatusEMPTY())
-                        tempCounter++;
-                    if(targetIndex == tempCounter){
-                        endList[iTemp].occupyEnd("croc");
-                        break;
-                    }
-                }
-            }
-        }
     }
 }

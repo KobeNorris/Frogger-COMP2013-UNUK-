@@ -22,7 +22,7 @@ import util.ElementFactory;
  * @see HardGameController
  * @see ElementFactory
  */
-public class InfiniteGameController extends HardGameController{
+public class InfiniteGameController extends GameController{
     /**
      * The demonstration board of the current difficulty level
      */
@@ -30,7 +30,6 @@ public class InfiniteGameController extends HardGameController{
     /**
      * Add the infinite game mode's map and initialise the data demonstration.
      */
-    @Override
     public void initialize(){
         initGameStage();
 

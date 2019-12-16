@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.end.EndControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-15T18:25:22" hostname="WPSARMENIA" time="0.008">
+<testsuite name="com.end.EndControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-15T23:54:22" hostname="WPSARMENIA" time="0.01">
   <properties/>
-  <testcase name="setStatus()" classname="com.end.EndControllerTest" time="0.008"/>
+  <testcase name="setStatus()" classname="com.end.EndControllerTest" time="0.01"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

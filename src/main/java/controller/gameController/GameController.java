@@ -1,5 +1,6 @@
 package controller.gameController;
 
+import com.end.EndView;
 import com.icon.LifeIconView;
 import com.icon.PauseIconView;
 import javafx.scene.image.ImageView;
@@ -23,6 +24,8 @@ import util.ElementFactory;
 import util.FileProcessor;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
 
 /**
  * <h1>GameController</h1>
@@ -76,6 +79,7 @@ public abstract class GameController{
 
     protected ImageView[] lifeIcon;
     protected ImageView pauseIcon;
+    protected static EndView[] endList;
 
     /**
      * The gameStage pane keeps all game elements
@@ -127,6 +131,50 @@ public abstract class GameController{
             }
 
         });
+    }
+
+    /**
+     * This function changes the status of ends, there is going to be only one
+     * pair of CrocEnd and BugEnd exist simultaneously at most. And if there is
+     * only one End left, it will be set to BugEnd.
+     */
+    public static void changeEnd(){
+        int emptyEndCounter = 0;
+        Date date = new Date();
+        Random rand = new Random(date.getTime());
+        for(int iTemp = 0; iTemp < 5; iTemp++){
+            if(!endList[iTemp].checkStatusFROGOCCUPIED()){
+                emptyEndCounter++;
+                endList[iTemp].occupyEnd("empty");
+            }
+        }
+        if(emptyEndCounter > 0){
+            int tempCounter = 0;
+            int targetIndex = rand.nextInt(emptyEndCounter);
+            targetIndex++;
+            for(int iTemp = 0; iTemp < 5; iTemp++){
+                if(endList[iTemp].checkStatusEMPTY()){
+                    tempCounter++;
+                }
+                if(targetIndex == tempCounter){
+                    endList[iTemp].occupyEnd("bug");
+                    break;
+                }
+            }
+            if(emptyEndCounter > 1){
+                tempCounter = 0;
+                targetIndex = rand.nextInt(emptyEndCounter-1);
+                targetIndex++;
+                for(int iTemp = 0; iTemp < 5; iTemp++){
+                    if(endList[iTemp].checkStatusEMPTY())
+                        tempCounter++;
+                    if(targetIndex == tempCounter){
+                        endList[iTemp].occupyEnd("croc");
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     /**
