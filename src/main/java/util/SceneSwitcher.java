@@ -126,7 +126,8 @@ public class SceneSwitcher {
      */
     public static void jumpToEasyGame() throws IOException {
         Main.difficulty = 1;
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/gameView/EasyGameView.fxml"));
+        GameController.filePath = "src/main/resources/map/InfiniteMap.txt";
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/gameView/NormalGameView.fxml"));
         Scene game  = new Scene(loader.load(),600,860);
         controller = loader.<GameController>getController();
         game.addEventHandler(KeyEvent.KEY_PRESSED, new KeyBoardListener());
@@ -145,7 +146,8 @@ public class SceneSwitcher {
      */
     public static void jumpToHardGame() throws IOException {
         Main.difficulty = 1;
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/gameView/HardGameView.fxml"));
+        GameController.filePath = "src/main/resources/map/HardMap.txt";
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/gameView/NormalGameView.fxml"));
         Scene game  = new Scene(loader.load(),600,860);
         controller = loader.<GameController>getController();
         game.addEventHandler(KeyEvent.KEY_PRESSED, new KeyBoardListener());
@@ -164,6 +166,7 @@ public class SceneSwitcher {
      */
     public static void jumpToInfiniteGame() throws IOException {
         Main.difficulty = 1;
+        GameController.filePath = "src/main/resources/map/InfiniteMap.txt";
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/view/gameView/InfiniteGameView.fxml"));
         Scene game  = new Scene(loader.load(),600,860);
         controller = loader.<GameController>getController();

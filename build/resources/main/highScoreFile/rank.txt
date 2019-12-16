@@ -11,10 +11,10 @@ Krixi
 TimeBoom
 450
 Kobe
+290
+
 130
-Empty
--1
-Empty
--1
-Empty
--1
+Kobe
+130
+sad
+0

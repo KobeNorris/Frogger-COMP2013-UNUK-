@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ceb80672-5590-40c5-83e8-4089ff0942c9" name="Default Changelist" comment="">
+    <list default="true" id="9b672970-bbdf-4810-8a27-21fc88b15084" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/build/resources/main/map/EasyMap.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/NormalGameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/map/EasyMap.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/map/HardMap.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/map/InfiniteMap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/car/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/car/CarView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/LongTruckView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/LongTruckView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/ShortTruckView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/ShortTruckView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/EasyGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/EasyGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/highScoreFile/rank.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/highScoreFile/rank.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/map/Map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/map/HardMap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/view/gameView/EasyGameView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/gameView/NormalGameView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/view/gameView/HardGameView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/end/EndView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/end/EndView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frogger/FroggerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frogger/FroggerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frogger/FroggerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frogger/FroggerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/frogger/FroggerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/frogger/FroggerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DifficultyLevelSelectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DifficultyLevelSelectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/EasyGameController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/HardGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/HardGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/HardGameController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/InfiniteGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/InfiniteGameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gameApp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gameApp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/package-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/ElementFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ElementFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/MapReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/MapReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/SceneSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/SceneSwitcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/highScoreFile/rank.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/highScoreFile/rank.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/map/Map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/map/InfiniteMap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/gameView/EasyGameView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/view/gameView/NormalGameView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/gameView/HardGameView.fxml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,14 +53,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1V1mkxcIAzFyS1ZF1r3Zyh1mtGH" />
+  <component name="ProjectId" id="1V4cYVsyYdWhveHdjxGfRey64QD" />
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/view/gameView" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\scykw1\Desktop\Frogger\src\main\resources\view\gameView" />
+      <recent name="C:\Users\scykw1\Desktop\Frogger\src\main\resources\map" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -50,33 +80,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="10" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="gameApp.Main" />
-      <module name="main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="gameApp.Main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ceb80672-5590-40c5-83e8-4089ff0942c9" name="Default Changelist" comment="" />
-      <created>1576429122046</created>
+      <changelist id="9b672970-bbdf-4810-8a27-21fc88b15084" name="Default Changelist" comment="" />
+      <created>1576515855809</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1576429122046</updated>
+      <updated>1576515855809</updated>
     </task>
     <servers />
   </component>

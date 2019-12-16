@@ -19,9 +19,8 @@ import com.platform.turtle.WetTurtleView;
  *
  * <p>This class is used as a factory to provide game elements to {@link controller.gameController.GameController}'s child class,
  * including:
- *      <p>1. {@link controller.gameController.EasyGameController};
- *      <p>2. {@link controller.gameController.HardGameController};
- *      <p>3. {@link controller.gameController.InfiniteGameController}.
+ *      <p>1. {@link controller.gameController.NormalGameController};
+ *      <p>2. {@link controller.gameController.InfiniteGameController}.
  *
  * <p>The elements include:<br>
  *     1. {@link FroggerView};<br>
@@ -41,8 +40,7 @@ import com.platform.turtle.WetTurtleView;
  * @author Kejia Wu, scykw1@nottingham.ac.uk
  * @version 1.3
  * @since 1.0
- * @see controller.gameController.EasyGameController
- * @see controller.gameController.HardGameController
+ * @see controller.gameController.NormalGameController
  * @see controller.gameController.InfiniteGameController
  * @see FroggerView
  * @see EndView

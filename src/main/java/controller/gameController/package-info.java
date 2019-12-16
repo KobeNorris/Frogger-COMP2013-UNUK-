@@ -6,8 +6,7 @@
  * @version 1.5
  * @since 1.0
  * @see controller.gameController.GameController
- * @see controller.gameController.EasyGameController
- * @see controller.gameController.HardGameController
+ * @see controller.gameController.NormalGameController
  * @see controller.gameController.InfiniteGameController
  */
 package controller.gameController;

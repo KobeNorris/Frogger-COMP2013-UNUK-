@@ -148,7 +148,7 @@ public class FroggerController implements Controller{
                         this.model.presentHighestPosition = 800;
                         if(++this.model.reachedEnd >= 5){
                             this.model.reachedEnd = 0;
-                            if(this.model.gameMode.equals("Infinite")){
+                            if(this.model.gameMode.equals("Infi")){
                                 InfiniteGameController.resetGame();
                             }else{
                                 blockMove();

@@ -8,15 +8,59 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class MapReader {
+import static java.lang.System.exit;
 
+/**
+ *<h1>MapReader</h1>
+ *
+ * <p>This class is applied to read in the game map provided by users. In order to
+ * improve game's extendability. By using {@link ElementFactory} as the builder of
+ * the game element, builder design pattern is applied to this project.
+ *
+ * <p>
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.2
+ * @since 1.0
+ * @see ElementFactory
+ */
+public class MapReader {
+    /**
+     * Target game mode
+     */
+    private static String gameMode;
+    /**
+     * Whether the program is going to enable change ends
+     */
+    private static Boolean enableChangeEnd;
+    /**
+     * Target number of life player has
+     */
+    private static int numOfLife;
+    /**
+     * Target number of time player has
+     */
+    private static int numOfTime;
+
+    /**
+     * This method will read in the map file according to the file path provided by
+     * user and load the responding game elements to the game map.
+     *
+     * @param filePath The file path points towards the map file
+     * @param controller The present controller of game
+     * @throws IOException Invalid file path
+     */
     public static void generateMap(String filePath, GameController controller)throws IOException {
         File file = new File(filePath);
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
-        String gameMode = bufferedReader.readLine();
+        String[] parameter = bufferedReader.readLine().split(" ");
+        gameMode = parameter[0];
+        enableChangeEnd = Boolean.valueOf(parameter[1]);
+        numOfLife = Integer.valueOf(parameter[2]);
+        numOfTime = Integer.valueOf(parameter[3]);
         String elementInfo = bufferedReader.readLine();
-        String[] parameter;
+
+
         while(elementInfo != null) {
             parameter = elementInfo.split(" ");
             switch(parameter[0]){
@@ -49,6 +93,9 @@ public class MapReader {
                 case "longTruck":
                     controller.add(ElementFactory.longTruckProvider(Double.valueOf(parameter[1]), Double.valueOf(parameter[2]),200, Double.valueOf(parameter[3])));
                     break;
+                case "snake":
+                    controller.add(ElementFactory.snakeProvider(Double.valueOf(parameter[1]), Double.valueOf(parameter[2]),55, Double.valueOf(parameter[3])));
+                    break;
                 default:
             }
             elementInfo = bufferedReader.readLine();
@@ -67,7 +114,7 @@ public class MapReader {
 
         controller.frogger = ElementFactory.froggerProvider();
         controller.frogger.setGameMode(gameMode);
-        controller.frogger.changeEnd();
+        controller.frogger.setChangeEndMode(enableChangeEnd);
         controller.add(controller.frogger);
 
         controller.initInfo(gameMode);
