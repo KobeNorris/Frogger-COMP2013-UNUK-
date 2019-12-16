@@ -2,10 +2,13 @@ package gameApp;
 
 import controller.gameController.GameController;
 import util.FileProcessor;
+import util.MapReader;
 import util.SceneSwitcher;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 /**
  * <h1>Main</h1>

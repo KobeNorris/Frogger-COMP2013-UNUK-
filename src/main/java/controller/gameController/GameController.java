@@ -79,7 +79,7 @@ public abstract class GameController{
 
     protected ImageView[] lifeIcon;
     protected ImageView pauseIcon;
-    protected static EndView[] endList;
+    public static EndView[] endList;
 
     /**
      * The gameStage pane keeps all game elements
@@ -345,7 +345,7 @@ public abstract class GameController{
      *
      * @param view Present frogger view
      */
-    protected void add(View view) {
+    public void add(View view) {
         this.gameStage.getChildren().add(view);
     }
 

@@ -69,22 +69,22 @@ public class InfiniteGameController extends GameController{
 
         this.add(ElementFactory.snakeProvider(0, 420, 60, 2));
 
-        this.add(ElementFactory.carProvider("right", 80, 701, 50, 2));
-        this.add(ElementFactory.carProvider("right", 300, 701, 50, 2));
-        this.add(ElementFactory.carProvider("right", 400, 701, 50, 2));
-        this.add(ElementFactory.carProvider("right", 570, 701, 50, 2));
-        this.add(ElementFactory.shortTruckProvider("right", 0, 649, 120, 1));
-        this.add(ElementFactory.shortTruckProvider("right", 300, 649, 120, 1));
-        this.add(ElementFactory.shortTruckProvider("right", 600, 649, 120, 1));
-        this.add(ElementFactory.shortTruckProvider("right", 720, 649, 120, 1));
-        this.add(ElementFactory.carProvider("left", 100, 597, 50, -1));
-        this.add(ElementFactory.carProvider("left", 250, 597, 50, -1));
-        this.add(ElementFactory.carProvider("left", 400, 597, 50, -1));
-        this.add(ElementFactory.carProvider("left", 550, 597, 50, -1));
-        this.add(ElementFactory.longTruckProvider("right", 0, 540, 200, 1));
-        this.add(ElementFactory.longTruckProvider("right", 500, 540, 200, 1));
-        this.add(ElementFactory.carProvider("left", 500, 490, 50, -5));
-        this.add(ElementFactory.carProvider("left", 800, 490, 50, -5));
+        this.add(ElementFactory.carProvider(80, 701, 50, 2));
+        this.add(ElementFactory.carProvider(300, 701, 50, 2));
+        this.add(ElementFactory.carProvider(400, 701, 50, 2));
+        this.add(ElementFactory.carProvider(570, 701, 50, 2));
+        this.add(ElementFactory.shortTruckProvider(0, 649, 120, 1));
+        this.add(ElementFactory.shortTruckProvider(300, 649, 120, 1));
+        this.add(ElementFactory.shortTruckProvider(600, 649, 120, 1));
+        this.add(ElementFactory.shortTruckProvider(720, 649, 120, 1));
+        this.add(ElementFactory.carProvider(100, 597, 50, -1));
+        this.add(ElementFactory.carProvider(250, 597, 50, -1));
+        this.add(ElementFactory.carProvider(400, 597, 50, -1));
+        this.add(ElementFactory.carProvider(550, 597, 50, -1));
+        this.add(ElementFactory.longTruckProvider(0, 540, 200, 1));
+        this.add(ElementFactory.longTruckProvider(500, 540, 200, 1));
+        this.add(ElementFactory.carProvider(500, 490, 50, -5));
+        this.add(ElementFactory.carProvider(800, 490, 50, -5));
 
         frogger = ElementFactory.froggerProvider();
         frogger.setGameMode("Infinite");

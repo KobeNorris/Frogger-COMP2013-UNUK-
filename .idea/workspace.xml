@@ -3,16 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="ceb80672-5590-40c5-83e8-4089ff0942c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/car/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/car/CarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/LongTruckView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/LongTruckView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/ShortTruckView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/obstacle/truck/ShortTruckView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/EasyGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/EasyGameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/HardGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/HardGameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/gameController/InfiniteGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/gameController/InfiniteGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gameApp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gameApp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ElementFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ElementFactory.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

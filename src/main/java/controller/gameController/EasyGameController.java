@@ -56,18 +56,18 @@ public class EasyGameController extends GameController{
         this.add(ElementFactory.dryTurtleProvider(450, 217, 130, -1.25));
         this.add(ElementFactory.wetTurtleProvider(650, 217, 130, -1.25));
 
-        this.add(ElementFactory.carProvider("right", 50, 701, 50, 2));
-        this.add(ElementFactory.carProvider("right", 300, 701, 50, 2));
-        this.add(ElementFactory.carProvider("right", 550, 701, 50, 2));
-        this.add(ElementFactory.shortTruckProvider("right", 0, 649, 120, 1));
-        this.add(ElementFactory.shortTruckProvider("right", 300, 649, 120, 1));
-        this.add(ElementFactory.shortTruckProvider("right", 600, 649, 120, 1));
-        this.add(ElementFactory.carProvider("left", 100, 597, 50, -1));
-        this.add(ElementFactory.carProvider("left", 300, 597, 50, -1));
-        this.add(ElementFactory.carProvider("left", 500, 597, 50, -1));
-        this.add(ElementFactory.longTruckProvider("right", 0, 540, 200, 1));
-        this.add(ElementFactory.longTruckProvider("right", 500, 540, 200, 1));
-        this.add(ElementFactory.carProvider("left", 500, 490, 50, -5));
+        this.add(ElementFactory.carProvider(50, 701, 50, 2));
+        this.add(ElementFactory.carProvider(300, 701, 50, 2));
+        this.add(ElementFactory.carProvider(550, 701, 50, 2));
+        this.add(ElementFactory.shortTruckProvider(0, 649, 120, 1));
+        this.add(ElementFactory.shortTruckProvider(300, 649, 120, 1));
+        this.add(ElementFactory.shortTruckProvider(600, 649, 120, 1));
+        this.add(ElementFactory.carProvider(100, 597, 50, -1));
+        this.add(ElementFactory.carProvider(300, 597, 50, -1));
+        this.add(ElementFactory.carProvider(500, 597, 50, -1));
+        this.add(ElementFactory.longTruckProvider(0, 540, 200, 1));
+        this.add(ElementFactory.longTruckProvider( 500, 540, 200, 1));
+        this.add(ElementFactory.carProvider(500, 490, 50, -5));
 
         frogger = ElementFactory.froggerProvider();
         frogger.setGameMode("Easy");

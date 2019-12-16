@@ -1,8 +1,10 @@
 Kobe
 1750
-Jerry
-600
+Kobe
+810
 Laim
+600
+Jerry
 600
 Krixi
 500
@@ -10,8 +12,6 @@ TimeBoom
 450
 Kobe
 130
-Empty
--1
 Empty
 -1
 Empty
