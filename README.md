@@ -6,7 +6,7 @@ Tested on: **Lab Machine**
 
 Build script: **Gradle**
 
-Words count: **519**
+Words count: **510**
 
 ----
 
@@ -48,13 +48,12 @@ Words count: **519**
 
 * **MVC design pattern**
     1. Refactored ```World```:
-        * ```World``` is refactored into ```GameController```;
-        * Background image is allocated in FXML files of game modes;
-        * Better extendability, different game modes could be extended from it.
+        * Refactored into ```GameController```;
+        * Better extendability.
 
     2. Refactored ```Actor``` and all of its child classes:
-        * ```Actor``` is refactored into ```View```, ```Controller``` and ```Model```;
-        * Elements will large classes e.g.```Animal```, are broken down into 3 classes;
+        * Refactored into ```View```, ```Controller``` and ```Model```;
+        * Elements with large classes e.g.```Animal```, are broken down into 3 classes;
         * Other game elements have their own ```View``` class;
         * Better testability (```Model``` and ```Controller``` could be tested without launching);
         * Better extendability (```Controller``` and ```Model``` provide extra interfaces).
@@ -64,16 +63,20 @@ Words count: **519**
 
 * **SINGLETON  design pattern**
     1. ```FroggerView```: 
-        * Better utility;
-        * Prevent redundant.
+        * Better maintainability (Prevent redundant).
 
     2. ```MusicPlayer```:
-        * Better extendability.
+        * Better extendability (Lower coupling).
 
 * **Factory design pattern**
     1. ```ElementFactory```: 
-        * Lower coupling;
-        * Better extendability.
+        * Better extendability (Lower coupling);
+        * Better maintainability (Separate users from actual implementation).
+        
+* **Builder design pattern**
+    1. ```MapReader```:
+        * Better extendability (Lower coupling, convenient for creating new maps);
+        * Better maintainability (Prevent redundant code).
 ----
 ## **For extension**
 
@@ -146,14 +149,18 @@ Words count: **519**
         * Different music for different pages.
         
     6. Create new map:
-        * New map could be developed by extending from ```GameController``` class:
-        
-        ![avatar](./)
+    
+        ![avatar](./readmeImg/Components/MapExample.PNG)
+        * Better extendability;
+        * **New** game map could be created in file (```.txt```) under ```/src/resources/map/```
+        * First line contains basic game data
         
         
 ## **Work Log**
 
-*   According to [LOG.md](./LOG.md), from November 17th to December 8th, I'm focusing on refactoring and making extensions.<br>
+*   Summary:
+
+    According to [LOG.md](./LOG.md), from November 17th to December 8th, I'm focusing on refactoring and making extensions.<br>
     From December 1st to the end, documentation and build framework development became my most important target.
     
     By recording a log file throughout the project, I gained a better perspective towards the process of my developing.
