@@ -6,7 +6,7 @@ Tested on: **Lab Machine**
 
 Build script: **Gradle**
 
-Words count: **510**
+Words count: **520**
 
 ----
 
@@ -45,6 +45,11 @@ Words count: **510**
          ![avatar](./readmeImg/Components/scoreDisplayExample.png)
         * Generates from points deduction;
         * Fixed by applying ```Text``` ```playerScoreBoard```;
+        
+    3. End status:
+        
+        * Generates from absence of upper bound;
+        * Player will be killed being standing on an occupied end.
 
 * **MVC design pattern**
     1. Refactored ```World```:

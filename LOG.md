@@ -3,7 +3,7 @@
 ###### Author -- Kejia Wu
 ###### Email -- scykw1@nottingham.ac.uk
 ###### Initial created date: 18/Nov/2019
-###### Latest update date: 15/Dec/2019
+###### Latest update date: 17/Dec/2019
 
 ----
 ## 17/Nov/2019 - 30/Nov/2019
@@ -100,3 +100,7 @@
 (**13/Dec - 13/Dec**)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Change the build framework to **Gradle**
 
 (**13/Dec - 13/Dec**)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rearrange resource structure
+
+(**13/Dec - 15/Dec**)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Update class diagram and Java document
+
+(**15/Dec - 17/Dec**)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Develop ```MapReader``` to read in Text files as game map

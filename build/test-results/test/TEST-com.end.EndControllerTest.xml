@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.end.EndControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-16T22:53:00" hostname="WPSBRUSSELS" time="0.009">
-  <properties/>
-  <testcase name="setStatus()" classname="com.end.EndControllerTest" time="0.009"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
