@@ -14,7 +14,7 @@ Krixi
 500
 TimeBoom
 450
+a
+400
 Kobe
 290
-
-130

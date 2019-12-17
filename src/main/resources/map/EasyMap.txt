@@ -1,4 +1,4 @@
-Easy false 3 60
+Easy true 3 60
 log middle -250 170 1
 log middle 0 170 1
 log middle 250 170 1
@@ -33,4 +33,3 @@ car 500 597 -1
 longTruck 0 540 1
 longTruck 500 540 1
 car 500 490 -5
-
