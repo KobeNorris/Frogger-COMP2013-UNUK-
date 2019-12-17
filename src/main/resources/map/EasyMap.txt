@@ -1,0 +1,36 @@
+Easy false 3 60
+log middle -250 170 1
+log middle 0 170 1
+log middle 250 170 1
+log middle 500 170 1
+log short -200 328 0.5
+log short 0 328 0.5
+log short 200 328 0.5
+log short 400 328 0.5
+log short 600 328 0.5
+log long 0 274 1.5
+log long 333 274 1.5
+log long 666 274 1.5
+dryTurtle -100 376 -1.25
+wetTurtle 100 376 -1.25
+dryTurtle 300 376 -1.25
+wetTurtle 500 376 -1.25
+dryTurtle 700 376 -1.25
+wetTurtle -150 217 -1.25
+dryTurtle 50 217 -1.25
+wetTurtle 250 217 -1.25
+dryTurtle 450 217 -1.25
+wetTurtle 650 217 -1.25
+car 50 701 2
+car 300 701 2
+car 550 701 2
+shortTruck 0 649 1
+shortTruck 300 649 1
+shortTruck 600 649 1
+car 100 597 -1
+car 300 597 -1
+car 500 597 -1
+longTruck 0 540 1
+longTruck 500 540 1
+car 500 490 -5
+

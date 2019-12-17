@@ -1,7 +1,6 @@
 package com.frogger;
 
-import controller.gameController.HardGameController;
-import controller.gameController.InfiniteGameController;
+import controller.gameController.GameController;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
@@ -117,11 +116,9 @@ public class FroggerView extends View {
      * Call the game end functions
      */
     public void changeEnd(){
-        if(this.model.gameMode.equals("Hard")){
-            HardGameController.changeEnd();
-        }else if(this.model.gameMode.equals("Infinite")){
-            InfiniteGameController.changeEnd();
-        }
+//        if(this.model.gameMode.equals("Hard") || this.model.gameMode.equals("Infi"))
+        if(this.model.enableChangeEnd)
+            GameController.changeEnd();
     }
 
     /**
@@ -313,6 +310,11 @@ public class FroggerView extends View {
     public void resetPresentHighestPosition(){this.model.presentHighestPosition = 800;}
 
     public void setGameMode(String targetMode){this.model.gameMode = targetMode;}
+
+    public void setChangeEndMode(Boolean changeEnd){
+        this.model.enableChangeEnd = changeEnd;
+        changeEnd();
+    }
 
     public int getPoints(){
         return this.model.getPoints();

@@ -1,5 +1,6 @@
 package controller.gameController;
 
+import com.end.EndView;
 import com.icon.LifeIconView;
 import com.icon.PauseIconView;
 import javafx.scene.image.ImageView;
@@ -23,6 +24,8 @@ import util.ElementFactory;
 import util.FileProcessor;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
 
 /**
  * <h1>GameController</h1>
@@ -76,6 +79,8 @@ public abstract class GameController{
 
     protected ImageView[] lifeIcon;
     protected ImageView pauseIcon;
+    public static EndView[] endList;
+    public static String filePath = "";
 
     /**
      * The gameStage pane keeps all game elements
@@ -130,51 +135,46 @@ public abstract class GameController{
     }
 
     /**
-     * This method updates player's present score
-     *
-     * @param presentScore Present score player gaines
+     * This function changes the status of ends, there is going to be only one
+     * pair of CrocEnd and BugEnd exist simultaneously at most. And if there is
+     * only one End left, it will be set to BugEnd.
      */
-    public void updateScore(int presentScore) {
-        playerScoreBoard.setText("SCORE\n" + presentScore);
-    }
-
-    /**
-     * This method updates player's present remaining time, if the
-     * time is less than 60 seconds, it will be demonstrated in
-     * orange and if it is less than 30, it will be demonstrated
-     * in red.
-     *
-     * @param presentTime Present remaining time player has
-     */
-    public void updateTime(int presentTime){
-        playerTimeBoard.setText("Time: " + presentTime);
-        timeBar.setWidth((this.gameStage.getPrefWidth() - 20) * presentTime/60);
-        timeBar.setX((this.gameStage.getPrefWidth() - 20) * (1 - (double)presentTime/60) + 10);
-        if(presentTime > 40){
-            playerTimeBoard.setFill(Color.rgb(10,225,10));
-            timeBar.setFill(Color.rgb(10,225,10));
+    public static void changeEnd(){
+        int emptyEndCounter = 0;
+        Date date = new Date();
+        Random rand = new Random(date.getTime());
+        for(int iTemp = 0; iTemp < 5; iTemp++){
+            if(!endList[iTemp].checkStatusFROGOCCUPIED()){
+                emptyEndCounter++;
+                endList[iTemp].occupyEnd("empty");
+            }
         }
-        else if(presentTime > 20){
-            playerTimeBoard.setFill(Color.ORANGE);
-            timeBar.setFill(Color.ORANGE);
-        }
-        else if(presentTime > 0){
-            playerTimeBoard.setFill(Color.RED);
-            timeBar.setFill(Color.RED);
-        }
-    }
-
-    /**
-     * This method updates player's present life number, if the
-     * life is less than 3, it will be demonstrated in orange,
-     * and if it is less than 2, which means it is the last chance,
-     * it will be demonstrated in red.
-     *
-     * @param presentLife Present life player has
-     */
-    public void updateLife(int presentLife) {
-        for(int iTemp = presentLife; iTemp < lifeIcon.length; iTemp++){
-            this.gameStage.getChildren().remove(lifeIcon[iTemp]);
+        if(emptyEndCounter > 0){
+            int tempCounter = 0;
+            int targetIndex = rand.nextInt(emptyEndCounter);
+            targetIndex++;
+            for(int iTemp = 0; iTemp < 5; iTemp++){
+                if(endList[iTemp].checkStatusEMPTY()){
+                    tempCounter++;
+                }
+                if(targetIndex == tempCounter){
+                    endList[iTemp].occupyEnd("bug");
+                    break;
+                }
+            }
+            if(emptyEndCounter > 1){
+                tempCounter = 0;
+                targetIndex = rand.nextInt(emptyEndCounter-1);
+                targetIndex++;
+                for(int iTemp = 0; iTemp < 5; iTemp++){
+                    if(endList[iTemp].checkStatusEMPTY())
+                        tempCounter++;
+                    if(targetIndex == tempCounter){
+                        endList[iTemp].occupyEnd("croc");
+                        break;
+                    }
+                }
+            }
         }
     }
 
@@ -285,6 +285,55 @@ public abstract class GameController{
     }
 
     /**
+     * This method updates player's present score
+     *
+     * @param presentScore Present score player gaines
+     */
+    public void updateScore(int presentScore) {
+        playerScoreBoard.setText("SCORE\n" + presentScore);
+    }
+
+    /**
+     * This method updates player's present remaining time, if the
+     * time is less than 60 seconds, it will be demonstrated in
+     * orange and if it is less than 30, it will be demonstrated
+     * in red.
+     *
+     * @param presentTime Present remaining time player has
+     */
+    public void updateTime(int presentTime){
+        playerTimeBoard.setText("Time: " + presentTime);
+        timeBar.setWidth((this.gameStage.getPrefWidth() - 20) * presentTime/60);
+        timeBar.setX((this.gameStage.getPrefWidth() - 20) * (1 - (double)presentTime/60) + 10);
+        if(presentTime > 40){
+            playerTimeBoard.setFill(Color.rgb(10,225,10));
+            timeBar.setFill(Color.rgb(10,225,10));
+        }
+        else if(presentTime > 20){
+            playerTimeBoard.setFill(Color.ORANGE);
+            timeBar.setFill(Color.ORANGE);
+        }
+        else if(presentTime > 0){
+            playerTimeBoard.setFill(Color.RED);
+            timeBar.setFill(Color.RED);
+        }
+    }
+
+    /**
+     * This method updates player's present life number, if the
+     * life is less than 3, it will be demonstrated in orange,
+     * and if it is less than 2, which means it is the last chance,
+     * it will be demonstrated in red.
+     *
+     * @param presentLife Present life player has
+     */
+    public void updateLife(int presentLife) {
+        for(int iTemp = presentLife; iTemp < lifeIcon.length; iTemp++){
+            this.gameStage.getChildren().remove(lifeIcon[iTemp]);
+        }
+    }
+
+    /**
      * Stop current game stage.
      */
     public void stopGame() {
@@ -297,7 +346,7 @@ public abstract class GameController{
      *
      * @param view Present frogger view
      */
-    protected void add(View view) {
+    public void add(View view) {
         this.gameStage.getChildren().add(view);
     }
 

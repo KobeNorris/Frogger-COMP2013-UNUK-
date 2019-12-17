@@ -1,6 +1,5 @@
 package com.end;
 
-import controller.gameController.HardGameController;
 import controller.gameController.InfiniteGameController;
 import javafx.scene.image.Image;
 import com.View;
@@ -124,7 +123,7 @@ public class EndView extends View {
 
     /**
      * EndView will not change itself during the execution, it could only be manipulated by
-     * gameControllers {@link HardGameController#changeEnd()} and {@link InfiniteGameController#changeEnd()}
+     * gameControllers {@link controller.gameController.NormalGameController#changeEnd()} and {@link InfiniteGameController#changeEnd()}
      *
      * @param timer Value of present timer counter
      */

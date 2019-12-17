@@ -10,10 +10,10 @@ import java.io.IOException;
  *
  * <p>This class is the controller for game difficulty selection page, it could jump to
  * games with different difficulty according to player's choice:
- *          <p>1. {@link controller.gameController.EasyGameController}: Game with little
+ *          <p>1. {@link controller.gameController.NormalGameController}: Game with little
  *          traffic and lots of logs, and turtles. There is no snake in the middle
  *          lane and the crocodiles and bugs will not appear in the ends;
- *          <p>2. {@link controller.gameController.HardGameController}: Game with more
+ *          <p>2. {@link controller.gameController.NormalGameController}: Game with more
  *          traffic and fewer logs, and turtles. There will be snake appears in the middle
  *          lane and the crocodiles and bugs will appear in the ends;
  *          <p>3. {@link controller.gameController.InfiniteGameController}: Game with same
@@ -24,8 +24,7 @@ import java.io.IOException;
  * @author Kejia Wu, scykw1@nottingham.ac.uk
  * @version 1.2
  * @since 1.0
- * @see controller.gameController.EasyGameController
- * @see controller.gameController.HardGameController
+ * @see controller.gameController.NormalGameController
  * @see controller.gameController.InfiniteGameController
  */
 public class DifficultyLevelSelectionController {

@@ -6,16 +6,29 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test the functionality of FroggerController
+ * <h1>FroggerControllerTest</h1>
+ *
+ * <p>Test the functionality of {@link FroggerController}
+ *
+ * @author Kejia Wu, scykw1@nottingham.ac.uk
+ * @version 1.4
+ * @since 1.0
+ * @see FroggerController
  */
 public class FroggerControllerTest {
     static FroggerController instance = null;
 
+    /**
+     * The instance of Frogger Controller should be realized first
+     */
     @BeforeAll
     public static void initialise(){
         instance = new FroggerController(new FroggerModel());
     }
 
+    /**
+     * Test the functionality of {@link FroggerController#revive()}
+     */
     @Test
     public void revive() {
         int lifeNumber = instance.model.life;
@@ -28,6 +41,9 @@ public class FroggerControllerTest {
         assertEquals(instance.model.life, lifeNumber - 1);
     }
 
+    /**
+     * Test the functionality of {@link FroggerController#resetToStart()}
+     */
     @Test
     public void resetToStart() {
         instance.resetToStart();
@@ -38,6 +54,9 @@ public class FroggerControllerTest {
         assertFalse(instance.model.stop);
     }
 
+    /**
+     * Test the functionality of {@link FroggerController#bonusPoints()}
+     */
     @Test
     public void bonusPoints() {
         int originPoints = instance.model.getPoints();
@@ -45,6 +64,9 @@ public class FroggerControllerTest {
         assertEquals(instance.model.getPoints(), originPoints + 50);
     }
 
+    /**
+     * Test the functionality of {@link FroggerController#blockMove()}
+     */
     @Test
     public void blockMove() {
         instance.blockMove();

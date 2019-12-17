@@ -30,7 +30,7 @@ public class FroggerModel implements Model {
      */
     String gameMode;
     int reachedEnd = 0, life = 3, roundTime = 60, remainingTime;
-    boolean noMove = false;
+    boolean enableChangeEnd, noMove = false;
     /**
      * Update instructions
      */

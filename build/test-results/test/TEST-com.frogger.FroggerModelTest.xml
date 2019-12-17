@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.frogger.FroggerModelTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2019-12-15T18:25:22" hostname="WPSARMENIA" time="0.006">
+<testsuite name="com.frogger.FroggerModelTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2019-12-16T22:53:00" hostname="WPSBRUSSELS" time="0.003">
   <properties/>
-  <testcase name="checkScore()" classname="com.frogger.FroggerModelTest" time="0.001"/>
-  <testcase name="changePoints()" classname="com.frogger.FroggerModelTest" time="0.0"/>
+  <testcase name="checkScore()" classname="com.frogger.FroggerModelTest" time="0.0"/>
+  <testcase name="changePoints()" classname="com.frogger.FroggerModelTest" time="0.001"/>
   <testcase name="checkLife()" classname="com.frogger.FroggerModelTest" time="0.0"/>
-  <testcase name="setPoints()" classname="com.frogger.FroggerModelTest" time="0.001"/>
-  <testcase name="setStatus()" classname="com.frogger.FroggerModelTest" time="0.001"/>
+  <testcase name="setPoints()" classname="com.frogger.FroggerModelTest" time="0.0"/>
+  <testcase name="setStatus()" classname="com.frogger.FroggerModelTest" time="0.0"/>
   <testcase name="getPoints()" classname="com.frogger.FroggerModelTest" time="0.0"/>
   <testcase name="getStatus()" classname="com.frogger.FroggerModelTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

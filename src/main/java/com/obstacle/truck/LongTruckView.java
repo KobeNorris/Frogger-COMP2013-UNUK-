@@ -27,18 +27,17 @@ public class LongTruckView extends ObstacleView {
     /**
      * This constructor initialise the type, position, size and speed of LongTruckView
      *
-     * @param longTruckType Type of the truck
      * @param positionX LongTruckView's X position
      * @param positionY LongTruckView's Y position
      * @param size  LongTruckView's size
      * @param speed  LongTruckView's speed
      */
-    public LongTruckView(String longTruckType, double positionX, double positionY, double size, double speed) {
+    public LongTruckView(double positionX, double positionY, double size, double speed) {
         createModel(speed);
         createController();
         LongTruckRight = new Image(this.filePath + "longTruckRight.png", size, size, true, true);
         LongTruckLeft = new Image(this.filePath + "longTruckLeft.png", size, size, true, true);
-        if(longTruckType.equals("right"))
+        if(speed > 0)
             setImage(LongTruckRight);
         else
             setImage(LongTruckLeft);

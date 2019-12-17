@@ -19,9 +19,8 @@ import com.platform.turtle.WetTurtleView;
  *
  * <p>This class is used as a factory to provide game elements to {@link controller.gameController.GameController}'s child class,
  * including:
- *      <p>1. {@link controller.gameController.EasyGameController};
- *      <p>2. {@link controller.gameController.HardGameController};
- *      <p>3. {@link controller.gameController.InfiniteGameController}.
+ *      <p>1. {@link controller.gameController.NormalGameController};
+ *      <p>2. {@link controller.gameController.InfiniteGameController}.
  *
  * <p>The elements include:<br>
  *     1. {@link FroggerView};<br>
@@ -41,8 +40,7 @@ import com.platform.turtle.WetTurtleView;
  * @author Kejia Wu, scykw1@nottingham.ac.uk
  * @version 1.3
  * @since 1.0
- * @see controller.gameController.EasyGameController
- * @see controller.gameController.HardGameController
+ * @see controller.gameController.NormalGameController
  * @see controller.gameController.InfiniteGameController
  * @see FroggerView
  * @see EndView
@@ -73,15 +71,14 @@ public class ElementFactory {
     /**
      * This constructor initialise the position, size and speed of CarView {@link CarView}
      *
-     * @param carType The direction of car image
      * @param positionX CarView's X position
      * @param positionY CarView's Y position
      * @param size  CarView's size
      * @param speed  CarView's speed
      * @return The car's image view
      */
-    public static CarView carProvider(String carType, double positionX, double positionY, double size, double speed){
-        return new CarView(carType, positionX, positionY, size, speed);
+    public static CarView carProvider(double positionX, double positionY, double size, double speed){
+        return new CarView(positionX, positionY, size, speed);
     }
 
     /**
@@ -100,29 +97,27 @@ public class ElementFactory {
     /**
      * This constructor initialise the type, position, size and speed of LongTruckView {@link LongTruckView}
      *
-     * @param longTruckType Type of the truck
      * @param positionX LongTruckView's X position
      * @param positionY LongTruckView's Y position
      * @param size  LongTruckView's size
      * @param speed  LongTruckView's speed
      * @return The long truck's image view
      */
-    public static LongTruckView longTruckProvider(String longTruckType, double positionX, double positionY, double size, double speed){
-        return new LongTruckView(longTruckType, positionX, positionY, size, speed);
+    public static LongTruckView longTruckProvider(double positionX, double positionY, double size, double speed){
+        return new LongTruckView(positionX, positionY, size, speed);
     }
 
     /**
      * This constructor initialise the position, size and speed of ShortTruckView {@link ShortTruckView}
      *
-     * @param shortTruckType Type of the truck
      * @param positionX ShortTruckView's X position
      * @param positionY ShortTruckView's Y position
      * @param size  ShortTruckView's size
      * @param speed  ShortTruckView's speed
      * @return The short truck's image view
      */
-    public static ShortTruckView shortTruckProvider(String shortTruckType, double positionX, double positionY, double size, double speed){
-        return new ShortTruckView(shortTruckType, positionX, positionY, size, speed);
+    public static ShortTruckView shortTruckProvider(double positionX, double positionY, double size, double speed){
+        return new ShortTruckView(positionX, positionY, size, speed);
     }
 
     /**
