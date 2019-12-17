@@ -1,0 +1,12 @@
+The second feature is an auto map readin function
+All game layout and data demonstration is generated from a Text file in map directory
+Present game mode is called "Infi", it could be easily modified by editing the correponding text file
+For example, let's change it to Kobe and then we restart the game
+You could observe that the mode name is already been changed
+Further modification could be made as well, including player's life number and remaining time
+This time we could disable the change of diferent types of end
+and remove the snake wandering on the middle lane
+Then restart the game again
+Ha, the annoying snake is gone and the dangerous corcodile will never catch me in the end now
+
+
